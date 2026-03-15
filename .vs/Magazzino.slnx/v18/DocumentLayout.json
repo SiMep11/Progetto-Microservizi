@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C99F0CB8-8A74-A3E0-C7BC-72CDE55EC754}|Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\magazzino\\magazzino.shared\\prodottodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C99F0CB8-8A74-A3E0-C7BC-72CDE55EC754}|Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj|solutionrelative:microservizi\\magazzino\\magazzino.shared\\prodottodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProdottoDto.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\ProdottoDto.cs",
+              "RelativeDocumentMoniker": "Microservizi\\Magazzino\\Magazzino.Shared\\ProdottoDto.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\ProdottoDto.cs",
+              "RelativeToolTip": "Microservizi\\Magazzino\\Magazzino.Shared\\ProdottoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T15:17:54.194Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
