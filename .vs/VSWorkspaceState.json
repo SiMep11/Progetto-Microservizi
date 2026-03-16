@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Microservizi",
+    "\\.github",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.Repository",
-    "\\Microservizi\\Magazzino\\Magazzino.Shared"
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
+    "\\UtilityKafka"
   ],
-  "SelectedNode": "\\Magazzino.slnx",
+  "SelectedNode": "\\UtilityKafka\\UtilityKafka.slnx",
   "PreviewInSolutionExplorer": false
 }

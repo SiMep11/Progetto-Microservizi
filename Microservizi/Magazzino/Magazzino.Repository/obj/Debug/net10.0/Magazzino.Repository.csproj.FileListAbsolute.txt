@@ -1,0 +1,16 @@
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\bin\Debug\net10.0\Magazzino.Repository.deps.json
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\bin\Debug\net10.0\Magazzino.Repository.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\bin\Debug\net10.0\Magazzino.Repository.pdb
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\bin\Debug\net10.0\Magazzino.Shared.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\bin\Debug\net10.0\Magazzino.Shared.pdb
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.csproj.AssemblyReference.cache
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.AssemblyInfoInputs.cache
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.AssemblyInfo.cs
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.csproj.CoreCompileInputs.cache
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.sourcelink.json
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzin.C5DB6AA5.Up2Date
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\refint\Magazzino.Repository.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.pdb
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\ref\Magazzino.Repository.dll
