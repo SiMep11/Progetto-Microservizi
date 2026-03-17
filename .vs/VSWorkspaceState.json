@@ -2,10 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\.github",
+    "\\.github\\workflows",
+    "\\k8s",
+    "\\Microservizi",
     "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Magazzino\\Magazzino.Repository",
+    "\\Microservizi\\Magazzino\\Magazzino.Repository\\Migrations",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\UtilityKafka"
   ],
-  "SelectedNode": "\\UtilityKafka\\UtilityKafka.slnx",
+  "SelectedNode": "\\Magazzino.slnx",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,16 @@
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\bin\Debug\net10.0\Magazzino.ClientHttp.deps.json
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\bin\Debug\net10.0\Magazzino.ClientHttp.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\bin\Debug\net10.0\Magazzino.ClientHttp.pdb
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\bin\Debug\net10.0\Magazzino.Shared.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\bin\Debug\net10.0\Magazzino.Shared.pdb
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.csproj.AssemblyReference.cache
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.AssemblyInfoInputs.cache
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.AssemblyInfo.cs
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.csproj.CoreCompileInputs.cache
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.sourcelink.json
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzin.C6098B3E.Up2Date
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\refint\Magazzino.ClientHttp.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\Magazzino.ClientHttp.pdb
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.ClientHttp\obj\Debug\net10.0\ref\Magazzino.ClientHttp.dll

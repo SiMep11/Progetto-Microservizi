@@ -14,3 +14,5 @@ C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Mag
 C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\refint\Magazzino.Repository.dll
 C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.pdb
 C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\ref\Magazzino.Repository.dll
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\bin\Debug\net10.0\Magazzino.Repository.runtimeconfig.json
+C:\Users\simon\Documents\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\obj\Debug\net10.0\Magazzino.Repository.genruntimeconfig.cache

@@ -25,7 +25,7 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<MagazzinoDbContext>();
 
         // Questo comando magico crea il DB e le tabelle se non esistono!
-        context.Database.EnsureCreated();
+        context.Database.Migrate();
     }
     catch (Exception ex)
     {

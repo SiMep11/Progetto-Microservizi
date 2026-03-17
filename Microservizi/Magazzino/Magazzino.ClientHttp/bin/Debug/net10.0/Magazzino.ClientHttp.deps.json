@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Magazzino.ClientHttp/1.0.0": {
+        "dependencies": {
+          "Magazzino.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Magazzino.ClientHttp.dll": {}
+        }
+      },
+      "Magazzino.Shared/1.0.0": {
+        "runtime": {
+          "Magazzino.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Magazzino.ClientHttp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Magazzino.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
