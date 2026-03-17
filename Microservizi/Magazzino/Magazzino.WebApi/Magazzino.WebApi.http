@@ -1,0 +1,6 @@
+@Magazzino.WebApi_HostAddress = http://localhost:5024
+
+GET {{Magazzino.WebApi_HostAddress}}/
+Accept: application/json
+
+###

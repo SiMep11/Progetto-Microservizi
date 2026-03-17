@@ -1,0 +1,36 @@
+name: Creazione e Pubblicazione NuGet
+
+on:
+  push:
+    branches: [ "main" ] # Si attiva quando fai un push sul branch principale
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    # Questi permessi sono FONDAMENTALI per permettere a GitHub di scrivere nei Packages
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET 10
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x' 
+        
+    - name: Pacchettizza Magazzino.Shared
+      run: dotnet pack Microservizi/Magazzino/Magazzino.Shared/Magazzino.Shared.csproj -c Release -o pacchetti_creati
+      
+    - name: Pacchettizza Magazzino.ClientHttp
+      run: dotnet pack Microservizi/Magazzino/Magazzino.ClientHttp/Magazzino.ClientHttp.csproj -c Release -o pacchetti_creati
+      
+    - name: Pacchettizza UtilityKafka
+      run: dotnet pack UtilityKafka/UtilityKafka.csproj -c Release -o pacchetti_creati
+
+    - name: Pubblica su GitHub Packages
+      # NOTA BENE: Sostituisci TUO_USERNAME_GITHUB qui sotto!
+      run: dotnet nuget push "pacchetti_creati/*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/SiMep11/index.json" --skip-duplicate
