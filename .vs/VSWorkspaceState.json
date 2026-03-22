@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
+    "\\Microservizi\\Magazzino\\Magazzino.Business",
+    "\\Microservizi\\Magazzino\\Magazzino.Repository",
+    "\\Microservizi\\Magazzino\\Magazzino.Shared",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
-    "\\UtilityKafka"
+    "\\Microservizi\\Ordini",
+    "\\Microservizi\\Ordini\\Ordini.Repository",
+    "\\Microservizi\\Ordini\\Ordini.Shared"
   ],
-  "SelectedNode": "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.Repository\\OrdiniDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

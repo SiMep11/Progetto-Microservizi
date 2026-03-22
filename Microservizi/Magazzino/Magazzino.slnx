@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Magazzino.Business/Magazzino.Business.csproj" />
+  <Project Path="Magazzino.ClientHttp/Magazzino.ClientHttp.csproj" />
+  <Project Path="Magazzino.Repository/Magazzino.Repository.csproj" />
+  <Project Path="Magazzino.Shared/Magazzino.Shared.csproj" />
+  <Project Path="Magazzino.WebApi/Magazzino.WebApi.csproj" />
+</Solution>

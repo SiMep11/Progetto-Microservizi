@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="Microservizi/Magazzino/Magazzino.Business/Magazzino.Business.csproj" />
-  <Project Path="Microservizi/Magazzino/Magazzino.ClientHttp/Magazzino.ClientHttp.csproj" />
-  <Project Path="Microservizi/Magazzino/Magazzino.Repository/Magazzino.Repository.csproj" />
-  <Project Path="Microservizi/Magazzino/Magazzino.Shared/Magazzino.Shared.csproj" />
-  <Project Path="Microservizi/Magazzino/Magazzino.WebApi/Magazzino.WebApi.csproj" />
-</Solution>

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Ordini.Business/Ordini.Business.csproj" />
+  <Project Path="Ordini.ClientHttp/Ordini.ClientHttp.csproj" />
+  <Project Path="Ordini.Repository/Ordini.Repository.csproj" />
+  <Project Path="Ordini.Shared/Ordini.Shared.csproj" />
+  <Project Path="Ordini.WebApi/Ordini.WebApi.csproj" />
+</Solution>

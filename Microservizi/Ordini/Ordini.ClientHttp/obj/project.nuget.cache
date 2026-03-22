@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "w33eswyy6a0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Simone\\.nuget\\packages\\magazzino.shared\\1.0.0\\magazzino.shared.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
