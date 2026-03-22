@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\",
+  "WorkspaceRootPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\magazzino\\magazzino.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|solutionrelative:microservizi\\magazzino\\magazzino.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\magazzino\\magazzino.webapi\\controllers\\prodotticontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|solutionrelative:microservizi\\magazzino\\magazzino.webapi\\controllers\\prodotticontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\magazzino\\magazzino.webapi\\controllers\\prodotticontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|solutionrelative:microservizi\\magazzino\\magazzino.webapi\\controllers\\prodotticontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\magazzino\\magazzino.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E1A3EF-6E9E-4BC9-6AA5-474D5401D552}|Microservizi\\Magazzino\\Magazzino.WebApi\\Magazzino.WebApi.csproj|solutionrelative:microservizi\\magazzino\\magazzino.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ProdottiController.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
               "RelativeDocumentMoniker": "Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
-              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
               "RelativeToolTip": "Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBsAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T09:59:12.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
               "RelativeDocumentMoniker": "Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
               "RelativeToolTip": "Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T08:58:26.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T08:58:26.884Z"
             }
           ]
         }

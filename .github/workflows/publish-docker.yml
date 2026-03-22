@@ -1,0 +1,30 @@
+name: Build e Pubblicazione Immagine Docker
+
+on:
+  push:
+    branches: [ "main" ] # Si attiva ad ogni push sul main
+
+jobs:
+  build-and-publish-docker:
+    runs-on: ubuntu-latest
+    
+    # Permessi necessari per caricare l'immagine su GitHub Packages
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+
+    - name: Login al GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build e Push dell'immagine Magazzino
+      run: |
+        docker build -f Microservizi/Magazzino/Magazzino.WebApi/Dockerfile -t ghcr.io/simep11/magazzino-api:latest Microservizi/Magazzino/
+        docker push ghcr.io/simep11/magazzino-api:latest

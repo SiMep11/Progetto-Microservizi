@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: magazzino-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: magazzino-api
+  template:
+    metadata:
+      labels:
+        app: magazzino-api
+    spec:
+      containers:
+      - name: magazzino-api
+        image: ghcr.io/simep11/magazzino-api:latest
+        ports:
+        - containerPort: 8080
+        env:
+        # Sovrascriviamo la stringa di connessione per fargli puntare al container SQL
+        - name: ConnectionStrings__MagazzinoDb
+          value: "Server=sqlserver-service,1433;Database=MagazzinoDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
+        # Diciamo a .NET di partire in modalità Sviluppo (così mostra Swagger!)
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: magazzino-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: magazzino-api
+  ports:
+  - port: 8080
+    targetPort: 8080
