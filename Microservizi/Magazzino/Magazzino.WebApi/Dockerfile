@@ -21,5 +21,5 @@ RUN dotnet publish "./Magazzino.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/p
 # Fase finale: prendiamo il risultato della compilazione e lo mettiamo nel server nudo
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "Magazzino.WebApi.dll"]
