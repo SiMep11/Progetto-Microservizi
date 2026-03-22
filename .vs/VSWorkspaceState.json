@@ -6,11 +6,10 @@
     "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.Repository",
-    "\\Microservizi\\Magazzino\\Magazzino.Repository\\Migrations",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
     "\\UtilityKafka"
   ],
-  "SelectedNode": "\\Magazzino.slnx",
+  "SelectedNode": "\\k8s\\magazzino.yaml",
   "PreviewInSolutionExplorer": false
 }

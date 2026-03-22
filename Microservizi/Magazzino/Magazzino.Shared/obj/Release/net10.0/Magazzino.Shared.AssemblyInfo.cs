@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazzino.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7ee686be53649b70ea0b00e14b18ea9a0e89c1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+067b9972154b49ffad203831a1be62e7e554b7af")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazzino.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazzino.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
