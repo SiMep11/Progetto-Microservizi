@@ -10,6 +10,6 @@
     "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
     "\\UtilityKafka"
   ],
-  "SelectedNode": "\\k8s\\magazzino.yaml",
+  "SelectedNode": "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
