@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ordini.Business\Ordini.Business.csproj" />
+    <ProjectReference Include="..\Ordini.ClientHttp\Ordini.ClientHttp.csproj" />
     <ProjectReference Include="..\Ordini.Repository\Ordini.Repository.csproj" />
     <ProjectReference Include="..\Ordini.Shared\Ordini.Shared.csproj" />
   </ItemGroup>

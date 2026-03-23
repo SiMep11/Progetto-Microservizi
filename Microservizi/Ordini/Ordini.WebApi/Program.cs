@@ -3,7 +3,9 @@ using Ordini.Repository;
 using Ordini.Repository.Abstractions;
 using Ordini.Business;
 using Ordini.Business.Abstractions;
-using Ordini.ClientHttp.Abstractions; // Assicurati di avere questo using in alto
+using Ordini.ClientHttp.Abstractions;
+using Ordini.ClientHttp;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,12 +20,13 @@ builder.Services.AddDbContext<OrdiniDbContext>(options =>
 builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
+builder.Services.AddScoped<IEventProducer, KafkaEventProducer>();
 builder.Services.AddHttpClient<IMagazzinoClient, MagazzinoClient>(client =>
 {
     // ATTENZIONE: Metti qui l'URL su cui gira il tuo Magazzino in locale! 
     // Di solito è qualcosa tipo https://localhost:5001 o http://localhost:5000
     // (Puoi controllarlo nel file launchSettings.json del Magazzino)
-    client.BaseAddress = new Uri("https://localhost:5001");
+    client.BaseAddress = new Uri("https://localhost:5024");
 });
 
 // Add services to the container.

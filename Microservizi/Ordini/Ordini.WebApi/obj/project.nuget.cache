@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FVd/Mk04cCE=",
+  "dgSpecHash": "BpzTxCYOHK0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\Simone\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\kafkautility\\1.0.0\\kafkautility.1.0.0.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\librdkafka.redist\\2.13.2\\librdkafka.redist.2.13.2.nupkg.sha512",
-    "C:\\Users\\Simone\\.nuget\\packages\\magazzino.shared\\1.0.0\\magazzino.shared.1.0.0.nupkg.sha512",
+    "C:\\Users\\Simone\\.nuget\\packages\\magazzino.shared\\1.0.1\\magazzino.shared.1.0.1.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.5\\microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\microsoft.bcl.cryptography\\9.0.4\\microsoft.bcl.cryptography.9.0.4.nupkg.sha512",

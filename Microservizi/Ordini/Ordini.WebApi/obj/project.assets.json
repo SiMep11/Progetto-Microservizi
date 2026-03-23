@@ -187,7 +187,7 @@
           }
         }
       },
-      "Magazzino.Shared/1.0.0": {
+      "Magazzino.Shared/1.0.1": {
         "type": "package",
         "compile": {
           "lib/net10.0/Magazzino.Shared.dll": {}
@@ -1225,9 +1225,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Confluent.Kafka": "2.13.2",
           "KafkaUtility": "1.0.0",
-          "Magazzino.Shared": "1.0.0",
+          "Magazzino.Shared": "1.0.1",
           "Niyat.Kafka.Utility": "1.10.29",
+          "Ordini.ClientHttp": "1.0.0",
           "Ordini.Repository": "1.0.0",
           "Ordini.Shared": "1.0.0"
         },
@@ -1236,6 +1238,20 @@
         },
         "runtime": {
           "bin/placeholder/Ordini.Business.dll": {}
+        }
+      },
+      "Ordini.ClientHttp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Magazzino.Shared": "1.0.1",
+          "Ordini.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Ordini.ClientHttp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ordini.ClientHttp.dll": {}
         }
       },
       "Ordini.Repository/1.0.0": {
@@ -1403,14 +1419,14 @@
         "runtimes/win-x86/native/zstd.dll"
       ]
     },
-    "Magazzino.Shared/1.0.0": {
-      "sha512": "ifMs0E0oouVfnJIqOiQQxjcPzHMKwDMpaKfcPYXcVkMcqAmwAiGvNY2S7jeIS1nkeb6qRzFrQ8FEaDSCVm7qrA==",
+    "Magazzino.Shared/1.0.1": {
+      "sha512": "8zbJ09DUZ602qwaAFWkxW5EUDZcmILbyHogVDyxMfuom6+kpmi9pyVVm+l38hR4iwIdbb/NFyUMlMJ4+yhjm6Q==",
       "type": "package",
-      "path": "magazzino.shared/1.0.0",
+      "path": "magazzino.shared/1.0.1",
       "files": [
         ".nupkg.metadata",
         "lib/net10.0/Magazzino.Shared.dll",
-        "magazzino.shared.1.0.0.nupkg.sha512",
+        "magazzino.shared.1.0.1.nupkg.sha512",
         "magazzino.shared.nuspec"
       ]
     },
@@ -3449,6 +3465,11 @@
       "path": "../Ordini.Business/Ordini.Business.csproj",
       "msbuildProject": "../Ordini.Business/Ordini.Business.csproj"
     },
+    "Ordini.ClientHttp/1.0.0": {
+      "type": "project",
+      "path": "../Ordini.ClientHttp/Ordini.ClientHttp.csproj",
+      "msbuildProject": "../Ordini.ClientHttp/Ordini.ClientHttp.csproj"
+    },
     "Ordini.Repository/1.0.0": {
       "type": "project",
       "path": "../Ordini.Repository/Ordini.Repository.csproj",
@@ -3468,6 +3489,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.5",
       "Niyat.Kafka.Utility >= 1.10.29",
       "Ordini.Business >= 1.0.0",
+      "Ordini.ClientHttp >= 1.0.0",
       "Ordini.Repository >= 1.0.0",
       "Ordini.Shared >= 1.0.0"
     ]
@@ -3509,6 +3531,9 @@
           "projectReferences": {
             "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
               "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj"
+            },
+            "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
+              "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
             },
             "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
               "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"

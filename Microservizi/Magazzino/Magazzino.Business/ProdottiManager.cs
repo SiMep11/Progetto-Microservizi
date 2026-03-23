@@ -1,32 +1,77 @@
-﻿using Magazzino.Repository;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using Magazzino.Repository.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Magazzino.Business.Abstraction; // Dove hai messo IProdottiManager
+using Magazzino.Repository.Abstraction; // Dove hai messo IMagazzinoRepository
+using Magazzino.Shared; // Dove si trova ProdottoDto
 
 namespace Magazzino.Business
 {
-    public  class ProdottiManager
+    public class ProdottiManager : IProdottiManager
     {
-        private readonly MagazzinoDbContext _context;
+        // Ora usiamo il Repository, non più il DbContext direttamente!
+        private readonly IMagazzinoRepository _repository;
 
-        // Tramite Dependency Injection, si fa passare il DbContext
-        public ProdottiManager(MagazzinoDbContext context)
+        // Dependency Injection
+        public ProdottiManager(IMagazzinoRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
-        public async Task<List<Prodotto>> RecuperaTuttiAsync()
+        public async Task<IEnumerable<ProdottoDto>> GetAllAsync()
         {
-            return await _context.Prodotti.ToListAsync();
+            // 1. Chiediamo le Entities (Tabelle) al Repository
+            var prodottiDb = await _repository.GetAllProdottiAsync();
+
+            // 2. Mapping: Entity -> DTO
+            return prodottiDb.Select(p => new ProdottoDto
+            {
+                Id = p.Id,
+                Nome = p.Nome,
+                Descrizione = p.Descrizione,
+                Prezzo = p.Prezzo,
+                QuantitaDisponibile = p.QuantitaInMagazzino
+            });
         }
 
-        public async Task<Prodotto> CreaProdottoAsync(Prodotto prodotto)
+        public async Task<ProdottoDto?> GetByIdAsync(int id)
         {
-            _context.Prodotti.Add(prodotto);
-            await _context.SaveChangesAsync();
-            return prodotto;
+            // 1. Chiediamo la singola Entity al Repository
+            var prodottoDb = await _repository.GetProdottoByIdAsync(id);
+
+            // Se non esiste, restituiamo null
+            if (prodottoDb == null)
+            {
+                return null;
+            }
+
+            // 2. Mapping: Entity -> DTO
+            return new ProdottoDto
+            {
+                Id = prodottoDb.Id,
+                Nome = prodottoDb.Nome,
+                Descrizione = prodottoDb.Descrizione,
+                Prezzo = prodottoDb.Prezzo,
+                QuantitaDisponibile = prodottoDb.QuantitaInMagazzino
+            };
+        }
+
+        public async Task<ProdottoDto> CreaProdottoAsync(ProdottoDto prodottoDto)
+        {
+            // Trasformiamo il DTO di internet nell'Entity del DB
+            var nuovoProdotto = new Magazzino.Repository.Models.Prodotto
+            {
+                Nome = prodottoDto.Nome,
+                Descrizione = prodottoDto.Descrizione,
+                Prezzo = prodottoDto.Prezzo,
+                QuantitaInMagazzino = prodottoDto.QuantitaDisponibile
+            };
+
+            var prodottoSalvato = await _repository.CreaProdottoAsync(nuovoProdotto);
+
+            // Aggiorniamo l'ID del DTO con quello generato dal DB
+            prodottoDto.Id = prodottoSalvato.Id;
+            return prodottoDto;
         }
     }
 }

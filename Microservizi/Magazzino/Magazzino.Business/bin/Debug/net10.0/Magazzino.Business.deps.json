@@ -9,7 +9,7 @@
       "Magazzino.Business/1.0.0": {
         "dependencies": {
           "Magazzino.Repository": "1.0.0",
-          "Magazzino.Shared": "1.0.0"
+          "Magazzino.Shared": "1.0.1"
         },
         "runtime": {
           "Magazzino.Business.dll": {}
@@ -488,7 +488,7 @@
       },
       "Magazzino.Repository/1.0.0": {
         "dependencies": {
-          "Magazzino.Shared": "1.0.0",
+          "Magazzino.Shared": "1.0.1",
           "Microsoft.EntityFrameworkCore": "10.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.5"
         },
@@ -499,11 +499,11 @@
           }
         }
       },
-      "Magazzino.Shared/1.0.0": {
+      "Magazzino.Shared/1.0.1": {
         "runtime": {
           "Magazzino.Shared.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       }
@@ -765,7 +765,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Magazzino.Shared/1.0.0": {
+    "Magazzino.Shared/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
