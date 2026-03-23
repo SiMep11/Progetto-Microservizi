@@ -1,0 +1,16 @@
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\bin\Debug\net10.0\Ordini.ClientHttp.deps.json
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\bin\Debug\net10.0\Ordini.ClientHttp.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\bin\Debug\net10.0\Ordini.ClientHttp.pdb
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\bin\Debug\net10.0\Ordini.Shared.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\bin\Debug\net10.0\Ordini.Shared.pdb
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.csproj.AssemblyReference.cache
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.AssemblyInfoInputs.cache
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.AssemblyInfo.cs
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.csproj.CoreCompileInputs.cache
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.sourcelink.json
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.C.B1382007.Up2Date
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\refint\Ordini.ClientHttp.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\Ordini.ClientHttp.pdb
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Ordini\Ordini.ClientHttp\obj\Debug\net10.0\ref\Ordini.ClientHttp.dll

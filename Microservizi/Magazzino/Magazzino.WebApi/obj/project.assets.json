@@ -1153,7 +1153,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Magazzino.Repository": "1.0.0",
-          "Magazzino.Shared": "1.0.0"
+          "Magazzino.Shared": "1.0.1"
         },
         "compile": {
           "bin/placeholder/Magazzino.Business.dll": {}
@@ -1166,7 +1166,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Magazzino.Shared": "1.0.0",
+          "Magazzino.Shared": "1.0.1",
           "Microsoft.EntityFrameworkCore": "10.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.5"
         },
@@ -1177,7 +1177,7 @@
           "bin/placeholder/Magazzino.Repository.dll": {}
         }
       },
-      "Magazzino.Shared/1.0.0": {
+      "Magazzino.Shared/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -3693,7 +3693,7 @@
       "path": "../Magazzino.Repository/Magazzino.Repository.csproj",
       "msbuildProject": "../Magazzino.Repository/Magazzino.Repository.csproj"
     },
-    "Magazzino.Shared/1.0.0": {
+    "Magazzino.Shared/1.0.1": {
       "type": "project",
       "path": "../Magazzino.Shared/Magazzino.Shared.csproj",
       "msbuildProject": "../Magazzino.Shared/Magazzino.Shared.csproj"
@@ -3702,7 +3702,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "Magazzino.Business >= 1.0.0",
-      "Magazzino.Shared >= 1.0.0",
+      "Magazzino.Shared >= 1.0.1",
       "Microsoft.AspNetCore.OpenApi >= 10.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.5",
@@ -3728,6 +3728,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+        "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
         "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -3738,7 +3739,8 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/SiMep11/index.json": {}
       },
       "frameworks": {
         "net10.0": {
@@ -3817,7 +3819,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

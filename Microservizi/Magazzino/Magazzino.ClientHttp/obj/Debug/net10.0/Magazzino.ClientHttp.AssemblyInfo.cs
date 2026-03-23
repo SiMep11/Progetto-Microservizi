@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazzino.ClientHttp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5df70b5a191e2111e279d1e3c161f1740437da0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31b6cfe73ce95d620992022f9c133b327a494b9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazzino.ClientHttp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazzino.ClientHttp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

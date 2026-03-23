@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazzino.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5df70b5a191e2111e279d1e3c161f1740437da0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+faa6501f45f98cd9b841343efb5f8ba855011150")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazzino.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazzino.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

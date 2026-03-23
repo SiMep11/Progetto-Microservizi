@@ -11,7 +11,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
-builder.Services.AddDbContext<MagazzinoDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MagazzinoDb")));
+builder.Services.AddDbContext<MagazzinoDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        b => b.MigrationsAssembly("Magazzino.WebApi") // <-- Aggiungi questa riga
+    ));
 builder.Services.AddScoped<ProdottiManager>();
 
 var app = builder.Build();

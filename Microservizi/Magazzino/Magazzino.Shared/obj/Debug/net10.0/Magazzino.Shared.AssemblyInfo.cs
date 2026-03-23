@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazzino.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5df70b5a191e2111e279d1e3c161f1740437da0b")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+31b6cfe73ce95d620992022f9c133b327a494b9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazzino.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazzino.Shared")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/SiMep11/Progetto-Microservizi")]
 
 // Generato dalla classe WriteCodeFragment di MSBuild.

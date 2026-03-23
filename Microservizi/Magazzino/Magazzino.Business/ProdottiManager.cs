@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Magazzino.Repository.Models;
 
 namespace Magazzino.Business
 {
