@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "Magazzino.Shared/1.0.0": {
+      "Magazzino.Shared/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -15,7 +15,7 @@
     }
   },
   "libraries": {
-    "Magazzino.Shared/1.0.0": {
+    "Magazzino.Shared/1.0.1": {
       "type": "project",
       "path": "../Magazzino.Shared/Magazzino.Shared.csproj",
       "msbuildProject": "../Magazzino.Shared/Magazzino.Shared.csproj"
@@ -23,7 +23,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Magazzino.Shared >= 1.0.0"
+      "Magazzino.Shared >= 1.0.1"
     ]
   },
   "packageFolders": {

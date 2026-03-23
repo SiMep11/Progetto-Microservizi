@@ -3,14 +3,13 @@
     "",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.Business",
-    "\\Microservizi\\Magazzino\\Magazzino.Repository",
-    "\\Microservizi\\Magazzino\\Magazzino.Shared",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Properties",
     "\\Microservizi\\Ordini",
     "\\Microservizi\\Ordini\\Ordini.Repository",
     "\\Microservizi\\Ordini\\Ordini.Shared"
   ],
-  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.Repository\\OrdiniDbContext.cs",
+  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.slnx",
   "PreviewInSolutionExplorer": false
 }

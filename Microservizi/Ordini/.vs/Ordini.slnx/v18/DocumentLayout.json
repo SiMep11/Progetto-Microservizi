@@ -1,12 +1,69 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.clienthttp\\abstractions\\imagazzinoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|solutionrelative:ordini.clienthttp\\abstractions\\imagazzinoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78EBE60C-F709-E00B-B68A-0F3FE9D8D2AE}|Ordini.WebApi\\Ordini.WebApi.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78EBE60C-F709-E00B-B68A-0F3FE9D8D2AE}|Ordini.WebApi\\Ordini.WebApi.csproj|solutionrelative:ordini.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.clienthttp\\magazzinoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|solutionrelative:ordini.clienthttp\\magazzinoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Ordini.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "RelativeToolTip": "Ordini.WebApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:23:54.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MagazzinoClient.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\MagazzinoClient.cs",
+              "RelativeDocumentMoniker": "Ordini.ClientHttp\\MagazzinoClient.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\MagazzinoClient.cs",
+              "RelativeToolTip": "Ordini.ClientHttp\\MagazzinoClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:42:25.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IMagazzinoClient.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Abstractions\\IMagazzinoClient.cs",
+              "RelativeDocumentMoniker": "Ordini.ClientHttp\\Abstractions\\IMagazzinoClient.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Abstractions\\IMagazzinoClient.cs",
+              "RelativeToolTip": "Ordini.ClientHttp\\Abstractions\\IMagazzinoClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T14:35:31.037Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1246,7 +1246,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Magazzino.Shared/1.0.0": {
+      "Magazzino.Shared/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -3660,7 +3660,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Magazzino.Shared/1.0.0": {
+    "Magazzino.Shared/1.0.1": {
       "type": "project",
       "path": "../Magazzino.Shared/Magazzino.Shared.csproj",
       "msbuildProject": "../Magazzino.Shared/Magazzino.Shared.csproj"
@@ -3668,7 +3668,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Magazzino.Shared >= 1.0.0",
+      "Magazzino.Shared >= 1.0.1",
       "Microsoft.EntityFrameworkCore >= 10.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.5"
