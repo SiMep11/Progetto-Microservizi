@@ -32,5 +32,26 @@ namespace Magazzino.Repository
             await _context.SaveChangesAsync();
             return prodotto;
         }
+
+        public async Task ScaricaGiacenzaAsync(int id, int quantita)
+        {
+            // 1. Cerchiamo il prodotto nel database
+            var prodotto = await _context.Prodotti.FindAsync(id);
+
+            if (prodotto != null)
+            {
+                // 2. Scaliamo la quantità
+                prodotto.QuantitaInMagazzino -= quantita;
+
+                // 3. Sicurezza: evitiamo giacenze negative
+                if (prodotto.QuantitaInMagazzino < 0)
+                {
+                    prodotto.QuantitaInMagazzino = 0;
+                }
+
+                // 4. Salviamo la modifica fisicamente sulla tabella
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

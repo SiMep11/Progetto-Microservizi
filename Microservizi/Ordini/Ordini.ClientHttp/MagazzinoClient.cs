@@ -18,7 +18,7 @@ namespace Ordini.ClientHttp
         public async Task<ProdottoDto?> GetProdottoByIdAsync(int id)
         {
             // Facciamo una richiesta GET all'API del Magazzino
-            var response = await _httpClient.GetAsync($"/api/prodotti/{id}");
+            var response = await _httpClient.GetAsync($"/api/Prodotti/{id}");
 
             if (response.IsSuccessStatusCode)
             {

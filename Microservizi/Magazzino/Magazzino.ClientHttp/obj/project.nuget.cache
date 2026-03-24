@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KcRMVCvARMQ=",
+  "dgSpecHash": "NARGs4DNiek=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.ClientHttp\\Magazzino.ClientHttp.csproj",
+  "projectFilePath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.ClientHttp\\Magazzino.ClientHttp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Simone\\.nuget\\packages\\magazzino.shared\\1.0.1\\magazzino.shared.1.0.1.nupkg.sha512"
+    "C:\\Users\\simon\\.nuget\\packages\\magazzino.shared\\1.0.1\\magazzino.shared.1.0.1.nupkg.sha512"
   ],
   "logs": []
 }

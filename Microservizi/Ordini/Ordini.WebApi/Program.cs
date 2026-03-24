@@ -5,7 +5,8 @@ using Ordini.Business;
 using Ordini.Business.Abstractions;
 using Ordini.ClientHttp.Abstractions;
 using Ordini.ClientHttp;
-
+using Ordini.Business.Kafka;
+using Ordini.ClientHttp.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,18 +22,15 @@ builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
 builder.Services.AddScoped<IEventProducer, KafkaEventProducer>();
-builder.Services.AddHttpClient<IMagazzinoClient, MagazzinoClient>(client =>
+builder.Services.AddMagazzinoClient(options =>
 {
-    // ATTENZIONE: Metti qui l'URL su cui gira il tuo Magazzino in locale! 
-    // Di solito è qualcosa tipo https://localhost:5001 o http://localhost:5000
-    // (Puoi controllarlo nel file launchSettings.json del Magazzino)
-    client.BaseAddress = new Uri("https://localhost:5024");
+    options.BaseUrl = "http://localhost:5024"; // Metti qui l'URL locale del tuo Magazzino
 });
-
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(); // <-- Questo genera il file JSON di Swagger
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -57,6 +55,8 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.MapOpenApi();
 }
 

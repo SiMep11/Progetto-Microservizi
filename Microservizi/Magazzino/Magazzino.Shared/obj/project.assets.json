@@ -8,24 +8,24 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Simone\\.nuget\\packages\\": {},
+    "C:\\Users\\simon\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
       "projectName": "Magazzino.Shared",
-      "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
-      "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\obj\\",
+      "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
+      "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-        "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+        "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,6 @@
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.pkg.github.com/SiMep11/index.json": {}

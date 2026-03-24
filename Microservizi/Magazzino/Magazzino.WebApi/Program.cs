@@ -15,8 +15,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MagazzinoDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        b => b.MigrationsAssembly("Magazzino.WebApi") // <-- Aggiungi questa riga
+        builder.Configuration.GetConnectionString("MagazzinoDb"),
+        b => b.MigrationsAssembly("Magazzino.WebApi") 
     ));
 builder.Services.AddScoped<ProdottiManager>();
 // Registriamo il nuovo Repository

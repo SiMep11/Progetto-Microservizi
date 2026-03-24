@@ -3,14 +3,15 @@
     "",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Magazzino\\Magazzino.Business",
+    "\\Microservizi\\Magazzino\\Magazzino.Business\\BackgroundServices",
+    "\\Microservizi\\Magazzino\\Magazzino.Shared",
+    "\\Microservizi\\Magazzino\\Magazzino.Shared\\Events",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi",
-    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Properties",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
     "\\Microservizi\\Ordini",
-    "\\Microservizi\\Ordini\\Ordini.ClientHttp",
-    "\\Microservizi\\Ordini\\Ordini.ClientHttp\\Abstractions",
-    "\\Microservizi\\Ordini\\Ordini.Repository",
     "\\Microservizi\\Ordini\\Ordini.Shared"
   ],
-  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.ClientHttp\\Abstractions\\IMagazzinoClient.cs",
+  "SelectedNode": "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers\\ProdottiController.cs",
   "PreviewInSolutionExplorer": false
 }

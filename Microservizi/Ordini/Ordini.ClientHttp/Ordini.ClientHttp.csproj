@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <PackageReference Include="Magazzino.Shared" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.5" />
   </ItemGroup>
 
   <ItemGroup>

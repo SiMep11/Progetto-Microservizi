@@ -6,6 +6,7 @@ using Ordini.ClientHttp.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Ordini.Business.Kafka;
 
 namespace Ordini.Business
 {

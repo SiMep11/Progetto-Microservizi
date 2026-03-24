@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj": {}
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj",
         "projectName": "Ordini.Business",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -35,14 +34,14 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
               },
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"
               },
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
               }
             }
           }
@@ -374,21 +373,21 @@
         }
       }
     },
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj",
         "projectName": "Ordini.ClientHttp",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -396,7 +395,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -405,8 +403,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
               }
             }
           }
@@ -430,6 +428,10 @@
             "Magazzino.Shared": {
               "target": "Package",
               "version": "[1.0.1, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[10.0.5, )"
             }
           },
           "imports": [
@@ -726,21 +728,21 @@
         }
       }
     },
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj",
         "projectName": "Ordini.Repository",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -748,7 +750,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -757,8 +758,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
               }
             }
           }
@@ -1084,21 +1085,21 @@
         }
       }
     },
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj",
         "projectName": "Ordini.Shared",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1106,7 +1107,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -1426,21 +1426,21 @@
         }
       }
     },
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
         "projectName": "Ordini.WebApi",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1448,7 +1448,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -1457,17 +1456,17 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj"
               },
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
               },
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"
               },
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
               }
             }
           }
@@ -1511,6 +1510,10 @@
             "Niyat.Kafka.Utility": {
               "target": "Package",
               "version": "[1.10.29, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.5, )"
             }
           },
           "imports": [

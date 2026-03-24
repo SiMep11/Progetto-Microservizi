@@ -29,5 +29,18 @@ namespace Magazzino.WebApi.Controllers
             var nuovo = await _prodottiManager.CreaProdottoAsync(prodotto);
             return Ok(nuovo);
         }
+
+        [HttpGet("{id}")] 
+        public async Task<IActionResult> GetProdottoById(int id)
+        {
+            var prodotto = await _prodottiManager.GetByIdAsync(id);
+
+            if (prodotto == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(prodotto);
+        }
     }
 }

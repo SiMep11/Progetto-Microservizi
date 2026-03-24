@@ -1,12 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.clienthttp\\magazzinoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|solutionrelative:ordini.clienthttp\\magazzinoclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78EBE60C-F709-E00B-B68A-0F3FE9D8D2AE}|Ordini.WebApi\\Ordini.WebApi.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78EBE60C-F709-E00B-B68A-0F3FE9D8D2AE}|Ordini.WebApi\\Ordini.WebApi.csproj|solutionrelative:ordini.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78EBE60C-F709-E00B-B68A-0F3FE9D8D2AE}|Ordini.WebApi\\Ordini.WebApi.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{78EBE60C-F709-E00B-B68A-0F3FE9D8D2AE}|Ordini.WebApi\\Ordini.WebApi.csproj|solutionrelative:ordini.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.clienthttp\\dependencyinjection\\magazzinoclientextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|solutionrelative:ordini.clienthttp\\dependencyinjection\\magazzinoclientextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|c:\\users\\simon\\documents\\github\\progetto-microservizi\\microservizi\\ordini\\ordini.clienthttp\\dependencyinjection\\magazzinoclientoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE5C7DC-09D4-F887-998C-135D3B809D93}|Ordini.ClientHttp\\Ordini.ClientHttp.csproj|solutionrelative:ordini.clienthttp\\dependencyinjection\\magazzinoclientoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MagazzinoClient.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\MagazzinoClient.cs",
+              "RelativeDocumentMoniker": "Ordini.ClientHttp\\MagazzinoClient.cs",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\MagazzinoClient.cs",
+              "RelativeToolTip": "Ordini.ClientHttp\\MagazzinoClient.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T09:37:37.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "Ordini.WebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\appsettings.json",
+              "RelativeToolTip": "Ordini.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-24T09:00:48.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Ordini.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "RelativeToolTip": "Ordini.WebApi\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T08:12:50.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MagazzinoClientExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientExtensions.cs",
+              "RelativeDocumentMoniker": "Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientExtensions.cs",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientExtensions.cs",
+              "RelativeToolTip": "Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T08:08:02.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MagazzinoClientOptions.cs",
+              "DocumentMoniker": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientOptions.cs",
+              "RelativeDocumentMoniker": "Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientOptions.cs",
+              "ToolTip": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientOptions.cs",
+              "RelativeToolTip": "Ordini.ClientHttp\\DependencyInjection\\MagazzinoClientOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T08:07:15.485Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -10,5 +10,6 @@ namespace Magazzino.Business.Abstraction
         Task<IEnumerable<ProdottoDto>> GetAllAsync();
         Task<ProdottoDto?> GetByIdAsync(int id);
         Task<ProdottoDto> CreaProdottoAsync(ProdottoDto prodottoDto);
+        Task ScaricaGiacenzaAsync(int id, int quantita);
     }
 }

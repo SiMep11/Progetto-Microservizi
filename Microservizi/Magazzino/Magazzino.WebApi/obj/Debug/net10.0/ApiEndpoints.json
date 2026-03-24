@@ -19,7 +19,23 @@
     "Parameters": [
       {
         "Name": "prodotto",
-        "Type": "Magazzino.Repository.Prodotto",
+        "Type": "Magazzino.Shared.ProdottoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Magazzino.WebApi.Controllers.ProdottiController",
+    "Method": "GetProdottoById",
+    "RelativePath": "api/Prodotti/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

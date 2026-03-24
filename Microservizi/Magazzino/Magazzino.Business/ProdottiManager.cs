@@ -73,5 +73,9 @@ namespace Magazzino.Business
             prodottoDto.Id = prodottoSalvato.Id;
             return prodottoDto;
         }
+        public async Task ScaricaGiacenzaAsync(int id, int quantita)
+        {
+            await _repository.ScaricaGiacenzaAsync(id, quantita);
+        }
     }
 }
