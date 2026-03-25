@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazzino.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60ab7d5d2fc69da17ab841ddb92fcda032110ec1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9081f2f048b384962e41e6a0fcd01874c413ee58")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazzino.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazzino.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

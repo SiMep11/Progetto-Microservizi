@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordini-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ordini-api
+  template:
+    metadata:
+      labels:
+        app: ordini-api
+    spec:
+      containers:
+      - name: ordini-api
+        # INSERISCI QUI IL NOME DELLA TUA IMMAGINE DOCKER CARICATA SU GITHUB
+        image: ghcr.io/simep11/ordini-api:latest 
+        ports:
+        - containerPort: 8080
+        env:
+        # 1. Connessione al Database SQL Server dentro K8s
+        - name: ConnectionStrings__OrdiniDb
+          value: "Server=sqlserver-service,1433;Database=OrdiniDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
+        
+        # 2. Connessione al broker Kafka dentro K8s
+        - name: Kafka__BootstrapServers
+          value: "kafka-service:9092"
+        
+        # 3. Connessione HTTP al microservizio Magazzino dentro K8s
+        - name: MagazzinoApiUrl
+          value: "http://magazzino-service:8080"
+          
+        # 4. Fondamentale per mostrare l'interfaccia Swagger al professore
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ordini-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ordini-api
+  ports:
+  - port: 8081       # La porta che userà il prof su Chrome (localhost:8081)
+    targetPort: 8080 # La porta interna usata dal container .NET

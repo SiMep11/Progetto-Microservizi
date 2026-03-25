@@ -1,9 +1,10 @@
-﻿using Ordini.Shared;
+﻿using Microsoft.Extensions.Configuration;
+using Ordini.Shared.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ordini.Business.Kafka
+namespace Ordini.Business.Abstractions
 {
     public interface IEventProducer
     {

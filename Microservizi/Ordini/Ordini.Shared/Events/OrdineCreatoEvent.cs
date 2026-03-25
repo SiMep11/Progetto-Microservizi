@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ordini.Shared
+namespace Ordini.Shared.Events
 {
     public class OrdineCreatoEvent
     {

@@ -1,5 +1,6 @@
 using Magazzino.Business;
 using Magazzino.Business.Abstraction;
+using Magazzino.Business.BackgroundServices;
 using Magazzino.Repository;
 using Magazzino.Repository.Abstraction;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,8 @@ builder.Services.AddScoped<IMagazzinoRepository, MagazzinoRepository>();
 
 // Registriamo il Manager aggiornato
 builder.Services.AddScoped<IProdottiManager, ProdottiManager>();
+
+builder.Services.AddHostedService<ConsumerOrdineCreato>();
 
 var app = builder.Build();
 

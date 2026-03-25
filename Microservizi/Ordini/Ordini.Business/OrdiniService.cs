@@ -2,11 +2,11 @@
 using Ordini.Repository.Abstractions;
 using Ordini.Repository.Models;
 using Ordini.Shared;
+using Ordini.Shared.Events;
 using Ordini.ClientHttp.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Ordini.Business.Kafka;
 
 namespace Ordini.Business
 {
@@ -122,7 +122,7 @@ namespace Ordini.Business
             };
 
             // Urliamo nel megafono! (Non blocchiamo l'esecuzione se fallisce, l'ordine è già salvo)
-            _ = _eventProducer.ProduceOrdineCreatoAsync(evento);
+            await _eventProducer.ProduceOrdineCreatoAsync(evento);
             // --------------------------
 
             return nuovoOrdineDto;

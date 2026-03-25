@@ -1,5 +1,7 @@
 ﻿using Confluent.Kafka;
-using Ordini.Shared;
+using Microsoft.Extensions.Configuration;
+using Ordini.Business.Abstractions;
+using Ordini.Shared.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +11,21 @@ namespace Ordini.Business.Kafka
 {
     public class KafkaEventProducer : IEventProducer
     {
-        private readonly string _bootstrapServers = "localhost:9092";
-        private readonly string _topic = "ordini-creati"; // Il "canale radio" su cui trasmettiamo
+        private readonly string _topic = "ordine-creato"; // Il "canale radio" su cui trasmettiamo
+        private readonly string _bootstrapServers; // <-- Creiamo una variabile per salvarci l'indirizzo
+
+        public KafkaEventProducer(IConfiguration configuration)
+        {
+            // Lo leggiamo una volta sola quando la classe viene creata e lo salviamo
+            _bootstrapServers = configuration["Kafka:BootstrapServers"] ?? "localhost:9092";
+        }
 
         public async Task ProduceOrdineCreatoAsync(OrdineCreatoEvent evento)
         {
-            var config = new ProducerConfig { BootstrapServers = _bootstrapServers };
+            var config = new ProducerConfig { 
+                BootstrapServers = _bootstrapServers,
+                MessageTimeoutMs = 5000
+            };
 
             // Creiamo il produttore Kafka
             using var producer = new ProducerBuilder<Null, string>(config).Build();
