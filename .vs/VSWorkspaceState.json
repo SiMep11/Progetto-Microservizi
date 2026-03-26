@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Magazzino\\Magazzino.Business\\BackgroundServices",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi",
-    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
-    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Properties",
     "\\Microservizi\\Ordini",
-    "\\Microservizi\\Ordini\\Ordini.Repository",
-    "\\Microservizi\\Ordini\\Ordini.Shared"
+    "\\Microservizi\\Ordini\\Ordini.WebApi"
   ],
-  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.slnx",
+  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

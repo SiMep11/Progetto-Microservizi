@@ -24,6 +24,8 @@ spec:
         # Diciamo a .NET di partire in modalità Sviluppo (così mostra Swagger!)
         - name: ASPNETCORE_ENVIRONMENT
           value: "Development"
+        - name: Kafka__BootstrapServers
+          value: "kafka-service:9092" # <-- Usa il nome del Service di Kafka!
 ---
 apiVersion: v1
 kind: Service

@@ -24,17 +24,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Prodotto"
+                "$ref": "#/components/schemas/ProdottoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Prodotto"
+                "$ref": "#/components/schemas/ProdottoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Prodotto"
+                "$ref": "#/components/schemas/ProdottoDto"
               }
             }
           }
@@ -45,14 +45,34 @@
           }
         }
       }
+    },
+    "/api/Prodotti/{id}": {
+      "get": {
+        "tags": [
+          "Prodotti"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Prodotto": {
-        "required": [
-          "nome"
-        ],
+      "ProdottoDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -60,9 +80,8 @@
             "format": "int32"
           },
           "nome": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "descrizione": {
             "type": "string",
@@ -72,7 +91,7 @@
             "type": "number",
             "format": "double"
           },
-          "quantitaInMagazzino": {
+          "quantitaDisponibile": {
             "type": "integer",
             "format": "int32"
           }

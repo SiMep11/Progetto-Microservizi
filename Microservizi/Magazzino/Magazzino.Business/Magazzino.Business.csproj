@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.13.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Magazzino.Repository\Magazzino.Repository.csproj" />
     <ProjectReference Include="..\Magazzino.Shared\Magazzino.Shared.csproj" />
   </ItemGroup>

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj": {}
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj",
         "projectName": "Magazzino.Business",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\Magazzino.Business.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -35,11 +34,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj"
               },
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj"
               }
             }
           }
@@ -59,6 +58,16 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[2.13.2, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -353,21 +362,21 @@
         }
       }
     },
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj",
         "projectName": "Magazzino.Repository",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\Magazzino.Repository.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -375,7 +384,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -384,8 +392,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj": {
-                "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj"
+              "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj": {
+                "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj"
               }
             }
           }
@@ -715,21 +723,21 @@
         }
       }
     },
-    "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj": {
+    "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
         "projectName": "Magazzino.Shared",
-        "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
-        "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\obj\\",
+        "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\Magazzino.Shared.csproj",
+        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-          "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -737,7 +745,6 @@
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/SiMep11/index.json": {}
