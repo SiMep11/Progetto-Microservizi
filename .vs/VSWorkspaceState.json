@@ -6,11 +6,10 @@
     "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.Business\\BackgroundServices",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\Microservizi\\Ordini",
     "\\Microservizi\\Ordini\\Ordini.WebApi"
   ],
-  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.slnx",
   "PreviewInSolutionExplorer": false
 }
