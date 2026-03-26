@@ -62,7 +62,7 @@ spec:
           value: "zookeeper:2181"
         # QUESTA È LA RIGA CHE SALVA LA CONSEGNA:
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: PLAINTEXT://localhost:9092
+          value: PLAINTEXT://kafka-service:9092
         - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
           value: "1"
 ---

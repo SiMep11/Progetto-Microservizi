@@ -20,7 +20,7 @@ spec:
         - containerPort: 8080
         env:
         # 1. Connessione al Database SQL Server dentro K8s
-        - name: ConnectionStrings__OrdiniDb
+        - name: ConnectionStrings__DefaultConnection
           value: "Server=sqlserver-service,1433;Database=OrdiniDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
         
         # 2. Connessione al broker Kafka dentro K8s

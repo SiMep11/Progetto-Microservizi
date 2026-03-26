@@ -55,8 +55,7 @@
               "RelativeToolTip": ".github\\workflows\\publish-nuget.yml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-03-26T07:54:44.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-26T07:54:44.535Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": ".github\\workflows\\publish-docker.yml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-03-25T10:44:39.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T10:44:39.777Z"
             },
             {
               "$type": "Document",

@@ -6,10 +6,12 @@
     "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Magazzino\\Magazzino.Business",
+    "\\Microservizi\\Magazzino\\Magazzino.Business\\BackgroundServices",
     "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\Microservizi\\Ordini",
     "\\Microservizi\\Ordini\\Ordini.WebApi"
   ],
-  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.slnx",
+  "SelectedNode": "\\k8s\\kafka.yaml",
   "PreviewInSolutionExplorer": false
 }
