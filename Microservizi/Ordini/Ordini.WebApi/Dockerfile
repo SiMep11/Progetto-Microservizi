@@ -17,6 +17,10 @@ COPY ["Ordini.Business/Ordini.Business.csproj", "Ordini.Business/"]
 COPY ["Ordini.ClientHttp/Ordini.ClientHttp.csproj", "Ordini.ClientHttp/"]
 COPY ["Ordini.Shared/Ordini.Shared.csproj", "Ordini.Shared/"]
 COPY ["Ordini.Repository/Ordini.Repository.csproj", "Ordini.Repository/"]
+
+ARG GH_TOKEN
+RUN dotnet nuget add source "https://nuget.pkg.github.com/simep11/index.json" --name "github" --username "simep11" --password "$GH_TOKEN" --store-password-in-clear-text
+
 RUN dotnet restore "./Ordini.WebApi/Ordini.WebApi.csproj"
 COPY . .
 WORKDIR "/src/Ordini.WebApi"

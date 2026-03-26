@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ordini.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c540d1174371ff50b9c1978931ad78fcb519c11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa2e6d5eb5ff1037440083e1d46cc9ac0845e482")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ordini.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ordini.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
