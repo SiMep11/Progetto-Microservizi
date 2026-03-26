@@ -3,14 +3,14 @@
     "",
     "\\.github",
     "\\.github\\workflows",
+    "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.Business",
     "\\Microservizi\\Magazzino\\Magazzino.Business\\BackgroundServices",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\Microservizi\\Ordini",
-    "\\Microservizi\\Ordini\\Ordini.Shared",
     "\\Microservizi\\Ordini\\Ordini.WebApi"
   ],
-  "SelectedNode": "\\.github\\workflows\\publish-docker.yml",
+  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
