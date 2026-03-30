@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Pagamenti.ClientHttp/1.0.0": {
+        "dependencies": {
+          "Pagamenti.Shared": "1.0.0"
+        },
+        "runtime": {
+          "Pagamenti.ClientHttp.dll": {}
+        }
+      },
+      "Pagamenti.Shared/1.0.0": {
+        "runtime": {
+          "Pagamenti.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pagamenti.ClientHttp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Pagamenti.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

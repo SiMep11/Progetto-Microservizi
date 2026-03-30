@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Pagamenti.Shared/1.0.0": {
+        "runtime": {
+          "Pagamenti.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pagamenti.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

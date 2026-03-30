@@ -1,0 +1,6 @@
+@Pagamenti.WebApi_HostAddress = http://localhost:5226
+
+GET {{Pagamenti.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
