@@ -83,7 +83,7 @@
           }
         }
       },
-      "KafkaUtility/1.0.0": {
+      "KafkaUtility/1.0.1": {
         "type": "package",
         "dependencies": {
           "Confluent.Kafka": "2.13.2"
@@ -1223,7 +1223,8 @@
           "AutoMapper": "16.1.1",
           "Pagamenti.ClientHttp": "1.0.0",
           "Pagamenti.Repository": "1.0.0",
-          "Pagamenti.Shared": "1.0.0"
+          "Pagamenti.Shared": "1.0.0",
+          "kafkautility": "1.0.1"
         },
         "compile": {
           "bin/placeholder/Pagamenti.Business.dll": {}
@@ -1236,7 +1237,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Pagamenti.Shared": "1.0.0"
+          "Pagamenti.Shared": "1.0.0",
+          "kafkautility": "1.0.1"
         },
         "compile": {
           "bin/placeholder/Pagamenti.ClientHttp.dll": {}
@@ -1250,7 +1252,8 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.5",
-          "Pagamenti.Shared": "1.0.0"
+          "Pagamenti.Shared": "1.0.0",
+          "kafkautility": "1.0.1"
         },
         "compile": {
           "bin/placeholder/Pagamenti.Repository.dll": {}
@@ -1262,6 +1265,9 @@
       "Pagamenti.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "kafkautility": "1.0.1"
+        },
         "compile": {
           "bin/placeholder/Pagamenti.Shared.dll": {}
         },
@@ -1375,13 +1381,13 @@
         "logo.png"
       ]
     },
-    "KafkaUtility/1.0.0": {
-      "sha512": "XwVQlQpX+dEFyzNhC1n3AROrPmvuvH3aHHiRekrkJ0H9zu5pQvGfVl5JHM4JjGu7h2LIHJY4EvSLGkhVdYclbg==",
+    "KafkaUtility/1.0.1": {
+      "sha512": "5Bzlp8fpI8IGvwKFnpDu5osvQCu8kMmX1Fy5ie43eJC1X8L0nhrqLfog5MdhjZFaHfmEZnDIxL4t+NCXT6vApA==",
       "type": "package",
-      "path": "kafkautility/1.0.0",
+      "path": "kafkautility/1.0.1",
       "files": [
         ".nupkg.metadata",
-        "kafkautility.1.0.0.nupkg.sha512",
+        "kafkautility.1.0.1.nupkg.sha512",
         "kafkautility.nuspec",
         "lib/net10.0/UtilityKafka.dll"
       ]
@@ -3480,7 +3486,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "AutoMapper >= 16.1.1",
-      "KafkaUtility >= 1.0.0",
+      "KafkaUtility >= 1.0.1",
       "Microsoft.AspNetCore.OpenApi >= 10.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.5",
@@ -3506,6 +3512,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+        "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\NuGet.Config",
         "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
         "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
@@ -3555,7 +3562,7 @@
           },
           "KafkaUtility": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",

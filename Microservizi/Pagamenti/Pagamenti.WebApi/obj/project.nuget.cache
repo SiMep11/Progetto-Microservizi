@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6FkcG0t74xc=",
+  "dgSpecHash": "VkJznizXuM4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Pagamenti.WebApi.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,7 @@
     "C:\\Users\\Simone\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\confluent.kafka\\2.13.2\\confluent.kafka.2.13.2.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\Simone\\.nuget\\packages\\kafkautility\\1.0.0\\kafkautility.1.0.0.nupkg.sha512",
+    "C:\\Users\\Simone\\.nuget\\packages\\kafkautility\\1.0.1\\kafkautility.1.0.1.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\librdkafka.redist\\2.13.2\\librdkafka.redist.2.13.2.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.5\\microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",
     "C:\\Users\\Simone\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",

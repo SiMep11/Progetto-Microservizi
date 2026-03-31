@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46B843CB-934B-AB69-1A39-4B3737414AA1}|Pagamenti.WebApi\\Pagamenti.WebApi.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\pagamenti\\pagamenti.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46B843CB-934B-AB69-1A39-4B3737414AA1}|Pagamenti.WebApi\\Pagamenti.WebApi.csproj|solutionrelative:pagamenti.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3C2C5A3-87DD-C2BE-E4AC-00072EEB0033}|Pagamenti.Business\\Pagamenti.Business.csproj|c:\\users\\simone\\onedrive\\documenti\\github\\progetto-microservizi\\microservizi\\pagamenti\\pagamenti.business\\business.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3C2C5A3-87DD-C2BE-E4AC-00072EEB0033}|Pagamenti.Business\\Pagamenti.Business.csproj|solutionrelative:pagamenti.business\\business.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "Pagamenti.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "RelativeToolTip": "Pagamenti.WebApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACBAAAAAAAAAA==",
+              "Title": "Business.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.Business\\Business.cs",
+              "RelativeDocumentMoniker": "Pagamenti.Business\\Business.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.Business\\Business.cs",
+              "RelativeToolTip": "Pagamenti.Business\\Business.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T14:28:10.385Z",
+              "WhenOpened": "2026-03-30T15:28:07.425Z",
               "EditorCaption": ""
             }
           ]

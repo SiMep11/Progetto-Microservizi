@@ -6,5 +6,6 @@ namespace Pagamenti.Business.Abstraction
 {
     public interface IPagamentiObserver
     {
+        IObserver<int> NuovoVersamento { get; }
     }
 }

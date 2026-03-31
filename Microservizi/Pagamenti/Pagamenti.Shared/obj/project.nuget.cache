@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zA3SnPDo/xI=",
+  "dgSpecHash": "W7cHxSu77lI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.Shared\\Pagamenti.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Simone\\.nuget\\packages\\confluent.kafka\\2.13.2\\confluent.kafka.2.13.2.nupkg.sha512",
+    "C:\\Users\\Simone\\.nuget\\packages\\kafkautility\\1.0.1\\kafkautility.1.0.1.nupkg.sha512",
+    "C:\\Users\\Simone\\.nuget\\packages\\librdkafka.redist\\2.13.2\\librdkafka.redist.2.13.2.nupkg.sha512"
+  ],
   "logs": []
 }

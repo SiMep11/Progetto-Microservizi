@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pagamenti.ClientHttp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20ec9847838cbb347a4965169eb86e0c64d14902")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25fe2775e04a22afdca7303f2e73211a68d9ce01")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pagamenti.ClientHttp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pagamenti.ClientHttp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

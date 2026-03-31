@@ -1,15 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\k8s",
     "\\Microservizi",
-    "\\Microservizi\\Magazzino\\Magazzino.Business",
-    "\\Microservizi\\Magazzino\\Magazzino.Business\\BackgroundServices",
-    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
-    "\\Microservizi\\Ordini\\Ordini.WebApi",
-    "\\Microservizi\\Ordini\\Ordini.WebApi\\Migrations",
     "\\Microservizi\\Pagamenti",
-    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi"
+    "\\Microservizi\\Pagamenti\\Pagamenti.Business",
+    "\\Microservizi\\Pagamenti\\Pagamenti.Business\\Factory",
+    "\\UtilityKafka",
+    "\\UtilityKafka\\Constants"
   ],
+  "SelectedNode": "\\Microservizi\\Pagamenti\\Pagamenti.slnx",
   "PreviewInSolutionExplorer": false
 }
