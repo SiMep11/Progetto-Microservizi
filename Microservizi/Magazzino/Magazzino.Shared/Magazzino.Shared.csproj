@@ -9,4 +9,8 @@
 	<RepositoryUrl>https://github.com/SiMep11/Progetto-Microservizi</RepositoryUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="KafkaUtility" Version="1.0.2" />
+  </ItemGroup>
+
 </Project>

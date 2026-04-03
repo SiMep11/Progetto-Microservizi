@@ -11,6 +11,6 @@
     "\\Microservizi\\Pagamenti\\Pagamenti.Business",
     "\\Microservizi\\Pagamenti\\Pagamenti.WebApi"
   ],
-  "SelectedNode": "\\.github\\workflows\\publish-docker.yml",
+  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.slnx",
   "PreviewInSolutionExplorer": false
 }
