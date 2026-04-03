@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pagamenti.Business.Abstraction
 {
-    public interface ISubject
+    public interface ISubject : IPagamentiObservable, IPagamentiObserver
     {
     }
 }

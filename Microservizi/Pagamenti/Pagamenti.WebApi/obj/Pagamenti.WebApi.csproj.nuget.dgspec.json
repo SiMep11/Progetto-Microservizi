@@ -68,9 +68,17 @@
               "target": "Package",
               "version": "[16.1.1, )"
             },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.7, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "kafkautility": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.2, )"
             }
           },
           "imports": [
@@ -1489,7 +1497,7 @@
             },
             "KafkaUtility": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.2, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",

@@ -6,6 +6,7 @@ C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pag
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Pagamenti.WebApi.runtimeconfig.json
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Pagamenti.WebApi.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Pagamenti.WebApi.pdb
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\AutoMapper.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Confluent.Kafka.dll
@@ -51,6 +52,7 @@ C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pag
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\System.Memory.Data.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\System.Reactive.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll

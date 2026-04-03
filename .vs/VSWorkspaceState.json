@@ -1,13 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
+    "\\.github\\workflows",
     "\\Microservizi",
+    "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Ordini",
+    "\\Microservizi\\Ordini\\Ordini.WebApi",
     "\\Microservizi\\Pagamenti",
     "\\Microservizi\\Pagamenti\\Pagamenti.Business",
-    "\\Microservizi\\Pagamenti\\Pagamenti.Business\\Factory",
-    "\\UtilityKafka",
-    "\\UtilityKafka\\Constants"
+    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi"
   ],
-  "SelectedNode": "\\Microservizi\\Pagamenti\\Pagamenti.slnx",
+  "SelectedNode": "\\.github\\workflows\\publish-docker.yml",
   "PreviewInSolutionExplorer": false
 }

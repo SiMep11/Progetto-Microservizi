@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Pagamenti.Business.Kafka
+namespace Pagamenti.Business.Kafka;
+
+public class KafkaTopicsOutput : AbstractKafkaTopics
 {
-    public class KafkaTopics
-    {
-    }
+    public string Versamenti { get; set; } = "Versamenti";
+
+    public override IEnumerable<string> GetTopics() => [Versamenti];
+
 }

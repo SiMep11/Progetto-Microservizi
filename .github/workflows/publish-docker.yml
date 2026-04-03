@@ -32,3 +32,7 @@ jobs:
       run: |
         docker build --build-arg GH_TOKEN=${{ secrets.GITHUB_TOKEN }} -f Microservizi/Ordini/Ordini.WebApi/Dockerfile -t ghcr.io/simep11/ordini-api:latest Microservizi/Ordini/
         docker push ghcr.io/simep11/ordini-api:latest
+    - name: Build e Push dell'immagine Pagamenti
+      run: |
+        docker build --build-arg GH_TOKEN=${{ secrets.GITHUB_TOKEN }} -f Microservizi/Pagamenti/Pagamenti.WebApi/Dockerfile -t ghcr.io/simep11/pagamenti-api:latest Microservizi/Pagamenti/
+        docker push ghcr.io/simep11/pagamenti-api:latest
