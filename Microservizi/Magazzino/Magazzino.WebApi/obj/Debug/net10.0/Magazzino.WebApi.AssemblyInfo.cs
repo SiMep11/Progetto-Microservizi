@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazzino.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ecd2d275c1800c3a1e7bd8a255cb64f95f622ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bae94fd66afc4e733ae712d08c31d319d3f5e344")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazzino.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazzino.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

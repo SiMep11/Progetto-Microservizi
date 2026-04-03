@@ -8,10 +8,6 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-# COPIA IL NUGET.CONFIG PER SCARICARE DA GITHUB!
-# (Assicurati che il file nuget.config sia nella cartella della Soluzione)
-COPY ["nuget.config", "."]
-
 # Copia i file di progetto (.csproj) per fare il restore
 # NOTA: Assicurati che i nomi delle cartelle combacino col tuo progetto
 COPY ["Pagamenti.WebApi/Pagamenti.WebApi.csproj", "Pagamenti.WebApi/"]
@@ -24,7 +20,7 @@ ARG GH_TOKEN
 RUN dotnet nuget add source "https://nuget.pkg.github.com/simep11/index.json" --name "github" --username "simep11" --password "$GH_TOKEN" --store-password-in-clear-text
 
 # Scarica le dipendenze usando il nuget.config appena copiato
-RUN dotnet restore "Pagamenti.WebApi/Pagamenti.WebApi.csproj" --configfile nuget.config
+RUN dotnet restore "Pagamenti.WebApi/Pagamenti.WebApi.csproj"
 
 # Copia tutto il resto del codice e compila
 COPY . .

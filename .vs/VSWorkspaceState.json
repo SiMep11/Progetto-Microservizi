@@ -11,6 +11,6 @@
     "\\Microservizi\\Pagamenti\\Pagamenti.Business",
     "\\Microservizi\\Pagamenti\\Pagamenti.WebApi"
   ],
-  "SelectedNode": "\\Microservizi\\Ordini\\Ordini.slnx",
+  "SelectedNode": "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
   "PreviewInSolutionExplorer": false
 }
