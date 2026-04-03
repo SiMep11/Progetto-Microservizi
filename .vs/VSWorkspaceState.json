@@ -3,6 +3,7 @@
     "",
     "\\.github",
     "\\.github\\workflows",
+    "\\k8s",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
     "\\Microservizi\\Ordini",
@@ -11,6 +12,6 @@
     "\\Microservizi\\Pagamenti\\Pagamenti.Business",
     "\\Microservizi\\Pagamenti\\Pagamenti.WebApi"
   ],
-  "SelectedNode": "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
+  "SelectedNode": "\\k8s",
   "PreviewInSolutionExplorer": false
 }
