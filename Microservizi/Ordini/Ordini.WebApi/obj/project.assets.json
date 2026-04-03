@@ -1310,7 +1310,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Confluent.Kafka": "2.13.2",
-          "KafkaUtility": "1.0.0",
+          "KafkaUtility": "1.0.2",
           "Magazzino.Shared": "1.0.1",
           "Niyat.Kafka.Utility": "1.10.29",
           "Ordini.ClientHttp": "1.0.0",
@@ -3998,24 +3998,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\simon\\.nuget\\packages\\": {},
+    "C:\\Users\\Simone\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
       "projectName": "Ordini.WebApi",
-      "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
-      "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\obj\\",
+      "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Ordini.WebApi.csproj",
+      "packagesPath": "C:\\Users\\Simone\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\NuGet.Config",
-        "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
+        "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4023,6 +4023,7 @@
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.pkg.github.com/SiMep11/index.json": {}
@@ -4031,17 +4032,17 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
-              "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj"
+            "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
+              "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj"
             },
-            "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
-              "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
+            "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj": {
+              "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.ClientHttp\\Ordini.ClientHttp.csproj"
             },
-            "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
-              "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"
+            "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj": {
+              "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Repository\\Ordini.Repository.csproj"
             },
-            "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
-              "projectPath": "C:\\Users\\simon\\Documents\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
+            "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj": {
+              "projectPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Shared\\Ordini.Shared.csproj"
             }
           }
         }
@@ -4531,5 +4532,16 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Avvertenza come errore: È stato rilevato il downgrade del pacchetto KafkaUtility da 1.0.2 a 1.0.0. Fare riferimento al pacchetto direttamente dal progetto per selezionare una versione diversa. \r\n Ordini.WebApi -> Ordini.Business -> KafkaUtility (>= 1.0.2) \r\n Ordini.WebApi -> KafkaUtility (>= 1.0.0)",
+      "libraryId": "KafkaUtility",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

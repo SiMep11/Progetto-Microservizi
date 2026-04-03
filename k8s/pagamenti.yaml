@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pagamenti-api
+  labels:
+    app: pagamenti
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pagamenti
+  template:
+    metadata:
+      labels:
+        app: pagamenti
+    spec:
+      containers:
+      - name: pagamenti-api
+        # Assicurati che questo nome combaci con quello dell'immagine che builderai!
+        image: ghcr.io/simep11/pagamenti-api:latest
+        imagePullPolicy: IfNotPresent # Fondamentale per usare immagini create in locale
+        ports:
+        - containerPort: 8080 # .NET 8 di default usa la 8080 (se usi versioni vecchie metti 80)
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+        - name: ConnectionStrings__PagamentiDbContext
+          value: "Server=sqlserver-service,1433;Database=PagamentiDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
+        - name: Kafka__ProducerClient__BootstrapServers
+          value: "kafka-service:9092"
+        - name: Kafka__AdminClient__BootstrapServers
+          value: "kafka-service:9092"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pagamenti-service
+spec:
+  type: LoadBalancer # Ti permette di accedere facilmente da localhost
+  selector:
+    app: pagamenti
+  ports:
+    - protocol: TCP
+      port: 5000 # La porta da cui lo chiamerai (es: http://localhost:5000/swagger)
+      targetPort: 8080 # Deve coincidere con il containerPort sopra

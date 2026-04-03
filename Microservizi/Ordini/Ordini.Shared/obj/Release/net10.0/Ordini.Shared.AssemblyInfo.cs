@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ordini.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9081f2f048b384962e41e6a0fcd01874c413ee58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7db28e629ee14945dd928a5494ee431340bc98a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ordini.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ordini.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("UtilityKafka")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+067b9972154b49ffad203831a1be62e7e554b7af")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+7db28e629ee14945dd928a5494ee431340bc98a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("UtilityKafka")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UtilityKafka")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/SiMep11/Progetto-Microservizi")]
 
 // Generato dalla classe WriteCodeFragment di MSBuild.
