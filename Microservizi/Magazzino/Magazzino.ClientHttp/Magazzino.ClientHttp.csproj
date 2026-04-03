@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="KafkaUtility" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Magazzino.Shared\Magazzino.Shared.csproj" />
   </ItemGroup>
 

@@ -1044,7 +1044,8 @@
         "dependencies": {
           "Magazzino.Shared": "1.0.1",
           "Microsoft.Extensions.Http": "10.0.5",
-          "Ordini.Shared": "1.0.0"
+          "Ordini.Shared": "1.0.0",
+          "kafkautility": "1.0.2"
         },
         "compile": {
           "bin/placeholder/Ordini.ClientHttp.dll": {}
@@ -1058,7 +1059,8 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.5",
-          "Ordini.Shared": "1.0.0"
+          "Ordini.Shared": "1.0.0",
+          "kafkautility": "1.0.2"
         },
         "compile": {
           "bin/placeholder/Ordini.Repository.dll": {}
@@ -1070,6 +1072,9 @@
       "Ordini.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "kafkautility": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Ordini.Shared.dll": {}
         },
@@ -2479,6 +2484,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+        "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\NuGet.Config",
         "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\NuGet.Config",
         "C:\\Users\\Simone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
