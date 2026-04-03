@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
               "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
               "RelativeToolTip": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-03T09:14:41.764Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "k8s\\magazzino.yaml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T09:13:02.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:13:02.47Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-03T09:12:54.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:12:54.806Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "k8s\\ordini.yaml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T09:12:37.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:12:37.219Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "k8s\\pagamenti.yaml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T09:12:30.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-03T09:12:30.523Z"
             }
           ]
         }
