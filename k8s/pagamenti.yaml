@@ -18,13 +18,10 @@ spec:
       - name: pagamenti-api
         # Assicurati che questo nome combaci con quello dell'immagine che builderai!
         image: ghcr.io/simep11/pagamenti-api:latest
-        imagePullPolicy: IfNotPresent # Fondamentale per usare immagini create in locale
-        ports:
-        - containerPort: 8080 # .NET 8 di default usa la 8080 (se usi versioni vecchie metti 80)
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: "Development"
-        - name: ConnectionStrings__PagamentiDbContext
+        - name: ConnectionStrings__PagamentiDb
           value: "Server=sqlserver-service,1433;Database=PagamentiDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
         - name: Kafka__ProducerClient__BootstrapServers
           value: "kafka-service:9092"

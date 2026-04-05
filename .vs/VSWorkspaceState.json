@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\Microservizi\\Ordini",
     "\\Microservizi\\Ordini\\Ordini.WebApi",
     "\\Microservizi\\Pagamenti",
     "\\Microservizi\\Pagamenti\\Pagamenti.Business",
-    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi"
+    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi",
+    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Migrations"
   ],
-  "SelectedNode": "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
+  "SelectedNode": "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

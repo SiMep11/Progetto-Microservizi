@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pagamenti.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bae94fd66afc4e733ae712d08c31d319d3f5e344")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a23971321ee97ac5130c9b4316ba8cf22f66ad97")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pagamenti.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pagamenti.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
