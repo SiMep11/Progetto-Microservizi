@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\pagamenti.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:k8s\\pagamenti.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\ordini.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:k8s\\ordini.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Microservizi\\Ordini\\Ordini.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\magazzino.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:k8s\\magazzino.yaml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -40,62 +32,39 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "RelativeToolTip": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACkAAAAVAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+              "RelativeToolTip": "Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T09:14:41.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "magazzino.yaml",
-              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\magazzino.yaml",
-              "RelativeDocumentMoniker": "k8s\\magazzino.yaml",
-              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\magazzino.yaml",
-              "RelativeToolTip": "k8s\\magazzino.yaml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T09:13:02.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
-              "RelativeDocumentMoniker": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
-              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
-              "RelativeToolTip": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-03T09:12:54.806Z",
+              "WhenOpened": "2026-04-05T16:31:38.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ordini.yaml",
-              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\ordini.yaml",
-              "RelativeDocumentMoniker": "k8s\\ordini.yaml",
-              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\ordini.yaml",
-              "RelativeToolTip": "k8s\\ordini.yaml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T09:12:37.219Z"
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "RelativeToolTip": "Microservizi\\Ordini\\Ordini.WebApi\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T16:22:14.703Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "pagamenti.yaml",
-              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\pagamenti.yaml",
-              "RelativeDocumentMoniker": "k8s\\pagamenti.yaml",
-              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\k8s\\pagamenti.yaml",
-              "RelativeToolTip": "k8s\\pagamenti.yaml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-04-03T09:12:30.523Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
+              "RelativeToolTip": "Microservizi\\Pagamenti\\Pagamenti.WebApi\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T09:14:41.764Z",
               "EditorCaption": ""
             }
           ]
