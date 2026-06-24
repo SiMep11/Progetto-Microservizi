@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
+    "\\.github\\workflows",
     "\\Microservizi",
-    "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
     "\\Microservizi\\Ordini",
     "\\Microservizi\\Ordini\\Ordini.WebApi",
     "\\Microservizi\\Pagamenti",
@@ -11,6 +11,6 @@
     "\\Microservizi\\Pagamenti\\Pagamenti.WebApi",
     "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Migrations"
   ],
-  "SelectedNode": "\\Microservizi\\Pagamenti",
+  "SelectedNode": "\\.github\\workflows\\publish-docker.yml",
   "PreviewInSolutionExplorer": false
 }
