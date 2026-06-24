@@ -4,13 +4,12 @@
     "\\.github",
     "\\.github\\workflows",
     "\\Microservizi",
-    "\\Microservizi\\Ordini",
+    "\\Microservizi\\Magazzino",
+    "\\Microservizi\\Magazzino\\Magazzino.Business",
+    "\\Microservizi\\Magazzino\\Magazzino.Shared\\Events",
     "\\Microservizi\\Ordini\\Ordini.WebApi",
-    "\\Microservizi\\Pagamenti",
-    "\\Microservizi\\Pagamenti\\Pagamenti.Business",
-    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi",
-    "\\Microservizi\\Pagamenti\\Pagamenti.WebApi\\Migrations"
+    "\\UtilityKafka"
   ],
-  "SelectedNode": "\\.github\\workflows\\publish-docker.yml",
+  "SelectedNode": "\\UtilityKafka\\Clients",
   "PreviewInSolutionExplorer": false
 }
