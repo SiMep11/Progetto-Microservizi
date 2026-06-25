@@ -17,6 +17,7 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
+build_property.EntryPointFilePath = 
 build_property.RootNamespace = Magazzino.Repository
 build_property.ProjectDir = C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Repository\
 build_property.EnableComHosting = 

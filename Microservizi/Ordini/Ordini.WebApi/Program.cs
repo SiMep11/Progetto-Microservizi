@@ -22,11 +22,7 @@ builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
 builder.Services.AddScoped<IEventProducer, KafkaEventProducer>();
-var magazzinoUrl = builder.Configuration["MagazzinoApiUrl"] ?? "http://localhost:5024";
-builder.Services.AddMagazzinoClient(options =>
-{
-    options.BaseUrl = magazzinoUrl; // Metti qui l'URL locale del tuo Magazzino
-});
+builder.Services.AddMagazzinoClient(builder.Configuration);
 // Add services to the container.
 
 builder.Services.AddControllers();

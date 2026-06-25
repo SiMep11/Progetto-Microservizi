@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
     "\\Microservizi",
     "\\Microservizi\\Magazzino",
-    "\\Microservizi\\Magazzino\\Magazzino.Business",
-    "\\Microservizi\\Magazzino\\Magazzino.Shared\\Events",
+    "\\Microservizi\\Magazzino\\Magazzino.ClientHttp\\Abstraction",
+    "\\Microservizi\\Magazzino\\Magazzino.ClientHttp\\DependencyInjection",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi",
+    "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Controllers",
     "\\Microservizi\\Ordini\\Ordini.WebApi",
-    "\\UtilityKafka"
+    "\\UtilityKafka",
+    "\\UtilityKafka\\Messages"
   ],
-  "SelectedNode": "\\UtilityKafka\\Clients",
+  "SelectedNode": "\\Microservizi\\Magazzino\\Magazzino.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
