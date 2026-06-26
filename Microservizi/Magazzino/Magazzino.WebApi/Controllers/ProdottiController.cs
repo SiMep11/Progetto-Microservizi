@@ -40,3 +40,4 @@ namespace Magazzino.WebApi.Controllers
             return Ok(prodotto);
         }
     }
+}

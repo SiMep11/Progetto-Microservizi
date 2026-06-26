@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Magazzino.Business.Abstraction; // Dove hai messo IProdottiManager
 using Magazzino.Repository.Abstraction; // Dove hai messo IMagazzinoRepository
+using Magazzino.Repository.Models;
 using Magazzino.Shared; // Dove si trova ProdottoDto
 
 namespace Magazzino.Business
@@ -75,3 +76,4 @@ namespace Magazzino.Business
             await repository.SaveChangesAsync(cancellationToken);
         }
     }
+}

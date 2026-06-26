@@ -24,7 +24,7 @@ namespace Magazzino.Repository
             return await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
         }
 
-        public async Task<Prodotto> CreaProdottoAsync(Prodotto prodotto, CancellationToken cancellationToken = default)
+        public async Task CreaProdottoAsync(Prodotto prodotto, CancellationToken cancellationToken = default)
         {
             await context.Prodotti.AddAsync(prodotto, cancellationToken);
         }
@@ -32,7 +32,7 @@ namespace Magazzino.Repository
         public async Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
             // 1. Cerchiamo il prodotto nel database
-            var prodotto = await _context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
+            var prodotto = await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
 
             if (prodotto != null)
             {

@@ -22,3 +22,4 @@ C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Mag
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Shared\obj\Debug\net10.0\refint\Magazzino.Shared.dll
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Shared\obj\Debug\net10.0\Magazzino.Shared.pdb
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Shared\obj\Debug\net10.0\ref\Magazzino.Shared.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Magazzino\Magazzino.Shared\obj\Debug\net10.0\Magazzino.Shared.csproj.AssemblyReference.cache

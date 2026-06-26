@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "AutoMapper/16.1.1": {
@@ -202,15 +202,6 @@
             "assetType": "native",
             "rid": "win-x86"
           }
-        }
-      },
-      "Magazzino.Shared/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/Magazzino.Shared.dll": {}
-        },
-        "runtime": {
-          "lib/net10.0/Magazzino.Shared.dll": {}
         }
       },
       "Microsoft.AspNetCore.OpenApi/10.0.5": {
@@ -1322,12 +1313,40 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Magazzino.ClientHttp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "KafkaUtility": "1.0.2",
+          "Magazzino.Shared": "1.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Magazzino.ClientHttp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Magazzino.ClientHttp.dll": {}
+        }
+      },
+      "Magazzino.Shared/1.0.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "KafkaUtility": "1.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Magazzino.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Magazzino.Shared.dll": {}
+        }
+      },
       "Ordini.Business/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Confluent.Kafka": "2.13.2",
           "KafkaUtility": "1.0.2",
+          "Magazzino.ClientHttp": "1.0.0",
           "Magazzino.Shared": "1.0.1",
           "Niyat.Kafka.Utility": "1.10.29",
           "Ordini.ClientHttp": "1.0.0",
@@ -1547,17 +1566,6 @@
         "runtimes/win-x86/native/vcruntime140.dll",
         "runtimes/win-x86/native/zlib1.dll",
         "runtimes/win-x86/native/zstd.dll"
-      ]
-    },
-    "Magazzino.Shared/1.0.1": {
-      "sha512": "8zbJ09DUZ602qwaAFWkxW5EUDZcmILbyHogVDyxMfuom6+kpmi9pyVVm+l38hR4iwIdbb/NFyUMlMJ4+yhjm6Q==",
-      "type": "package",
-      "path": "magazzino.shared/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net10.0/Magazzino.Shared.dll",
-        "magazzino.shared.1.0.1.nupkg.sha512",
-        "magazzino.shared.nuspec"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/10.0.5": {
@@ -4011,6 +4019,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Magazzino.ClientHttp/1.0.0": {
+      "type": "project",
+      "path": "../../Magazzino/Magazzino.ClientHttp/Magazzino.ClientHttp.csproj",
+      "msbuildProject": "../../Magazzino/Magazzino.ClientHttp/Magazzino.ClientHttp.csproj"
+    },
+    "Magazzino.Shared/1.0.1": {
+      "type": "project",
+      "path": "../../Magazzino/Magazzino.Shared/Magazzino.Shared.csproj",
+      "msbuildProject": "../../Magazzino/Magazzino.Shared/Magazzino.Shared.csproj"
+    },
     "Ordini.Business/1.0.0": {
       "type": "project",
       "path": "../Ordini.Business/Ordini.Business.csproj",
@@ -4074,13 +4092,14 @@
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/SiMep11/index.json": {},
         "https://nuget.pkg.github.com/SiMep11/index.json": {}
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
             "C:\\Users\\Simone\\OneDrive\\Documenti\\GitHub\\Progetto-Microservizi\\Microservizi\\Ordini\\Ordini.Business\\Ordini.Business.csproj": {
@@ -4108,10 +4127,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "KafkaUtility": {
@@ -4166,7 +4186,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

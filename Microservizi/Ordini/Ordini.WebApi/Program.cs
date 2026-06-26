@@ -3,7 +3,7 @@ using Ordini.Repository;
 using Ordini.Repository.Abstractions;
 using Ordini.Business;
 using Ordini.Business.Abstractions;
-using Ordini.ClientHttp.Abstractions;
+using Ordini.ClientHttp.Abstraction;
 using Ordini.ClientHttp;
 using Ordini.Business.Kafka;
 using Ordini.ClientHttp.DependencyInjection;
@@ -21,7 +21,6 @@ builder.Services.AddDbContext<OrdiniDbContext>(options =>
 builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
-builder.Services.AddScoped<IEventProducer, KafkaEventProducer>();
 builder.Services.AddMagazzinoClient(builder.Configuration);
 // Add services to the container.
 

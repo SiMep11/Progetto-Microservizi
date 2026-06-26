@@ -195,3 +195,6 @@ C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pag
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\obj\Debug\net10.0\Pagamenti.WebApi.pdb
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\obj\Debug\net10.0\Pagamenti.WebApi.genruntimeconfig.cache
 C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\obj\Debug\net10.0\ref\Pagamenti.WebApi.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Simone\OneDrive\Documenti\GitHub\Progetto-Microservizi\Microservizi\Pagamenti\Pagamenti.WebApi\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll

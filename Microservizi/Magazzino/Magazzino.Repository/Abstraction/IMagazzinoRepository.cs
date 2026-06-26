@@ -7,7 +7,7 @@ namespace Magazzino.Repository.Abstraction
 {
     public interface IMagazzinoRepository
     {
-       / Il metodo per salvare i dati esposto al Business
+       // Il metodo per salvare i dati esposto al Business
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
         Task<IEnumerable<Prodotto>> GetAllProdottiAsync(CancellationToken cancellationToken = default);
@@ -17,6 +17,6 @@ namespace Magazzino.Repository.Abstraction
         // Cambiato a Task (void) perché il salvataggio effettivo avverrà dopo
         Task CreaProdottoAsync(Prodotto prodotto, CancellationToken cancellationToken = default);
 
-        Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
+        Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default);
     }
 }

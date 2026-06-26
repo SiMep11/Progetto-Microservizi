@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ordini.ClientHttp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+381aa84d948ca22b01dc6a8e24c4e38bb7c8566c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9022a8f228b1ff00e7cc1136957b15c7fab8712e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ordini.ClientHttp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ordini.ClientHttp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

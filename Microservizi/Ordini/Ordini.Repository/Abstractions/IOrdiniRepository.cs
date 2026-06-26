@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Ordini.Repository.Models;
 
 namespace Ordini.Repository.Abstractions
 {
     public interface IOrdiniRepository
     {
-        // Ottiene tutti gli ordini (con i relativi prodotti inclusi)
-        Task<IEnumerable<Ordine>> GetAllOrdiniAsync();
+        // Il nuovo comando manuale per salvare!
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
-        // Ottiene un ordine specifico tramite ID
-        Task<Ordine?> GetOrdineByIdAsync(int id);
+        Task<IEnumerable<Ordine>> GetAllOrdiniAsync(CancellationToken cancellationToken = default);
 
-        // Salva un nuovo ordine nel database
-        Task<Ordine> CreaOrdineAsync(Ordine ordine);
+        Task<Ordine?> GetOrdineByIdAsync(int id, CancellationToken cancellationToken = default);
 
-        // Aggiorna lo stato di un ordine (es: da "In elaborazione" a "Completato")
-        Task AggiornaStatoOrdineAsync(int id, string nuovoStato);
+        // Ora restituisce solo un Task (niente più Ordine di ritorno)
+        Task CreaOrdineAsync(Ordine ordine, CancellationToken cancellationToken = default);
+
+        Task AggiornaStatoOrdineAsync(int id, string nuovoStato, CancellationToken cancellationToken = default);
     }
 }

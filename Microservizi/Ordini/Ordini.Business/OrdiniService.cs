@@ -1,131 +1,114 @@
-﻿using Ordini.Business.Abstractions;
+﻿using Magazzino.ClientHttp.Abstraction;
+using Ordini.Business.Abstractions;
+using Ordini.Business.Kafka;
 using Ordini.Repository.Abstractions;
 using Ordini.Repository.Models;
 using Ordini.Shared;
 using Ordini.Shared.Events;
-using Ordini.ClientHttp.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Utility.Kafka.Abstractions.Clients;
 
-namespace Ordini.Business
+namespace Ordini.Business;
+
+// Costruttore primario stile C# 12: via le variabili private!
+public class OrdiniService(
+    IOrdiniRepository repository,
+    IMagazzinoClient magazzinoClient,
+    IProducerClient<string, string> producerClient) : IOrdiniService
 {
-    public class OrdiniService : IOrdiniService
+    public async Task<IEnumerable<OrdineDto>> GetAllOrdiniAsync()
     {
-        private readonly IOrdiniRepository _repository;
-        private readonly IMagazzinoClient _magazzinoClient; // <-- Il nostro nuovo "telefono"
-        private readonly IEventProducer _eventProducer; // NUOVO: Aggiunto l'altoparlante
+        var ordini = await repository.GetAllOrdiniAsync();
 
-        // Dependency Injection del Repository
-        public OrdiniService(IOrdiniRepository repository, IMagazzinoClient magazzinoClient, IEventProducer eventProducer)
+        return ordini.Select(o => new OrdineDto
         {
-            _repository = repository;
-            _magazzinoClient = magazzinoClient;
-            _eventProducer = eventProducer;
-        }
-
-        public async Task<IEnumerable<OrdineDto>> GetAllOrdiniAsync()
-        {
-            var ordini = await _repository.GetAllOrdiniAsync();
-
-            // Mapping: Entity (DB) -> DTO (Internet)
-            return ordini.Select(o => new OrdineDto
+            Id = o.Id,
+            DataOrdine = o.DataOrdine,
+            Cliente = o.Cliente,
+            Totale = o.Totale,
+            Stato = o.Stato,
+            Prodotti = o.Prodotti.Select(p => new ProdottoOrdinatoDto
             {
-                Id = o.Id,
-                DataOrdine = o.DataOrdine,
-                Cliente = o.Cliente,
-                Totale = o.Totale,
-                Stato = o.Stato,
-                Prodotti = o.Prodotti.Select(p => new ProdottoOrdinatoDto
-                {
-                    ProdottoId = p.ProdottoId,
-                    Quantita = p.Quantita,
-                    PrezzoUnitario = p.PrezzoUnitario
-                }).ToList()
-            });
-        }
+                ProdottoId = p.ProdottoId,
+                Quantita = p.Quantita,
+                PrezzoUnitario = p.PrezzoUnitario
+            }).ToList()
+        });
+    }
 
-        public async Task<OrdineDto?> GetOrdineByIdAsync(int id)
+    public async Task<OrdineDto?> GetOrdineByIdAsync(int id)
+    {
+        var ordine = await repository.GetOrdineByIdAsync(id);
+        if (ordine == null) return null;
+
+        return new OrdineDto
         {
-            var ordine = await _repository.GetOrdineByIdAsync(id);
-            if (ordine == null) return null;
-
-            return new OrdineDto
+            Id = ordine.Id,
+            DataOrdine = ordine.DataOrdine,
+            Cliente = ordine.Cliente,
+            Totale = ordine.Totale,
+            Stato = ordine.Stato,
+            Prodotti = ordine.Prodotti.Select(p => new ProdottoOrdinatoDto
             {
-                Id = ordine.Id,
-                DataOrdine = ordine.DataOrdine,
-                Cliente = ordine.Cliente,
-                Totale = ordine.Totale,
-                Stato = ordine.Stato,
-                Prodotti = ordine.Prodotti.Select(p => new ProdottoOrdinatoDto
-                {
-                    ProdottoId = p.ProdottoId,
-                    Quantita = p.Quantita,
-                    PrezzoUnitario = p.PrezzoUnitario
-                }).ToList()
-            };
-        }
+                ProdottoId = p.ProdottoId,
+                Quantita = p.Quantita,
+                PrezzoUnitario = p.PrezzoUnitario
+            }).ToList()
+        };
+    }
 
-        public async Task<OrdineDto> CreaOrdineAsync(OrdineDto nuovoOrdineDto)
+    public async Task<OrdineDto> CreaOrdineAsync(OrdineDto nuovoOrdineDto)
+    {
+        decimal totaleCalcolato = 0;
+
+        // 1. CHIAMATA AL MAGAZZINO: Controlliamo i prezzi reali!
+        foreach (var riga in nuovoOrdineDto.Prodotti)
         {
-            decimal totaleCalcolato = 0;
+            var prodottoMagazzino = await magazzinoClient.GetProdottoByIdAsync(riga.ProdottoId);
 
-            // 1. CHIAMATA AL MAGAZZINO: Controlliamo i prezzi reali!
-            foreach (var riga in nuovoOrdineDto.Prodotti)
+            if (prodottoMagazzino == null)
             {
-                // Facciamo la vera chiamata HTTP al microservizio Magazzino
-                var prodottoMagazzino = await _magazzinoClient.GetProdottoByIdAsync(riga.ProdottoId);
-
-                if (prodottoMagazzino == null)
-                {
-                    // Se il prodotto non esiste, blocchiamo l'ordine sollevando un'eccezione
-                    throw new Exception($"Impossibile creare l'ordine: il prodotto con ID {riga.ProdottoId} non esiste in magazzino.");
-                }
-
-                // Sicurezza: forziamo il prezzo unitario a quello UFFICIALE del magazzino
-                riga.PrezzoUnitario = prodottoMagazzino.Prezzo;
-
-                // Calcoliamo il totale riga per riga
-                totaleCalcolato += (riga.Quantita * riga.PrezzoUnitario);
+                throw new Exception($"Impossibile creare l'ordine: il prodotto con ID {riga.ProdottoId} non esiste in magazzino.");
             }
 
-            // 2. Mapping: DTO (Internet) -> Entity (DB)
-            var nuovoOrdine = new Ordine
-            {
-                Cliente = nuovoOrdineDto.Cliente,
-                DataOrdine = DateTime.UtcNow,
-                Stato = "In elaborazione",
-                Totale = totaleCalcolato, // <-- Usiamo il totale sicuro e verificato!
-                Prodotti = nuovoOrdineDto.Prodotti.Select(p => new ProdottoOrdinato
-                {
-                    ProdottoId = p.ProdottoId,
-                    Quantita = p.Quantita,
-                    PrezzoUnitario = p.PrezzoUnitario // Che ora è quello sicuro
-                }).ToList()
-            };
+            // Sicurezza: forziamo il prezzo unitario a quello UFFICIALE del magazzino
+            riga.PrezzoUnitario = prodottoMagazzino.Prezzo;
 
-            // 3. Salviamo nel DB degli Ordini
-            var ordineSalvato = await _repository.CreaOrdineAsync(nuovoOrdine);
-
-            // 4. Aggiorniamo il DTO di ritorno per il cliente
-            nuovoOrdineDto.Id = ordineSalvato.Id;
-            nuovoOrdineDto.DataOrdine = ordineSalvato.DataOrdine;
-            nuovoOrdineDto.Stato = ordineSalvato.Stato;
-            nuovoOrdineDto.Totale = ordineSalvato.Totale; // Il cliente vede il vero totale pagato
-
-            // --- NUOVO: KAFKA EVENT ---
-            // Creiamo il pacchetto da inviare al Magazzino (e a chiunque altro ascolti)
-            var evento = new OrdineCreatoEvent
-            {
-                OrdineId = ordineSalvato.Id,
-                Prodotti = nuovoOrdineDto.Prodotti // Passiamo la lista dei prodotti venduti
-            };
-
-            // Urliamo nel megafono! (Non blocchiamo l'esecuzione se fallisce, l'ordine è già salvo)
-            await _eventProducer.ProduceOrdineCreatoAsync(evento);
-            // --------------------------
-
-            return nuovoOrdineDto;
+            // Calcoliamo il totale riga per riga
+            totaleCalcolato += (riga.Quantita * riga.PrezzoUnitario);
         }
+
+        // 2. Mapping: DTO -> Entity
+        var nuovoOrdine = new Ordine // Assicurati che 'Ordine' sia la tua entità DB
+        {
+            Cliente = nuovoOrdineDto.Cliente,
+            DataOrdine = DateTime.UtcNow,
+            Stato = "In elaborazione",
+            Totale = totaleCalcolato,
+            Prodotti = nuovoOrdineDto.Prodotti.Select(p => new ProdottoOrdinato // Assicurati che 'ProdottoOrdinato' sia l'entità
+            {
+                ProdottoId = p.ProdottoId,
+                Quantita = p.Quantita,
+                PrezzoUnitario = p.PrezzoUnitario
+            }).ToList()
+        };
+
+        // 4. Aggiorniamo il DTO
+        nuovoOrdineDto.Id = nuovoOrdine.Id; // L'ID è generato da EF dopo il SaveChanges
+        nuovoOrdineDto.DataOrdine = nuovoOrdine.DataOrdine;
+        nuovoOrdineDto.Stato = nuovoOrdine.Stato;
+        nuovoOrdineDto.Totale = nuovoOrdine.Totale;
+
+        // --- NUOVO: KAFKA EVENT (Tramite UtilityKafka!) ---
+        var evento = new OrdineCreatoEvent
+        {
+            OrdineId = nuovoOrdine.Id,
+            Prodotti = nuovoOrdineDto.Prodotti
+        };
+        string messaggioJson = System.Text.Json.JsonSerializer.Serialize(evento);
+
+        // Usiamo l'interfaccia generica IProducerClient
+        await producerClient.ProduceAsync(KafkaTopics.OrdineCreato, nuovoOrdine.Id.ToString(), messaggioJson);
+
+        return nuovoOrdineDto;
     }
 }

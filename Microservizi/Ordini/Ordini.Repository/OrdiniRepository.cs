@@ -1,52 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Ordini.Repository.Abstractions;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Ordini.Repository.Abstractions;
 using Ordini.Repository.Models;
 
 namespace Ordini.Repository
 {
-    public class OrdiniRepository : IOrdiniRepository
+    // Costruttore Primario C# 12
+    public class OrdiniRepository(OrdiniDbContext context) : IOrdiniRepository
     {
-        private readonly OrdiniDbContext _context;
-
-        public OrdiniRepository(OrdiniDbContext context)
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            _context = context;
+            return await context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<IEnumerable<Ordine>> GetAllOrdiniAsync()
+        public async Task<IEnumerable<Ordine>> GetAllOrdiniAsync(CancellationToken cancellationToken = default)
         {
-            // Include(o => o.Prodotti) è fondamentale per caricare anche le righe dell'ordine!
-            return await _context.Ordini
+            return await context.Ordini
                 .Include(o => o.Prodotti)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
 
-        public async Task<Ordine?> GetOrdineByIdAsync(int id)
+        public async Task<Ordine?> GetOrdineByIdAsync(int id, CancellationToken cancellationToken = default)
         {
-            return await _context.Ordini
+            return await context.Ordini
                 .Include(o => o.Prodotti)
-                .FirstOrDefaultAsync(o => o.Id == id);
+                .FirstOrDefaultAsync(o => o.Id == id, cancellationToken);
         }
 
-        public async Task<Ordine> CreaOrdineAsync(Ordine ordine)
+        public async Task CreaOrdineAsync(Ordine ordine, CancellationToken cancellationToken = default)
         {
-            _context.Ordini.Add(ordine);
-            await _context.SaveChangesAsync();
-            return ordine;
+            await context.Ordini.AddAsync(ordine, cancellationToken);
+            // Niente più salvataggio qui!
         }
 
-        public async Task AggiornaStatoOrdineAsync(int id, string nuovoStato)
+        public async Task AggiornaStatoOrdineAsync(int id, string nuovoStato, CancellationToken cancellationToken = default)
         {
-            var ordine = await _context.Ordini.FindAsync(id);
+            var ordine = await context.Ordini.FindAsync(new object[] { id }, cancellationToken);
             if (ordine != null)
             {
                 ordine.Stato = nuovoStato;
-                await _context.SaveChangesAsync();
             }
+            // Niente più salvataggio qui!
         }
     }
 }

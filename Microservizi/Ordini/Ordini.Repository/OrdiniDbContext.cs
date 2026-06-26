@@ -1,37 +1,30 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Ordini.Repository.Models;
 
 namespace Ordini.Repository
 {
     public class OrdiniDbContext(DbContextOptions<OrdiniDbContext> dbContextOptions) : DbContext(dbContextOptions)
     {
-        // Queste diventeranno le tue tabelle nel database!
-        public DbSet<Ordine> Ordini { get; set; }
-        public DbSet<ProdottoOrdinato> ProdottiOrdinati { get; set; }
-
-        // Configurazione aggiuntiva (Opzionale ma consigliata per relazioni chiare)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            // 1. Chiavi Primarie esplicite in stile prof
+            modelBuilder.Entity<Ordine>().HasKey(x => x.Id);
+            modelBuilder.Entity<ProdottoOrdinato>().HasKey(x => x.Id);
 
-            // Diciamo esplicitamente a EF Core come sono collegati Ordine e ProdottoOrdinato
-            modelBuilder.Entity<ProdottoOrdinato>()
-                .HasOne(p => p.Ordine)
-                .WithMany(o => o.Prodotti)
-                .HasForeignKey(p => p.OrdineId)
-                .OnDelete(DeleteBehavior.Cascade); // Se elimino un ordine, elimino anche le sue righe
+            // 2. Autoincremento esplicito
+            modelBuilder.Entity<Ordine>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<ProdottoOrdinato>().Property(e => e.Id).ValueGeneratedOnAdd();
 
-            // Diciamo a EF Core che il totale e il prezzo hanno i decimali (evita warning)
-            modelBuilder.Entity<Ordine>()
-                .Property(o => o.Totale)
-                .HasColumnType("decimal(18,2)");
+            // 3. Relazione scritta su una riga compatta (come fa il prof)
+            modelBuilder.Entity<Ordine>().HasMany(p => p.Prodotti).WithOne(p => p.Ordine).HasForeignKey(p => p.OrdineId).OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<ProdottoOrdinato>()
-                .Property(p => p.PrezzoUnitario)
-                .HasColumnType("decimal(18,2)");
+            // 4. Manteniamo la tua configurazione salvavita per i prezzi!
+            modelBuilder.Entity<Ordine>().Property(o => o.Totale).HasColumnType("decimal(18,2)");
+            modelBuilder.Entity<ProdottoOrdinato>().Property(p => p.PrezzoUnitario).HasColumnType("decimal(18,2)");
         }
+
+        // Il prof mette i DbSet in fondo al file
+        public DbSet<Ordine> Ordini { get; set; }
+        public DbSet<ProdottoOrdinato> ProdottiOrdinati { get; set; }
     }
 }
