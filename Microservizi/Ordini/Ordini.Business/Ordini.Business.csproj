@@ -5,11 +5,10 @@
     <PackageReference Include="KafkaUtility" Version="1.0.2" />
     <PackageReference Include="Magazzino.Shared" Version="1.0.1" />
     <PackageReference Include="Niyat.Kafka.Utility" Version="1.10.29" />
+	<PackageReference Include="Magazzino.ClientHttp" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\UtilityKafka\UtilityKafka.csproj" />
-    <ProjectReference Include="..\..\Magazzino\Magazzino.ClientHttp\Magazzino.ClientHttp.csproj" />
     <ProjectReference Include="..\Ordini.ClientHttp\Ordini.ClientHttp.csproj" />
     <ProjectReference Include="..\Ordini.Repository\Ordini.Repository.csproj" />
     <ProjectReference Include="..\Ordini.Shared\Ordini.Shared.csproj" />

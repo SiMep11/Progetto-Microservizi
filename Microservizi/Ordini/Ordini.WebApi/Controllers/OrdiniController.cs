@@ -2,7 +2,7 @@
 using Ordini.Business.Abstractions;
 using Ordini.Shared;
 
-namespace Ordini.WebApi.Controller
+namespace Ordini.WebApi.ControllerS
 {
     [ApiController]
     [Route("api/[controller]")] // La rotta diventerà in automatico /api/ordini
