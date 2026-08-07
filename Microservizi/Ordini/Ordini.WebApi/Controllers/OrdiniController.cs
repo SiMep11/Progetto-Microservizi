@@ -1,50 +1,47 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Ordini.Business.Abstractions;
 using Ordini.Shared;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Ordini.WebApi.ControllerS
+namespace Ordini.WebApi.Controllers // Corretto togliendo la 'S' maiuscola finale se c'era
 {
     [ApiController]
-    [Route("api/[controller]")] // La rotta diventerà in automatico /api/ordini
-    public class OrdiniController : ControllerBase
+    // Stile Prof: Rotta basata sul nome del controller e del metodo (es. /Ordini/GetAll)
+    [Route("[controller]/[action]")]
+    public class OrdiniController(IOrdiniService ordiniService, ILogger<OrdiniController> logger) : ControllerBase
     {
-        private readonly IOrdiniService _ordiniService;
-
-        // Chiediamo a .NET di "iniettare" il nostro servizio
-        public OrdiniController(IOrdiniService ordiniService)
-        {
-            _ordiniService = ordiniService;
-        }
-
-        // GET: api/ordini
-        [HttpGet]
+        [HttpGet(Name = "GetAllOrdini")]
         public async Task<ActionResult<IEnumerable<OrdineDto>>> GetAll()
         {
-            var ordini = await _ordiniService.GetAllOrdiniAsync();
-            return Ok(ordini); // Restituisce HTTP 200 OK con la lista
+            // Possiamo usare il logger che abbiamo iniettato!
+            logger.LogInformation("Richiesta lista di tutti gli ordini ricevuta.");
+
+            var ordini = await ordiniService.GetAllOrdiniAsync();
+            return Ok(ordini);
         }
 
-        // GET: api/ordini/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetOrdineById")]
         public async Task<ActionResult<OrdineDto>> GetById(int id)
         {
-            var ordine = await _ordiniService.GetOrdineByIdAsync(id);
+            var ordine = await ordiniService.GetOrdineByIdAsync(id);
 
             if (ordine == null)
             {
-                return NotFound(); // Restituisce HTTP 404 se non esiste
+                logger.LogWarning($"Ordine con ID {id} non trovato.");
+                return NotFound();
             }
 
             return Ok(ordine);
         }
 
-        // POST: api/ordini
-        [HttpPost]
+        [HttpPost(Name = "CreateOrdine")]
         public async Task<ActionResult<OrdineDto>> Create([FromBody] OrdineDto nuovoOrdine)
         {
-            var ordineCreato = await _ordiniService.CreaOrdineAsync(nuovoOrdine);
+            logger.LogInformation("Richiesta creazione nuovo ordine ricevuta.");
+            var ordineCreato = await ordiniService.CreaOrdineAsync(nuovoOrdine);
 
-            // Restituisce HTTP 201 Created e dice dove trovare il nuovo ordine
             return CreatedAtAction(nameof(GetById), new { id = ordineCreato.Id }, ordineCreato);
         }
     }
