@@ -7,36 +7,32 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Magazzino.Repository
 {
-    public class MagazzinoRepository : IMagazzinoRepository
+    public class MagazzinoRepository(MagazzinoDbContext context) : IMagazzinoRepository
     {
-        private readonly MagazzinoDbContext _context;
-
-        public MagazzinoRepository(MagazzinoDbContext context)
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            _context = context;
+            return await context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<IEnumerable<Prodotto>> GetAllProdottiAsync()
+        public async Task<IEnumerable<Prodotto>> GetAllProdottiAsync(CancellationToken cancellationToken = default)
         {
-            return await _context.Prodotti.ToListAsync();
+            return await context.Prodotti.ToListAsync(cancellationToken);
         }
 
-        public async Task<Prodotto?> GetProdottoByIdAsync(int id)
+        public async Task<Prodotto?> GetProdottoByIdAsync(int id, CancellationToken cancellationToken = default)
         {
-            return await _context.Prodotti.FindAsync(id);
+            return await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
         }
 
-        public async Task<Prodotto> CreaProdottoAsync(Prodotto prodotto)
+        public async Task CreaProdottoAsync(Prodotto prodotto, CancellationToken cancellationToken = default)
         {
-            _context.Prodotti.Add(prodotto);
-            await _context.SaveChangesAsync();
-            return prodotto;
+            await context.Prodotti.AddAsync(prodotto, cancellationToken);
         }
 
-        public async Task ScaricaGiacenzaAsync(int id, int quantita)
+        public async Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
             // 1. Cerchiamo il prodotto nel database
-            var prodotto = await _context.Prodotti.FindAsync(id);
+            var prodotto = await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
 
             if (prodotto != null)
             {
@@ -48,9 +44,6 @@ namespace Magazzino.Repository
                 {
                     prodotto.QuantitaInMagazzino = 0;
                 }
-
-                // 4. Salviamo la modifica fisicamente sulla tabella
-                await _context.SaveChangesAsync();
             }
         }
     }

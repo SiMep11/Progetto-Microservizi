@@ -3,27 +3,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Magazzino.Business.Abstraction; // Dove hai messo IProdottiManager
 using Magazzino.Repository.Abstraction; // Dove hai messo IMagazzinoRepository
+using Magazzino.Repository.Models;
 using Magazzino.Shared; // Dove si trova ProdottoDto
 
 namespace Magazzino.Business
 {
-    public class ProdottiManager : IProdottiManager
+    public class ProdottiManager(IMagazzinoRepository repository) : IProdottiManager
     {
-        // Ora usiamo il Repository, non più il DbContext direttamente!
-        private readonly IMagazzinoRepository _repository;
-
-        // Dependency Injection
-        public ProdottiManager(IMagazzinoRepository repository)
+        public async Task<IEnumerable<ProdottoDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            _repository = repository;
-        }
+            // Passiamo il token al repository
+            var prodottiDb = await repository.GetAllProdottiAsync(cancellationToken);
 
-        public async Task<IEnumerable<ProdottoDto>> GetAllAsync()
-        {
-            // 1. Chiediamo le Entities (Tabelle) al Repository
-            var prodottiDb = await _repository.GetAllProdottiAsync();
-
-            // 2. Mapping: Entity -> DTO
             return prodottiDb.Select(p => new ProdottoDto
             {
                 Id = p.Id,
@@ -34,18 +25,16 @@ namespace Magazzino.Business
             });
         }
 
-        public async Task<ProdottoDto?> GetByIdAsync(int id)
+        public async Task<ProdottoDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
         {
-            // 1. Chiediamo la singola Entity al Repository
-            var prodottoDb = await _repository.GetProdottoByIdAsync(id);
+            // Passiamo il token al repository
+            var prodottoDb = await repository.GetProdottoByIdAsync(id, cancellationToken);
 
-            // Se non esiste, restituiamo null
             if (prodottoDb == null)
             {
                 return null;
             }
 
-            // 2. Mapping: Entity -> DTO
             return new ProdottoDto
             {
                 Id = prodottoDb.Id,
@@ -56,10 +45,9 @@ namespace Magazzino.Business
             };
         }
 
-        public async Task<ProdottoDto> CreaProdottoAsync(ProdottoDto prodottoDto)
+        public async Task<ProdottoDto> CreaProdottoAsync(ProdottoDto prodottoDto, CancellationToken cancellationToken = default)
         {
-            // Trasformiamo il DTO di internet nell'Entity del DB
-            var nuovoProdotto = new Magazzino.Repository.Models.Prodotto
+            var nuovoProdotto = new Prodotto
             {
                 Nome = prodottoDto.Nome,
                 Descrizione = prodottoDto.Descrizione,
@@ -67,15 +55,25 @@ namespace Magazzino.Business
                 QuantitaInMagazzino = prodottoDto.QuantitaDisponibile
             };
 
-            var prodottoSalvato = await _repository.CreaProdottoAsync(nuovoProdotto);
+            // 2. Diciamo al DbContext di tracciare il nuovo prodotto in memoria
+            await repository.CreaProdottoAsync(nuovoProdotto, cancellationToken);
 
-            // Aggiorniamo l'ID del DTO con quello generato dal DB
-            prodottoDto.Id = prodottoSalvato.Id;
+            // 3. IL TOCCO DEL PROF: Il Business comanda il salvataggio fisico!
+            await repository.SaveChangesAsync(cancellationToken);
+
+            // 4. Magia di EF Core: dopo il SaveChanges, 'nuovoProdotto' ha l'ID valorizzato!
+            prodottoDto.Id = nuovoProdotto.Id;
+
             return prodottoDto;
         }
-        public async Task ScaricaGiacenzaAsync(int id, int quantita)
+
+        public async Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
-            await _repository.ScaricaGiacenzaAsync(id, quantita);
+            // 1. Il repository calcola la nuova giacenza in memoria
+            await repository.ScaricaGiacenzaAsync(id, quantita, cancellationToken);
+
+            // 2. IL TOCCO DEL PROF: Il Business comanda il salvataggio fisico!
+            await repository.SaveChangesAsync(cancellationToken);
         }
     }
 }
