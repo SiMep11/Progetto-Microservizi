@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Magazzino\Magazzino.ClientHttp\Magazzino.ClientHttp.csproj" />
     <ProjectReference Include="..\Ordini.ClientHttp\Ordini.ClientHttp.csproj" />
     <ProjectReference Include="..\Ordini.Repository\Ordini.Repository.csproj" />
     <ProjectReference Include="..\Ordini.Shared\Ordini.Shared.csproj" />
