@@ -9,7 +9,7 @@ using Utility.Kafka.Abstractions.Clients;
 
 namespace Ordini.Business;
 
-// Costruttore primario stile C# 12: via le variabili private!
+// Costruttore primario stile C# 12: via le variabili private
 public class OrdiniService(
     IOrdiniRepository repository,
     IMagazzinoClient magazzinoClient,
