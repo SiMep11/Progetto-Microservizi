@@ -33,4 +33,4 @@ jobs:
 
     - name: Pubblica su GitHub Packages
       # NOTA BENE: Sostituisci TUO_USERNAME_GITHUB qui sotto!
-      run: dotnet nuget push "pacchetti_creati/*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/SiMep11/index.json" --skip-duplicate
+      run: dotnet nuget push "pacchetti_creati/*.nupkg" --api-key ${{ secrets.PAT_GITHUB }} --source "https://nuget.pkg.github.com/SiMep11/index.json" --skip-duplicate
