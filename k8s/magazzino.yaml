@@ -15,6 +15,7 @@ spec:
       containers:
       - name: magazzino-api
         image: ghcr.io/simep11/magazzino-api:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
