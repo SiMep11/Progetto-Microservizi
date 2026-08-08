@@ -26,7 +26,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }} # Questo rimane GITHUB_TOKEN (automatico)
+        password: ${{ secrets.GITHUB_TOKEN }} 
 
     - name: Build e Push dell'immagine Magazzino
       run: |
