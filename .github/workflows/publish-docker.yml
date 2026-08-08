@@ -7,7 +7,7 @@ on:
 jobs:
   build-and-publish-docker:
     runs-on: ubuntu-latest
-    
+
     # Permessi necessari per caricare l'immagine su GitHub Packages
     permissions:
       packages: write
@@ -22,17 +22,19 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }} # Questo rimane GITHUB_TOKEN (automatico)
 
     - name: Build e Push dell'immagine Magazzino
       run: |
-        docker build -f Microservizi/Magazzino/Magazzino.WebApi/Dockerfile -t ghcr.io/simep11/magazzino-api:latest Microservizi/Magazzino/
+        docker build --build-arg GH_TOKEN=${{ secrets.PAT_GITHUB }} -f Microservizi/Magazzino/Magazzino.WebApi/Dockerfile -t ghcr.io/simep11/magazzino-api:latest Microservizi/Magazzino/
         docker push ghcr.io/simep11/magazzino-api:latest
+
     - name: Build e Push dell'immagine Ordini
       run: |
-        docker build --build-arg GH_TOKEN=${{ secrets.GITHUB_TOKEN }} -f Microservizi/Ordini/Ordini.WebApi/Dockerfile -t ghcr.io/simep11/ordini-api:latest Microservizi/Ordini/
+        docker build --build-arg GH_TOKEN=${{ secrets.PAT_GITHUB }} -f Microservizi/Ordini/Ordini.WebApi/Dockerfile -t ghcr.io/simep11/ordini-api:latest Microservizi/Ordini/
         docker push ghcr.io/simep11/ordini-api:latest
+
     - name: Build e Push dell'immagine Pagamenti
       run: |
-        docker build --build-arg GH_TOKEN=${{ secrets.GITHUB_TOKEN }} -f Microservizi/Pagamenti/Pagamenti.WebApi/Dockerfile -t ghcr.io/simep11/pagamenti-api:latest Microservizi/Pagamenti/
+        docker build --build-arg GH_TOKEN=${{ secrets.PAT_GITHUB }} -f Microservizi/Pagamenti/Pagamenti.WebApi/Dockerfile -t ghcr.io/simep11/pagamenti-api:latest Microservizi/Pagamenti/
         docker push ghcr.io/simep11/pagamenti-api:latest
