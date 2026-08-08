@@ -18,14 +18,14 @@ spec:
         ports:
         - containerPort: 8080
         env:
-        # Sovrascriviamo la stringa di connessione per fargli puntare al container SQL
-        - name: ConnectionStrings__MagazzinoDb
-          value: "Server=sqlserver-service,1433;Database=MagazzinoDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
-        # Diciamo a .NET di partire in modalità Sviluppo (così mostra Swagger!)
-        - name: ASPNETCORE_ENVIRONMENT
-          value: "Development"
-        - name: Kafka__BootstrapServers
-          value: "kafka-service:9092" # <-- Usa il nome del Service di Kafka!
+          # Sovrascriviamo la stringa di connessione per fargli puntare al container SQL
+          - name: ConnectionStrings__MagazzinoDb
+            value: "Server=sqlserver-service,1433;Database=MagazzinoDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
+          # Diciamo a .NET di partire in modalità Sviluppo (così mostra Swagger!)
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
+          - name: Kafka__BootstrapServers
+            value: "kafka-service:9092" # <-- Usa il nome del Service di Kafka!
 ---
 apiVersion: v1
 kind: Service
