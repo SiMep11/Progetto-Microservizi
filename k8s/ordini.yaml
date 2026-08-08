@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: ordini-api
-        # INSERISCI QUI IL NOME DELLA TUA IMMAGINE DOCKER CARICATA SU GITHUB
         image: ghcr.io/simep11/ordini-api:latest 
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
