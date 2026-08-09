@@ -16,13 +16,13 @@ public class MagazzinoClient(HttpClient httpClient) : IMagazzinoClient
         });
 
         // PUNTO 1: Gestione errori aggressiva
-        var response = await httpClient.GetAsync($"/api/prodotti/GetProdottoById{queryString}", cancellationToken);
+        var response = await httpClient.GetAsync($"/Prodotti/GetProdottoById{queryString.Value}", cancellationToken);
         return await response.EnsureSuccessStatusCode().Content.ReadFromJsonAsync<ProdottoDto?>(cancellationToken: cancellationToken);
     }
 
     public async Task<IEnumerable<ProdottoDto>> GetAllProdottiAsync(CancellationToken cancellationToken = default)
     {
-        var response = await httpClient.GetAsync("/api/prodotti/GetAllProdotti", cancellationToken);
+        var response = await httpClient.GetAsync("/Prodotti/GetProdotti", cancellationToken);
 
         // PUNTO 1: Gestione errori aggressiva
         var result = await response.EnsureSuccessStatusCode().Content.ReadFromJsonAsync<IEnumerable<ProdottoDto>>(cancellationToken: cancellationToken);
@@ -33,7 +33,7 @@ public class MagazzinoClient(HttpClient httpClient) : IMagazzinoClient
     {
         // Niente Punto 3: Usiamo la versione moderna per il Json (PostAsJsonAsync)
         // PUNTO 1: Gestione errori aggressiva
-        var response = await httpClient.PostAsJsonAsync("/api/prodotti/CreaProdotto", prodotto, cancellationToken);
+        var response = await httpClient.PostAsJsonAsync("/Prodotti/AggiungiProdotto", prodotto, cancellationToken);
         return await response.EnsureSuccessStatusCode().Content.ReadFromJsonAsync<ProdottoDto?>(cancellationToken: cancellationToken);
     }
 }
