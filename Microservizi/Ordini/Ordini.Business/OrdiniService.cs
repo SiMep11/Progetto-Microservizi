@@ -92,6 +92,9 @@ public class OrdiniService(
             }).ToList()
         };
 
+        await repository.CreaOrdineAsync( nuovoOrdine );
+        await repository.SaveChangesAsync();
+
         // 4. Aggiorniamo il DTO
         nuovoOrdineDto.Id = nuovoOrdine.Id; // L'ID è generato da EF dopo il SaveChanges
         nuovoOrdineDto.DataOrdine = nuovoOrdine.DataOrdine;
