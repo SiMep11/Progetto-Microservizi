@@ -6,6 +6,8 @@ using Ordini.Business.Abstractions;
 using Ordini.ClientHttp.Abstraction;
 using Ordini.ClientHttp;
 using Ordini.Business.Kafka;
+using Utility.Kafka.Abstractions.Clients;
+using Utility.Kafka.Clients;
 using Ordini.ClientHttp.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +24,7 @@ builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
 builder.Services.AddMagazzinoClient(builder.Configuration);
+builder.Services.AddSingleton<IProducerClient<string, string>, ProducerClient>();
 // Add services to the container.
 
 builder.Services.AddControllers();
