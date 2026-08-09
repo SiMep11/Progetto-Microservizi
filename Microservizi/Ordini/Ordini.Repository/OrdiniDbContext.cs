@@ -23,7 +23,6 @@ namespace Ordini.Repository
             modelBuilder.Entity<ProdottoOrdinato>().Property(p => p.PrezzoUnitario).HasColumnType("decimal(18,2)");
         }
 
-        // Il prof mette i DbSet in fondo al file
         public DbSet<Ordine> Ordini { get; set; }
         public DbSet<ProdottoOrdinato> ProdottiOrdinati { get; set; }
     }

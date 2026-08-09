@@ -18,15 +18,15 @@ spec:
       - name: pagamenti-api
         # Assicurati che questo nome combaci con quello dell'immagine che builderai!
         image: ghcr.io/simep11/pagamenti-api:latest
+        ports:
+        - containerPort: 8080
         env:
-        - name: ASPNETCORE_ENVIRONMENT
-          value: "Development"
-        - name: ConnectionStrings__PagamentiDb
-          value: "Server=sqlserver-service,1433;Database=PagamentiDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
-        - name: Kafka__ProducerClient__BootstrapServers
-          value: "kafka-service:9092"
-        - name: Kafka__AdminClient__BootstrapServers
-          value: "kafka-service:9092"
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
+          - name: ConnectionStrings__PagamentiDb
+            value: "Server=sqlserver-service,1433;Database=PagamentiDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
+          - name: Kafka__BootstrapServers
+            value: "kafka-service:9092"
 ---
 apiVersion: v1
 kind: Service
