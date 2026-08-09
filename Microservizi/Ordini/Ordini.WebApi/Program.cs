@@ -24,6 +24,7 @@ builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
 builder.Services.AddMagazzinoClient(builder.Configuration);
+builder.Services.Configure<KafkaProducerClientOptions>(builder.Configuration.GetSection("Kafka"));
 builder.Services.AddSingleton<IProducerClient<string, string>, ProducerClient>();
 // Add services to the container.
 
