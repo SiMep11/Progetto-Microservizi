@@ -15,6 +15,7 @@ namespace Pagamenti.Business
     {
         public async Task CreateVersamentoAsync(VersamentoInsertDto versamentoInsertDto, CancellationToken cancellationToken = default)
         {
+            int idVersamentoCreato = 0;
             await repository.BeginTransactionAsync(async (CancellationToken cancellation) =>
             {
                 var versamento = await repository.CreateVersamentoAsync(versamentoInsertDto, cancellation);
@@ -26,9 +27,12 @@ namespace Pagamenti.Business
                 await repository.InsertTransactionalOutboxAsync(TransactionalOutboxFactory.CreateInsert(newVersamentoRecord), cancellation);
 
                 await repository.SaveChangesAsync(cancellation);
+
+                idVersamentoCreato = newVersamentoRecord.Id;
             }, cancellationToken);
 
-            observer.NuovoVersamento.OnNext(1);
+            if(idVersamentoCreato > 0)
+                observer.NuovoVersamento.OnNext(idVersamentoCreato);
         }
     }
 }

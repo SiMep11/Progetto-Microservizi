@@ -11,5 +11,6 @@ namespace Pagamenti.Shared
         public DateTime DataContabile { get; set; }
         public decimal Importo { get; set; }
         public string? Informazioni { get; set; }
+        public int ordineId { get; set; }
     }
 }

@@ -63,6 +63,9 @@ namespace Pagamenti.WebApi.Migrations
                     b.Property<string>("Informazioni")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ordineId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Versamenti");
