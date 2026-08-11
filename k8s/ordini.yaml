@@ -22,18 +22,23 @@ spec:
           # 1. Connessione al Database SQL Server dentro K8s
           - name: ConnectionStrings__DefaultConnection
             value: "Server=sqlserver-service,1433;Database=OrdiniDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
-        
           # 2. Connessione al broker Kafka dentro K8s
           - name: Kafka__BootstrapServers
             value: "kafka-service:9092"
-        
           # 3. Connessione HTTP al microservizio Magazzino dentro K8s
           - name: MagazzinoClient__BaseAddress
-            value: "http://magazzino-service:8080"
-          
+            value: "http://magazzino-service:8080"      
           # 4. Fondamentale per mostrare l'interfaccia Swagger al professore
           - name: ASPNETCORE_ENVIRONMENT
             value: "Development"
+          - name: Kafka__AdminClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__ConsumerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__ConsumerClient__GroupId
+            value: "ordini-group"
+          - name: Kafka__Topics__Versamenti
+            value: "Versamenti"
 ---
 apiVersion: v1
 kind: Service

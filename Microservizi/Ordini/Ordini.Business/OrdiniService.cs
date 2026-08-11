@@ -82,7 +82,7 @@ public class OrdiniService(
         {
             Cliente = nuovoOrdineDto.Cliente,
             DataOrdine = DateTime.UtcNow,
-            Stato = "In elaborazione",
+            Stato = StatiOrdine.InElaborazione,
             Totale = totaleCalcolato,
             Prodotti = nuovoOrdineDto.Prodotti.Select(p => new ProdottoOrdinato // Assicurati che 'ProdottoOrdinato' sia l'entità
             {
@@ -113,5 +113,30 @@ public class OrdiniService(
         await producerClient.ProduceAsync(KafkaTopics.OrdineCreato, nuovoOrdine.Id.ToString(), messaggioJson);
 
         return nuovoOrdineDto;
+    }
+
+    public async Task<bool> ConfermaOrdineSePagatoAsync(int ordineId, decimal importoPagato, CancellationToken cancellationToken = default)
+    {
+        var ordine = await repository.GetOrdineByIdAsync(ordineId, cancellationToken);
+
+        if (ordine is null)
+            return false;   // pagamento riferito a un ordine inesistente
+
+        // Idempotenza: Kafka può riconsegnare lo stesso messaggio (at-least-once).
+        if (ordine.Stato == StatiOrdine.Confermato)
+            return true;
+
+        // Confermiamo solo ordini ancora in lavorazione (non annullati/rifiutati).
+        if (ordine.Stato != StatiOrdine.InElaborazione)
+            return false;
+
+        // ---- IL CONTROLLO CHIESTO: l'importo deve coincidere col totale ----
+        if (importoPagato != ordine.Totale)
+            return false;
+
+        await repository.AggiornaStatoOrdineAsync(ordineId, StatiOrdine.Confermato, cancellationToken);
+        await repository.SaveChangesAsync(cancellationToken);
+
+        return true;
     }
 }

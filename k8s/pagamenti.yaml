@@ -27,6 +27,12 @@ spec:
             value: "Server=sqlserver-service,1433;Database=PagamentiDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
           - name: Kafka__BootstrapServers
             value: "kafka-service:9092"
+          - name: Kafka__ProducerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__AdminClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__Topics__Versamenti
+            value: "Versamenti"
 ---
 apiVersion: v1
 kind: Service

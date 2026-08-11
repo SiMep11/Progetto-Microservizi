@@ -3,6 +3,7 @@ using Ordini.Repository;
 using Ordini.Repository.Abstractions;
 using Ordini.Business;
 using Ordini.Business.Abstractions;
+using Ordini.Business.Kafka.MessageHandlers;
 using Ordini.ClientHttp.Abstraction;
 using Ordini.ClientHttp;
 using Ordini.Business.Kafka;
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IOrdiniService, OrdiniService>();
 builder.Services.AddMagazzinoClient(builder.Configuration);
 builder.Services.Configure<KafkaProducerClientOptions>(builder.Configuration.GetSection("Kafka"));
 builder.Services.AddSingleton<IProducerClient<string, string>, ProducerClient>();
+builder.Services.AddKafkaConsumerService<KafkaTopicsInput, OrdiniMessageHandlerFactory>(builder.Configuration);
 // Add services to the container.
 
 builder.Services.AddControllers();
