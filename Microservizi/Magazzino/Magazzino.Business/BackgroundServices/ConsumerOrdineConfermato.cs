@@ -8,19 +8,19 @@ using System.Text.Json;
 
 namespace Magazzino.Business.BackgroundServices
 {
-    public class ConsumerOrdineCreato : BackgroundService
+    public class ConsumerOrdineConfermato : BackgroundService
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IConsumer<Ignore, string> _consumer;
 
-        public ConsumerOrdineCreato(IServiceProvider serviceProvider, IConfiguration configuration)
+        public ConsumerOrdineConfermato(IServiceProvider serviceProvider, IConfiguration configuration)
         {
             _serviceProvider = serviceProvider;
             var bootstrapServers = configuration["Kafka:BootstrapServers"] ?? "localhost:9092";
 
             var config = new ConsumerConfig
             {
-                BootstrapServers = bootstrapServers, 
+                BootstrapServers = bootstrapServers,
                 GroupId = "magazzino-group",
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
@@ -30,7 +30,9 @@ namespace Magazzino.Business.BackgroundServices
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _consumer.Subscribe("ordine-creato");
+            // Ascoltiamo la CONFERMA, non la creazione: la giacenza si scarica
+            // solo quando l'ordine è stato effettivamente pagato.
+            _consumer.Subscribe("ordine-confermato");
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -38,7 +40,7 @@ namespace Magazzino.Business.BackgroundServices
                 {
                     // Spostiamo tutto dentro il try!
                     var consumeResult = _consumer.Consume(stoppingToken);
-                    var evento = JsonSerializer.Deserialize<OrdineCreatoEvent>(consumeResult.Message.Value);
+                    var evento = JsonSerializer.Deserialize<OrdineConfermatoEvent>(consumeResult.Message.Value);
 
                     using (var scope = _serviceProvider.CreateScope())
                     {
@@ -47,7 +49,7 @@ namespace Magazzino.Business.BackgroundServices
                         foreach (var p in evento.Prodotti)
                         {
                             await manager.ScaricaGiacenzaAsync(p.ProdottoId, p.Quantita);
-                            Console.WriteLine($"[MAGAZZINO] Scalati {p.Quantita} pezzi per il prodotto {p.ProdottoId}!");
+                            Console.WriteLine($"[MAGAZZINO] Ordine {evento.OrdineId} pagato: scalati {p.Quantita} pezzi per il prodotto {p.ProdottoId}!");
                         }
                     }
                 }

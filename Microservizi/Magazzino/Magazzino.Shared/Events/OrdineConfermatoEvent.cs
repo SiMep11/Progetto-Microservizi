@@ -1,6 +1,10 @@
-﻿namespace Magazzino.Shared.Events
+namespace Magazzino.Shared.Events
 {
-    public class OrdineCreatoEvent
+    /// <summary>
+    /// Ricevuto da Ordini quando un ordine è stato pagato per l'importo corretto:
+    /// è il via libera per scaricare la giacenza.
+    /// </summary>
+    public class OrdineConfermatoEvent
     {
         public int OrdineId { get; set; }
         public List<DettaglioOrdineEvent> Prodotti { get; set; } = new();

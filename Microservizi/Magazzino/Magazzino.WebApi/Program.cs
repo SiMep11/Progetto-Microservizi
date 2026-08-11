@@ -29,7 +29,7 @@ builder.Services.AddScoped<IMagazzinoRepository, MagazzinoRepository>();
 // Registriamo il Manager aggiornato
 builder.Services.AddScoped<IProdottiManager, ProdottiManager>();
 
-builder.Services.AddHostedService<ConsumerOrdineCreato>();
+builder.Services.AddHostedService<ConsumerOrdineConfermato>();
 
 var app = builder.Build();
 

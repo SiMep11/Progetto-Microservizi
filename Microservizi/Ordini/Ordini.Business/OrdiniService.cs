@@ -101,16 +101,8 @@ public class OrdiniService(
         nuovoOrdineDto.Stato = nuovoOrdine.Stato;
         nuovoOrdineDto.Totale = nuovoOrdine.Totale;
 
-        // --- NUOVO: KAFKA EVENT (Tramite UtilityKafka!) ---
-        var evento = new OrdineCreatoEvent
-        {
-            OrdineId = nuovoOrdine.Id,
-            Prodotti = nuovoOrdineDto.Prodotti
-        };
-        string messaggioJson = System.Text.Json.JsonSerializer.Serialize(evento);
-
-        // Usiamo l'interfaccia generica IProducerClient
-        await producerClient.ProduceAsync(KafkaTopics.OrdineCreato, nuovoOrdine.Id.ToString(), messaggioJson);
+        // NB: qui NON avvisiamo il magazzino. L'ordine è solo "In elaborazione":
+        // la giacenza verrà scaricata solo dopo l'incasso, in ConfermaOrdineSePagatoAsync.
 
         return nuovoOrdineDto;
     }
@@ -136,6 +128,23 @@ public class OrdiniService(
 
         await repository.AggiornaStatoOrdineAsync(ordineId, StatiOrdine.Confermato, cancellationToken);
         await repository.SaveChangesAsync(cancellationToken);
+
+        // --- KAFKA EVENT (Tramite UtilityKafka!) ---
+        // Solo ORA l'ordine è pagato: avvisiamo il magazzino di scaricare la giacenza.
+        var evento = new OrdineConfermatoEvent
+        {
+            OrdineId = ordine.Id,
+            Prodotti = ordine.Prodotti.Select(p => new ProdottoOrdinatoDto
+            {
+                ProdottoId = p.ProdottoId,
+                Quantita = p.Quantita,
+                PrezzoUnitario = p.PrezzoUnitario
+            }).ToList()
+        };
+        string messaggioJson = System.Text.Json.JsonSerializer.Serialize(evento);
+
+        // Usiamo l'interfaccia generica IProducerClient
+        await producerClient.ProduceAsync(KafkaTopics.OrdineConfermato, ordine.Id.ToString(), messaggioJson, cancellationToken);
 
         return true;
     }
