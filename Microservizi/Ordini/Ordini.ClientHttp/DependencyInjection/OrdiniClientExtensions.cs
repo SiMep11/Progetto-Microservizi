@@ -1,27 +1,26 @@
-﻿using System;
-using Ordini.ClientHttp; 
+using Ordini.ClientHttp;
 using Ordini.ClientHttp.Abstraction;
-using Ordini.ClientHttp.DependencyInjection;
+using Ordini.ClientHttp.DependencyInjection; // Serve per leggere le Options
+using Microsoft.Extensions.Configuration;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Microsoft.Extensions.DependencyInjection;
+
+public static class OrdiniClientExtensions
 {
-    public static class OrdiniClientExtensions
+    public static IServiceCollection AddOrdiniClient(this IServiceCollection services, IConfiguration configuration)
     {
-        public static IServiceCollection AddOrdiniClient(
-            this IServiceCollection services,
-            Action<OrdiniClientOptions> configureOptions)
+        // Peschiamo la configurazione usando il SectionName
+        IConfigurationSection confSection = configuration.GetSection(OrdiniClientOptions.SectionName);
+        OrdiniClientOptions options = confSection.Get<OrdiniClientOptions>() ?? new();
+
+        services.AddHttpClient<IOrdiniClient, OrdiniClient>(o => {
+            o.BaseAddress = new Uri(options.BaseAddress);
+        }).ConfigurePrimaryHttpMessageHandler(_ => new HttpClientHandler
         {
-            // 1. Creiamo un "contenitore" per le opzioni vuoto e lo facciamo riempire
-            var options = new OrdiniClientOptions();
-            configureOptions(options);
+            // Ignora gli errori dei certificati SSL in locale/Kubernetes
+            ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; }
+        });
 
-            // 2. Registriamo il vero e proprio HttpClient, leggendo l'URL dalle opzioni!
-            services.AddHttpClient<IOrdiniClient, OrdiniClient>(client =>
-            {
-                client.BaseAddress = new Uri(options.BaseUrl);
-            });
-
-            return services;
-        }
+        return services;
     }
 }
