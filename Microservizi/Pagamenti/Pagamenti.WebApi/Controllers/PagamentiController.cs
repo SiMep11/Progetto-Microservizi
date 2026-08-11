@@ -11,7 +11,17 @@ namespace Pagamenti.WebApi.Controllers
         [HttpPost(Name = "CreateVersamento")]
         public async Task<ActionResult> CreateVersamento(VersamentoInsertDto versamentoInsertDto)
         {
-            await business.CreateVersamentoAsync(versamentoInsertDto);
+            try
+            {
+                await business.CreateVersamentoAsync(versamentoInsertDto);
+            }
+            catch (ArgumentException ex)
+            {
+                // Versamento non valido (ordine inesistente, importo errato...):
+                // è un errore del chiamante, non del server.
+                logger.LogWarning(ex, "Richiesta di versamento non valida");
+                return BadRequest(ex.Message);
+            }
 
             return Ok();
         }

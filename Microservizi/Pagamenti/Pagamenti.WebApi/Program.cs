@@ -29,6 +29,9 @@ builder.Services.AddSingleton<IPagamentiObservable>(p => p.GetRequiredService<Su
 builder.Services.AddSingleton<IPagamentiObserver>(p => p.GetRequiredService<Subject>());
 builder.Services.AddKafkaProducerServiceWithSubscription<KafkaTopicsOutput, ProducerServiceWithSubscription>(builder.Configuration);
 
+// Comunicazione sincrona verso Ordini: serve a validare l'ordine prima di incassare
+builder.Services.AddOrdiniClient(builder.Configuration);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
