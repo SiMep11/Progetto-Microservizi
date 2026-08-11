@@ -34,6 +34,9 @@ jobs:
     - name: Pacchettizza UtilityKafka
       run: dotnet pack UtilityKafka/UtilityKafka.csproj -c Release -o pacchetti_creati
 
+    - name: Pacchettizza Pagamenti.Shared
+      run: dotnet pack Microservizi/Pagamenti/Pagamenti.Shared/Pagamenti.Shared.csproj -c Release -o pacchetti_creati
+
     - name: Pubblica su GitHub Packages
       # NOTA BENE: Sostituisci TUO_USERNAME_GITHUB qui sotto!
       run: dotnet nuget push "pacchetti_creati/*.nupkg" --api-key ${{ secrets.PAT_GITHUB }} --source "https://nuget.pkg.github.com/SiMep11/index.json" --skip-duplicate

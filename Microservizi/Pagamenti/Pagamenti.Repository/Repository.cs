@@ -48,6 +48,7 @@ namespace Pagamenti.Repository
             versamento.DataContabile = versamentoInsertDto.DataContabile;
             versamento.Importo = versamentoInsertDto.Importo;
             versamento.Informazioni = versamentoInsertDto.Informazioni;
+            versamento.ordineId = versamentoInsertDto.ordineId;
 
             await pagamentiDbContext.Versamenti.AddAsync(versamento, cancellationToken);
 

@@ -15,6 +15,12 @@ namespace Pagamenti.Business
     {
         public async Task CreateVersamentoAsync(VersamentoInsertDto versamentoInsertDto, CancellationToken cancellationToken = default)
         {
+            if (versamentoInsertDto.ordineId <= 0)
+                throw new ArgumentException("Il versamento deve essere collegato a un ordine valido", nameof(versamentoInsertDto.ordineId));
+
+            if (versamentoInsertDto.Importo <= 0)
+                throw new ArgumentException("L'importo del versamento deve essere positivo", nameof(versamentoInsertDto.Importo));
+
             int idVersamentoCreato = 0;
             await repository.BeginTransactionAsync(async (CancellationToken cancellation) =>
             {

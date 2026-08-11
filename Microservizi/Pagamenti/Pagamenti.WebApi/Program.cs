@@ -4,6 +4,7 @@ using Pagamenti.Business.Abstraction;
 using Pagamenti.Business.Profiles;
 using Pagamenti.Repository;
 using Pagamenti.Repository.Abstraction;
+using Pagamenti.Business.Kafka;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IBusiness, Business>();
 builder.Services.AddSingleton(p => ActivatorUtilities.CreateInstance<Subject>(p));
 builder.Services.AddSingleton<IPagamentiObservable>(p => p.GetRequiredService<Subject>());
 builder.Services.AddSingleton<IPagamentiObserver>(p => p.GetRequiredService<Subject>());
+builder.Services.AddKafkaProducerServiceWithSubscription<KafkaTopicsOutput, ProducerServiceWithSubscription>(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
