@@ -1,9 +1,12 @@
 using Magazzino.Business;
 using Magazzino.Business.Abstraction;
-using Magazzino.Business.BackgroundServices;
+using Magazzino.Business.Kafka;
+using Magazzino.Business.Kafka.MessageHandlers;
 using Magazzino.Repository;
 using Magazzino.Repository.Abstraction;
 using Microsoft.EntityFrameworkCore;
+using Utility.Kafka.Abstractions.Clients;
+using Utility.Kafka.Clients;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,24 +15,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 builder.Services.AddDbContext<MagazzinoDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("MagazzinoDb"),
-        b =>{
+        b => {
             b.MigrationsAssembly("Magazzino.WebApi");
             b.EnableRetryOnFailure();
         }
     ));
-builder.Services.AddScoped<ProdottiManager>();
-// Registriamo il nuovo Repository
+
+// Registriamo il Repository
 builder.Services.AddScoped<IMagazzinoRepository, MagazzinoRepository>();
 
-// Registriamo il Manager aggiornato
+// Registriamo il Manager
 builder.Services.AddScoped<IProdottiManager, ProdottiManager>();
 
-builder.Services.AddHostedService<ConsumerOrdineConfermato>();
+// Kafka: produciamo "scorta-sotto-soglia", consumiamo "ordine-confermato" e "merce-ricevuta"
+builder.Services.Configure<KafkaProducerClientOptions>(builder.Configuration.GetSection("Kafka"));
+builder.Services.AddSingleton<IProducerClient<string, string>, ProducerClient>();
+builder.Services.AddKafkaConsumerService<KafkaTopicsInput, MagazzinoMessageHandlerFactory>(builder.Configuration);
 
 var app = builder.Build();
 

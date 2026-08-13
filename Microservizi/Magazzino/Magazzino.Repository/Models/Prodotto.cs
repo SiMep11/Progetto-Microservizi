@@ -19,5 +19,8 @@ namespace Magazzino.Repository.Models
         public decimal Prezzo { get; set; }
 
         public int QuantitaInMagazzino { get; set; }
+
+        // Sotto questa soglia scatta il riordino automatico
+        public int ScortaMinima { get; set; } = 5;
     }
 }

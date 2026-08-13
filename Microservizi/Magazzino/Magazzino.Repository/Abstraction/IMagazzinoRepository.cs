@@ -17,6 +17,9 @@ namespace Magazzino.Repository.Abstraction
         // Cambiato a Task (void) perché il salvataggio effettivo avverrà dopo
         Task CreaProdottoAsync(Prodotto prodotto, CancellationToken cancellationToken = default);
 
-        Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default);
+        // Restituisce il prodotto aggiornato: al Business serve per sapere se siamo scesi sotto la scorta minima
+        Task<Prodotto?> ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default);
+
+        Task<Prodotto?> CaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default);
     }
 }

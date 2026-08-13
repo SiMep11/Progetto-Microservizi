@@ -44,6 +44,9 @@ namespace Magazzino.WebApi.Migrations
                     b.Property<int>("QuantitaInMagazzino")
                         .HasColumnType("int");
 
+                    b.Property<int>("ScortaMinima")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Prodotti");

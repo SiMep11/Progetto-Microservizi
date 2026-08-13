@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="../../UtilityKafka/UtilityKafka.csproj" />
+  <Project Path="../Magazzino/Magazzino.ClientHttp/Magazzino.ClientHttp.csproj" />
+  <Project Path="../Magazzino/Magazzino.Shared/Magazzino.Shared.csproj" />
+  <Project Path="Approvvigionamenti.Business/Approvvigionamenti.Business.csproj" />
+  <Project Path="Approvvigionamenti.ClientHttp/Approvvigionamenti.ClientHttp.csproj" />
+  <Project Path="Approvvigionamenti.Repository/Approvvigionamenti.Repository.csproj" />
+  <Project Path="Approvvigionamenti.Shared/Approvvigionamenti.Shared.csproj" />
+  <Project Path="Approvvigionamenti.WebApi/Approvvigionamenti.WebApi.csproj" />
+</Solution>

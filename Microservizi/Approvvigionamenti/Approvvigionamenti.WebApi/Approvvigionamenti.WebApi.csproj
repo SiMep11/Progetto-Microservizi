@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="KafkaUtility" Version="1.0.2" />
+		<PackageReference Include="Magazzino.ClientHttp" Version="1.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Approvvigionamenti.Business\Approvvigionamenti.Business.csproj" />
+		<ProjectReference Include="..\Approvvigionamenti.ClientHttp\Approvvigionamenti.ClientHttp.csproj" />
+		<ProjectReference Include="..\Approvvigionamenti.Repository\Approvvigionamenti.Repository.csproj" />
+		<ProjectReference Include="..\Approvvigionamenti.Shared\Approvvigionamenti.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

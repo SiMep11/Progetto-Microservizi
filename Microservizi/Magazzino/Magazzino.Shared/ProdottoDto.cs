@@ -10,5 +10,8 @@
         public decimal Prezzo { get; set; }
 
         public int QuantitaDisponibile { get; set; }
+
+        // Sotto questa soglia scatta il riordino automatico verso Approvvigionamenti
+        public int ScortaMinima { get; set; }
     }
 }

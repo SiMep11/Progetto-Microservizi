@@ -1,48 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Magazzino.Business.Abstraction; // Dove hai messo IProdottiManager
-using Magazzino.Repository.Abstraction; // Dove hai messo IMagazzinoRepository
+using Magazzino.Business.Abstraction;
+using Magazzino.Business.Kafka;
+using Magazzino.Repository.Abstraction;
 using Magazzino.Repository.Models;
-using Magazzino.Shared; // Dove si trova ProdottoDto
+using Magazzino.Shared;
+using Magazzino.Shared.Events;
+using Microsoft.Extensions.Logging;
+using Utility.Kafka.Abstractions.Clients;
 
 namespace Magazzino.Business
 {
-    public class ProdottiManager(IMagazzinoRepository repository) : IProdottiManager
+    public class ProdottiManager(
+        IMagazzinoRepository repository,
+        IProducerClient<string, string> producerClient,
+        ILogger<ProdottiManager> logger) : IProdottiManager
     {
         public async Task<IEnumerable<ProdottoDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            // Passiamo il token al repository
             var prodottiDb = await repository.GetAllProdottiAsync(cancellationToken);
-
-            return prodottiDb.Select(p => new ProdottoDto
-            {
-                Id = p.Id,
-                Nome = p.Nome,
-                Descrizione = p.Descrizione,
-                Prezzo = p.Prezzo,
-                QuantitaDisponibile = p.QuantitaInMagazzino
-            });
+            return prodottiDb.Select(Map);
         }
 
         public async Task<ProdottoDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
         {
-            // Passiamo il token al repository
             var prodottoDb = await repository.GetProdottoByIdAsync(id, cancellationToken);
-
-            if (prodottoDb == null)
-            {
-                return null;
-            }
-
-            return new ProdottoDto
-            {
-                Id = prodottoDb.Id,
-                Nome = prodottoDb.Nome,
-                Descrizione = prodottoDb.Descrizione,
-                Prezzo = prodottoDb.Prezzo,
-                QuantitaDisponibile = prodottoDb.QuantitaInMagazzino
-            };
+            return prodottoDb == null ? null : Map(prodottoDb);
         }
 
         public async Task<ProdottoDto> CreaProdottoAsync(ProdottoDto prodottoDto, CancellationToken cancellationToken = default)
@@ -52,28 +37,70 @@ namespace Magazzino.Business
                 Nome = prodottoDto.Nome,
                 Descrizione = prodottoDto.Descrizione,
                 Prezzo = prodottoDto.Prezzo,
-                QuantitaInMagazzino = prodottoDto.QuantitaDisponibile
+                QuantitaInMagazzino = prodottoDto.QuantitaDisponibile,
+                ScortaMinima = prodottoDto.ScortaMinima
             };
 
-            // 2. Diciamo al DbContext di tracciare il nuovo prodotto in memoria
             await repository.CreaProdottoAsync(nuovoProdotto, cancellationToken);
-
-            // 3. IL TOCCO DEL PROF: Il Business comanda il salvataggio fisico!
+            
             await repository.SaveChangesAsync(cancellationToken);
 
-            // 4. Magia di EF Core: dopo il SaveChanges, 'nuovoProdotto' ha l'ID valorizzato!
             prodottoDto.Id = nuovoProdotto.Id;
-
             return prodottoDto;
         }
 
         public async Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
-            // 1. Il repository calcola la nuova giacenza in memoria
-            await repository.ScaricaGiacenzaAsync(id, quantita, cancellationToken);
-
-            // 2. IL TOCCO DEL PROF: Il Business comanda il salvataggio fisico!
+            var prodotto = await repository.ScaricaGiacenzaAsync(id, quantita, cancellationToken);
             await repository.SaveChangesAsync(cancellationToken);
+
+            if (prodotto is null)
+            {
+                logger.LogWarning("Scarico giacenza: prodotto {ProdottoId} non trovato", id);
+                return;
+            }
+
+            // Se siamo scesi sotto la scorta minima avvisiamo Approvvigionamenti, che deciderà se e quanto riordinare.
+            if (prodotto.QuantitaInMagazzino < prodotto.ScortaMinima)
+            {
+                var evento = new ScortaSottoSogliaEvent
+                {
+                    ProdottoId = prodotto.Id,
+                    QuantitaAttuale = prodotto.QuantitaInMagazzino,
+                    ScortaMinima = prodotto.ScortaMinima
+                };
+
+                await producerClient.ProduceAsync(KafkaTopics.ScortaSottoSoglia, prodotto.Id.ToString(),
+                    JsonSerializer.Serialize(evento), cancellationToken);
+
+                logger.LogInformation("Prodotto {ProdottoId} sceso a {Quantita}, sotto la soglia {Soglia}: richiesto riordino",
+                    prodotto.Id, prodotto.QuantitaInMagazzino, prodotto.ScortaMinima);
+            }
         }
+
+        public async Task CaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
+        {
+            var prodotto = await repository.CaricaGiacenzaAsync(id, quantita, cancellationToken);
+            await repository.SaveChangesAsync(cancellationToken);
+
+            if (prodotto is null)
+            {
+                logger.LogWarning("Carico giacenza: prodotto {ProdottoId} non trovato", id);
+                return;
+            }
+
+            logger.LogInformation("Prodotto {ProdottoId} ricaricato di {Quantita} pezzi, giacenza ora {Giacenza}",
+                prodotto.Id, quantita, prodotto.QuantitaInMagazzino);
+        }
+
+        private static ProdottoDto Map(Prodotto p) => new ProdottoDto
+        {
+            Id = p.Id,
+            Nome = p.Nome,
+            Descrizione = p.Descrizione,
+            Prezzo = p.Prezzo,
+            QuantitaDisponibile = p.QuantitaInMagazzino,
+            ScortaMinima = p.ScortaMinima
+        };
     }
 }

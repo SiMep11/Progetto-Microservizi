@@ -29,7 +29,7 @@ namespace Magazzino.Repository
             await context.Prodotti.AddAsync(prodotto, cancellationToken);
         }
 
-        public async Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
+        public async Task<Prodotto?> ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
             // 1. Cerchiamo il prodotto nel database
             var prodotto = await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
@@ -45,6 +45,20 @@ namespace Magazzino.Repository
                     prodotto.QuantitaInMagazzino = 0;
                 }
             }
+
+            return prodotto;
+        }
+
+        public async Task<Prodotto?> CaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
+        {
+            var prodotto = await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
+
+            if (prodotto != null)
+            {
+                prodotto.QuantitaInMagazzino += quantita;
+            }
+
+            return prodotto;
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="KafkaUtility" Version="1.0.2" />
+		<PackageReference Include="Magazzino.ClientHttp" Version="1.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Approvvigionamenti.ClientHttp\Approvvigionamenti.ClientHttp.csproj" />
+		<ProjectReference Include="..\Approvvigionamenti.Repository\Approvvigionamenti.Repository.csproj" />
+		<ProjectReference Include="..\Approvvigionamenti.Shared\Approvvigionamenti.Shared.csproj" />
+	</ItemGroup>
+
+</Project>
