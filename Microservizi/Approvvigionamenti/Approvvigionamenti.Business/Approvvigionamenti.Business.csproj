@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="KafkaUtility" Version="1.0.2" />
-		<PackageReference Include="Magazzino.ClientHttp" Version="1.0.2" />
+		<PackageReference Include="Magazzino.ClientHttp" Version="1.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
