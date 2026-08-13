@@ -3,6 +3,7 @@ using Magazzino.ClientHttp.Abstraction;
 using Magazzino.Shared;
 using Microsoft.AspNetCore.Http; // Necessario per usare la classe QueryString
 using System.Globalization;
+using System.Net;
 
 namespace Magazzino.ClientHttp;
 
@@ -23,7 +24,6 @@ public class MagazzinoClient(HttpClient httpClient) : IMagazzinoClient
             return null;
 
         // PUNTO 1: Gestione errori aggressiva
-        return await
         return await response.EnsureSuccessStatusCode().Content.ReadFromJsonAsync<ProdottoDto?>(cancellationToken: cancellationToken);
     }
 
