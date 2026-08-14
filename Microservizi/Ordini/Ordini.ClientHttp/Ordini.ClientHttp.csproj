@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <PackageId>Ordini.ClientHttp</PackageId>
     <RepositoryUrl>https://github.com/SiMep11/Progetto-Microservizi</RepositoryUrl>
   </PropertyGroup>

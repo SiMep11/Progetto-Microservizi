@@ -9,7 +9,7 @@ namespace Ordini.Business.Abstractions
     {
         Task<IEnumerable<OrdineDto>> GetAllOrdiniAsync();
         Task<OrdineDto?> GetOrdineByIdAsync(int id);
-        Task<OrdineDto> CreaOrdineAsync(OrdineDto nuovoOrdineDto);
+        Task<OrdineDto> CreaOrdineAsync(OrdineInsertDto nuovoOrdineDto);
         Task<bool> ConfermaOrdineSePagatoAsync(int ordineId, decimal importoPagato, CancellationToken cancellationToken = default);
     }
 }

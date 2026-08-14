@@ -19,92 +19,67 @@ public class OrdiniService(
     {
         var ordini = await repository.GetAllOrdiniAsync();
 
-        return ordini.Select(o => new OrdineDto
-        {
-            Id = o.Id,
-            DataOrdine = o.DataOrdine,
-            Cliente = o.Cliente,
-            Totale = o.Totale,
-            Stato = o.Stato,
-            Prodotti = o.Prodotti.Select(p => new ProdottoOrdinatoDto
-            {
-                ProdottoId = p.ProdottoId,
-                Quantita = p.Quantita,
-                PrezzoUnitario = p.PrezzoUnitario
-            }).ToList()
-        });
+        return ordini.Select(MapOrdine);
     }
 
     public async Task<OrdineDto?> GetOrdineByIdAsync(int id)
     {
         var ordine = await repository.GetOrdineByIdAsync(id);
-        if (ordine == null) return null;
 
-        return new OrdineDto
-        {
-            Id = ordine.Id,
-            DataOrdine = ordine.DataOrdine,
-            Cliente = ordine.Cliente,
-            Totale = ordine.Totale,
-            Stato = ordine.Stato,
-            Prodotti = ordine.Prodotti.Select(p => new ProdottoOrdinatoDto
-            {
-                ProdottoId = p.ProdottoId,
-                Quantita = p.Quantita,
-                PrezzoUnitario = p.PrezzoUnitario
-            }).ToList()
-        };
+        return ordine == null ? null : MapOrdine(ordine);
     }
 
-    public async Task<OrdineDto> CreaOrdineAsync(OrdineDto nuovoOrdineDto)
+    public async Task<OrdineDto> CreaOrdineAsync(OrdineInsertDto nuovoOrdineDto)
     {
+        if (nuovoOrdineDto.Prodotti is null || nuovoOrdineDto.Prodotti.Count == 0)
+            throw new ArgumentException("L'ordine deve contenere almeno un prodotto", nameof(nuovoOrdineDto.Prodotti));
+
         decimal totaleCalcolato = 0;
+        var righe = new List<ProdottoOrdinato>();
 
         // 1. CHIAMATA AL MAGAZZINO: Controlliamo i prezzi reali!
         foreach (var riga in nuovoOrdineDto.Prodotti)
         {
+            if (riga.Quantita <= 0)
+                throw new ArgumentException($"La quantità del prodotto {riga.ProdottoId} deve essere positiva", nameof(nuovoOrdineDto.Prodotti));
+
             var prodottoMagazzino = await magazzinoClient.GetProdottoByIdAsync(riga.ProdottoId);
 
             if (prodottoMagazzino == null)
             {
-                throw new Exception($"Impossibile creare l'ordine: il prodotto con ID {riga.ProdottoId} non esiste in magazzino.");
+                throw new ArgumentException($"Impossibile creare l'ordine: il prodotto con ID {riga.ProdottoId} non esiste in magazzino.", nameof(nuovoOrdineDto.Prodotti));
             }
 
-            // Sicurezza: forziamo il prezzo unitario a quello UFFICIALE del magazzino
-            riga.PrezzoUnitario = prodottoMagazzino.Prezzo;
+            // Sicurezza: il prezzo unitario è quello UFFICIALE del magazzino.
+            // Per questo non compare nel DTO in ingresso: il client non può deciderlo.
+            righe.Add(new ProdottoOrdinato
+            {
+                ProdottoId = riga.ProdottoId,
+                Quantita = riga.Quantita,
+                PrezzoUnitario = prodottoMagazzino.Prezzo
+            });
 
             // Calcoliamo il totale riga per riga
-            totaleCalcolato += (riga.Quantita * riga.PrezzoUnitario);
+            totaleCalcolato += riga.Quantita * prodottoMagazzino.Prezzo;
         }
 
         // 2. Mapping: DTO -> Entity
-        var nuovoOrdine = new Ordine // Assicurati che 'Ordine' sia la tua entità DB
+        var nuovoOrdine = new Ordine
         {
             Cliente = nuovoOrdineDto.Cliente,
             DataOrdine = DateTime.UtcNow,
             Stato = StatiOrdine.InElaborazione,
             Totale = totaleCalcolato,
-            Prodotti = nuovoOrdineDto.Prodotti.Select(p => new ProdottoOrdinato // Assicurati che 'ProdottoOrdinato' sia l'entità
-            {
-                ProdottoId = p.ProdottoId,
-                Quantita = p.Quantita,
-                PrezzoUnitario = p.PrezzoUnitario
-            }).ToList()
+            Prodotti = righe
         };
 
-        await repository.CreaOrdineAsync( nuovoOrdine );
+        await repository.CreaOrdineAsync(nuovoOrdine);
         await repository.SaveChangesAsync();
-
-        // 4. Aggiorniamo il DTO
-        nuovoOrdineDto.Id = nuovoOrdine.Id; // L'ID è generato da EF dopo il SaveChanges
-        nuovoOrdineDto.DataOrdine = nuovoOrdine.DataOrdine;
-        nuovoOrdineDto.Stato = nuovoOrdine.Stato;
-        nuovoOrdineDto.Totale = nuovoOrdine.Totale;
 
         // NB: qui NON avvisiamo il magazzino. L'ordine è solo "In elaborazione":
         // la giacenza verrà scaricata solo dopo l'incasso, in ConfermaOrdineSePagatoAsync.
 
-        return nuovoOrdineDto;
+        return MapOrdine(nuovoOrdine);
     }
 
     public async Task<bool> ConfermaOrdineSePagatoAsync(int ordineId, decimal importoPagato, CancellationToken cancellationToken = default)
@@ -134,12 +109,7 @@ public class OrdiniService(
         var evento = new OrdineConfermatoEvent
         {
             OrdineId = ordine.Id,
-            Prodotti = ordine.Prodotti.Select(p => new ProdottoOrdinatoDto
-            {
-                ProdottoId = p.ProdottoId,
-                Quantita = p.Quantita,
-                PrezzoUnitario = p.PrezzoUnitario
-            }).ToList()
+            Prodotti = ordine.Prodotti.Select(MapRiga).ToList()
         };
         string messaggioJson = System.Text.Json.JsonSerializer.Serialize(evento);
 
@@ -148,4 +118,25 @@ public class OrdiniService(
 
         return true;
     }
+
+    #region Helper privati
+
+    private static OrdineDto MapOrdine(Ordine o) => new OrdineDto
+    {
+        Id = o.Id,
+        DataOrdine = o.DataOrdine,
+        Cliente = o.Cliente,
+        Totale = o.Totale,
+        Stato = o.Stato,
+        Prodotti = o.Prodotti.Select(MapRiga).ToList()
+    };
+
+    private static ProdottoOrdinatoDto MapRiga(ProdottoOrdinato p) => new ProdottoOrdinatoDto
+    {
+        ProdottoId = p.ProdottoId,
+        Quantita = p.Quantita,
+        PrezzoUnitario = p.PrezzoUnitario
+    };
+
+    #endregion
 }

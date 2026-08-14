@@ -14,6 +14,6 @@ namespace Ordini.ClientHttp.Abstraction // <- Tolta la 's' finale
         Task<OrdineDto?> GetOrdineByIdAsync(int id, CancellationToken cancellationToken = default);
 
         // Invia un nuovo ordine da creare
-        Task<OrdineDto> CreaOrdineAsync(OrdineDto ordine, CancellationToken cancellationToken = default);
+        Task<OrdineDto> CreaOrdineAsync(OrdineInsertDto ordine, CancellationToken cancellationToken = default);
     }
 }

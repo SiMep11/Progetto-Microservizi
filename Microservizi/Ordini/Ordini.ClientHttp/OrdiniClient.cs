@@ -10,8 +10,6 @@ using Ordini.ClientHttp.Abstraction;
 namespace Ordini.ClientHttp
 {
     // Costruttore primario che inietta automaticamente l'HttpClient
-    // NB: OrdiniController usa [Route("[controller]/[action]")], quindi le rotte
-    // sono /Ordini/NomeAction e non /api/ordini.
     public class OrdiniClient(HttpClient httpClient) : IOrdiniClient
     {
         public async Task<IEnumerable<OrdineDto>> GetAllOrdiniAsync(CancellationToken cancellationToken = default)
@@ -29,8 +27,7 @@ namespace Ordini.ClientHttp
             // L'action GetById ha [HttpGet("{id}")], quindi l'id va nel path
             var response = await httpClient.GetAsync($"/Ordini/GetById/{id}", cancellationToken);
 
-            // Un ordine inesistente è una risposta legittima (il controller torna NotFound),
-            // non un errore: la traduciamo in null invece di sollevare eccezione.
+            // Un ordine inesistente è una risposta legittima (il controller torna NotFound)
             if (response.StatusCode == HttpStatusCode.NotFound)
                 return null;
 
@@ -38,7 +35,7 @@ namespace Ordini.ClientHttp
                 .Content.ReadFromJsonAsync<OrdineDto?>(cancellationToken: cancellationToken);
         }
 
-        public async Task<OrdineDto> CreaOrdineAsync(OrdineDto ordine, CancellationToken cancellationToken = default)
+        public async Task<OrdineDto> CreaOrdineAsync(OrdineInsertDto ordine, CancellationToken cancellationToken = default)
         {
             var response = await httpClient.PostAsJsonAsync("/Ordini/Create", ordine, cancellationToken);
 
