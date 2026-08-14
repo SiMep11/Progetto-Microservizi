@@ -43,6 +43,12 @@ jobs:
     - name: Pacchettizza Ordini.ClientHttp
       run: dotnet pack Microservizi/Ordini/Ordini.ClientHttp/Ordini.ClientHttp.csproj -c Release -o pacchetti_creati
 
+    - name: Pacchettizza Approvvigionamenti.Shared
+      run: dotnet pack Microservizi/Approvvigionamenti/Approvvigionamenti.Shared/Approvvigionamenti.Shared.csproj -c Release -o pacchetti_creati
+
+    - name: Pacchettizza Approvvigionamenti.ClientHttp
+      run: dotnet pack Microservizi/Approvvigionamenti/Approvvigionamenti.ClientHttp/Approvvigionamenti.ClientHttp.csproj -c Release -o pacchetti_creati
+
     - name: Pubblica su GitHub Packages
       # NOTA BENE: Sostituisci TUO_USERNAME_GITHUB qui sotto!
       run: dotnet nuget push "pacchetti_creati/*.nupkg" --api-key ${{ secrets.PAT_GITHUB }} --source "https://nuget.pkg.github.com/SiMep11/index.json" --skip-duplicate

@@ -27,6 +27,16 @@ spec:
             value: "Development"
           - name: Kafka__BootstrapServers
             value: "kafka-service:9092" # <-- Usa il nome del Service di Kafka!
+          - name: Kafka__AdminClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__ConsumerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__ConsumerClient__GroupId
+            value: "magazzino-group"
+          - name: Kafka__Topics__OrdineConfermato
+            value: "ordine-confermato"
+          - name: Kafka__Topics__MerceRicevuta
+            value: "merce-ricevuta"
 ---
 apiVersion: v1
 kind: Service

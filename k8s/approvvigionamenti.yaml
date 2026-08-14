@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: approvvigionamenti-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: approvvigionamenti-api
+  template:
+    metadata:
+      labels:
+        app: approvvigionamenti-api
+    spec:
+      containers:
+      - name: approvvigionamenti-api
+        image: ghcr.io/simep11/approvvigionamenti-api:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+          # 1. Connessione al Database SQL Server dentro K8s
+          - name: ConnectionStrings__ApprovvigionamentiDb
+            value: "Server=sqlserver-service,1433;Database=ApprovvigionamentiDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
+          # 2. Connessione HTTP al microservizio Magazzino dentro K8s
+          - name: MagazzinoClient__BaseAddress
+            value: "http://magazzino-service:8080"
+          # 3. Kafka: produciamo "merce-ricevuta", consumiamo "scorta-sotto-soglia"
+          - name: Kafka__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__AdminClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__ConsumerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__ConsumerClient__GroupId
+            value: "approvvigionamenti-group"
+          - name: Kafka__Topics__ScortaSottoSoglia
+            value: "scorta-sotto-soglia"
+          # 4. Fondamentale per mostrare l'interfaccia Swagger al professore
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: approvvigionamenti-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: approvvigionamenti-api
+  ports:
+  - port: 5001       # La porta che userà il prof su Chrome (localhost:5001)
+    targetPort: 8080 # La porta interna usata dal container .NET
