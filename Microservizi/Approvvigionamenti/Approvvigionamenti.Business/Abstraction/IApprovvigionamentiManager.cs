@@ -8,7 +8,7 @@ namespace Approvvigionamenti.Business.Abstraction
 
         Task<IEnumerable<FornitoreDto>> GetAllFornitoriAsync(CancellationToken cancellationToken = default);
         Task<FornitoreDto?> GetFornitoreByIdAsync(int id, CancellationToken cancellationToken = default);
-        Task<FornitoreDto> CreaFornitoreAsync(FornitoreDto fornitoreDto, CancellationToken cancellationToken = default);
+        Task<FornitoreDto> CreaFornitoreAsync(FornitoreInsertDto fornitoreInsertDto, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Associa un prodotto del magazzino a un fornitore, con prezzo e quantità di riordino.

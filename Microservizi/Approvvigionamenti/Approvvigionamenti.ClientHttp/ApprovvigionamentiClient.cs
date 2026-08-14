@@ -17,7 +17,7 @@ public class ApprovvigionamentiClient(HttpClient httpClient) : IApprovvigionamen
         return result ?? new List<FornitoreDto>();
     }
 
-    public async Task<FornitoreDto> CreaFornitoreAsync(FornitoreDto fornitore, CancellationToken cancellationToken = default)
+    public async Task<FornitoreDto> CreaFornitoreAsync(FornitoreInsertDto fornitore, CancellationToken cancellationToken = default)
     {
         var response = await httpClient.PostAsJsonAsync("/Fornitori/Create", fornitore, cancellationToken);
 

@@ -31,7 +31,7 @@ namespace Approvvigionamenti.WebApi.Controllers
         }
 
         [HttpPost(Name = "CreateFornitore")]
-        public async Task<ActionResult<FornitoreDto>> Create([FromBody] FornitoreDto fornitore, CancellationToken cancellationToken)
+        public async Task<ActionResult<FornitoreDto>> Create([FromBody] FornitoreInsertDto fornitore, CancellationToken cancellationToken)
         {
             try
             {

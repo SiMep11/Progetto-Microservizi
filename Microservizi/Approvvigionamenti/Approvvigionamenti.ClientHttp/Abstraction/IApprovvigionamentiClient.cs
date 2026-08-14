@@ -6,7 +6,7 @@ public interface IApprovvigionamentiClient
 {
     Task<IEnumerable<FornitoreDto>> GetAllFornitoriAsync(CancellationToken cancellationToken = default);
 
-    Task<FornitoreDto> CreaFornitoreAsync(FornitoreDto fornitore, CancellationToken cancellationToken = default);
+    Task<FornitoreDto> CreaFornitoreAsync(FornitoreInsertDto fornitore, CancellationToken cancellationToken = default);
 
     Task<IEnumerable<OrdineFornitoreDto>> GetAllOrdiniFornitoreAsync(CancellationToken cancellationToken = default);
 

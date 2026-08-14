@@ -32,22 +32,22 @@ public class ApprovvigionamentiManager(
         return fornitore is null ? null : MapFornitore(fornitore);
     }
 
-    public async Task<FornitoreDto> CreaFornitoreAsync(FornitoreDto fornitoreDto, CancellationToken cancellationToken = default)
+    public async Task<FornitoreDto> CreaFornitoreAsync(FornitoreInsertDto fornitoreInsertDto, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrWhiteSpace(fornitoreDto.RagioneSociale))
-            throw new ArgumentException("La ragione sociale è obbligatoria", nameof(fornitoreDto.RagioneSociale));
+        if (string.IsNullOrWhiteSpace(fornitoreInsertDto.RagioneSociale))
+            throw new ArgumentException("La ragione sociale è obbligatoria", nameof(fornitoreInsertDto.RagioneSociale));
 
         var fornitore = new Fornitore
         {
-            RagioneSociale = fornitoreDto.RagioneSociale,
-            Email = fornitoreDto.Email
+            RagioneSociale = fornitoreInsertDto.RagioneSociale,
+            Email = fornitoreInsertDto.Email
         };
 
         await repository.CreaFornitoreAsync(fornitore, cancellationToken);
         await repository.SaveChangesAsync(cancellationToken);
 
-        fornitoreDto.Id = fornitore.Id;
-        return fornitoreDto;
+        // Torniamo il DTO di lettura: contiene l'Id assegnato dal DB e la lista dei prodotti forniti, per ora vuota
+        return MapFornitore(fornitore);
     }
 
     public async Task<ProdottoFornitoDto> AggiungiProdottoFornitoAsync(ProdottoFornitoDto dto, CancellationToken cancellationToken = default)
