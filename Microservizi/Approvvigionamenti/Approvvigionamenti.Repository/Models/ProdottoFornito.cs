@@ -1,8 +1,7 @@
 namespace Approvvigionamenti.Repository.Models
 {
     /// <summary>
-    /// Dice quali prodotti del magazzino un fornitore è in grado di rifornire,
-    /// a che prezzo e in che quantità conviene riordinare.
+    /// Dice quali prodotti del magazzino un fornitore è in grado di rifornire, a che prezzo e in che quantità conviene riordinare.
     /// </summary>
     public class ProdottoFornito
     {

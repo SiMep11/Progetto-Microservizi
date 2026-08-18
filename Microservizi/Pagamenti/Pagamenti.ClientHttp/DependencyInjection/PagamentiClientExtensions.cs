@@ -9,7 +9,7 @@ public static class PagamentiClientExtensions
 {
     public static IServiceCollection AddPagamentiClient(this IServiceCollection services, IConfiguration configuration)
     {
-        // Peschiamo la configurazione usando il SectionName
+        // Pescho la configurazione usando il SectionName
         IConfigurationSection confSection = configuration.GetSection(PagamentiClientOptions.SectionName);
         PagamentiClientOptions options = confSection.Get<PagamentiClientOptions>() ?? new();
 

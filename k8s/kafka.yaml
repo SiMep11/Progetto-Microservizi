@@ -1,4 +1,4 @@
-# 1. ZOOKEEPER (Necessario per far funzionare Kafka)
+# ZOOKEEPER (Necessario per far funzionare Kafka)
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -35,7 +35,7 @@ spec:
   selector:
     app: zookeeper
 ---
-# 2. KAFKA (Esposto su localhost per te e per il prof)
+# KAFKA (Esposto su localhost)
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -60,7 +60,6 @@ spec:
           value: "1"
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: "zookeeper:2181"
-        # QUESTA È LA RIGA CHE SALVA LA CONSEGNA:
         - name: KAFKA_ADVERTISED_LISTENERS
           value: PLAINTEXT://kafka-service:9092
         - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
@@ -71,7 +70,7 @@ kind: Service
 metadata:
   name: kafka-service
 spec:
-  type: LoadBalancer # <- Fa in modo che K8s apra la porta in automatico!
+  type: LoadBalancer # Fa in modo che K8s apra la porta in automatico!
   ports:
   - port: 9092
     targetPort: 9092

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Ordini.Shared; // <- Usiamo i DTO di Ordini!
+using Ordini.Shared; // Uso i DTO di Ordini
 
-namespace Ordini.ClientHttp.Abstraction // <- Tolta la 's' finale
+namespace Ordini.ClientHttp.Abstraction 
 {
     public interface IOrdiniClient
     {

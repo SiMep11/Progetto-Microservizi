@@ -9,7 +9,7 @@ using Utility.Kafka.Abstractions.Clients;
 
 namespace Ordini.Business;
 
-// Costruttore primario stile C# 12: via le variabili private
+// Costruttore primario stile C# 12
 public class OrdiniService(
     IOrdiniRepository repository,
     IMagazzinoClient magazzinoClient,
@@ -37,7 +37,7 @@ public class OrdiniService(
         decimal totaleCalcolato = 0;
         var righe = new List<ProdottoOrdinato>();
 
-        // 1. CHIAMATA AL MAGAZZINO: Controlliamo i prezzi reali!
+        // 1. CHIAMATA AL MAGAZZINO: Controllo i prezzi reali!
         foreach (var riga in nuovoOrdineDto.Prodotti)
         {
             if (riga.Quantita <= 0)
@@ -59,7 +59,7 @@ public class OrdiniService(
                 PrezzoUnitario = prodottoMagazzino.Prezzo
             });
 
-            // Calcoliamo il totale riga per riga
+            // Calcolo il totale riga per riga
             totaleCalcolato += riga.Quantita * prodottoMagazzino.Prezzo;
         }
 
@@ -76,7 +76,7 @@ public class OrdiniService(
         await repository.CreaOrdineAsync(nuovoOrdine);
         await repository.SaveChangesAsync();
 
-        // NB: qui NON avvisiamo il magazzino. L'ordine è solo "In elaborazione":
+        // NB: qui NON avviso il magazzino. L'ordine è solo "In elaborazione":
         // la giacenza verrà scaricata solo dopo l'incasso, in ConfermaOrdineSePagatoAsync.
 
         return MapOrdine(nuovoOrdine);
@@ -93,11 +93,11 @@ public class OrdiniService(
         if (ordine.Stato == StatiOrdine.Confermato)
             return true;
 
-        // Confermiamo solo ordini ancora in lavorazione (non annullati/rifiutati).
+        // Confermo solo ordini ancora in lavorazione (non annullati/rifiutati).
         if (ordine.Stato != StatiOrdine.InElaborazione)
             return false;
 
-        // ---- IL CONTROLLO CHIESTO: l'importo deve coincidere col totale ----
+        // l'importo deve coincidere col totale ----
         if (importoPagato != ordine.Totale)
             return false;
 
@@ -105,7 +105,7 @@ public class OrdiniService(
         await repository.SaveChangesAsync(cancellationToken);
 
         // --- KAFKA EVENT (Tramite UtilityKafka!) ---
-        // Solo ORA l'ordine è pagato: avvisiamo il magazzino di scaricare la giacenza.
+        // Solo ORA l'ordine è pagato: avviso il magazzino di scaricare la giacenza.
         var evento = new OrdineConfermatoEvent
         {
             OrdineId = ordine.Id,
@@ -113,7 +113,7 @@ public class OrdiniService(
         };
         string messaggioJson = System.Text.Json.JsonSerializer.Serialize(evento);
 
-        // Usiamo l'interfaccia generica IProducerClient
+        // Uso l'interfaccia generica IProducerClient
         await producerClient.ProduceAsync(KafkaTopics.OrdineConfermato, ordine.Id.ToString(), messaggioJson, cancellationToken);
 
         return true;

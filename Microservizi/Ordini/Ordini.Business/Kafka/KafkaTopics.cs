@@ -4,8 +4,7 @@ namespace Ordini.Business.Kafka;
 
 public static class KafkaTopics
 {
-    // Il "canale radio" su cui trasmettiamo: l'ordine è stato pagato e confermato,
-    // quindi il magazzino può scaricare la giacenza.
+    // Il canale su cui trasmetto: l'ordine è stato pagato e confermato, quindi il magazzino può scaricare la giacenza.
     public const string OrdineConfermato = "ordine-confermato";
 }
 

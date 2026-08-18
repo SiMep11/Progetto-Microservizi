@@ -9,7 +9,7 @@ public static class OrdiniClientExtensions
 {
     public static IServiceCollection AddOrdiniClient(this IServiceCollection services, IConfiguration configuration)
     {
-        // Peschiamo la configurazione usando il SectionName
+        // Pesco la configurazione usando il SectionName
         IConfigurationSection confSection = configuration.GetSection(OrdiniClientOptions.SectionName);
         OrdiniClientOptions options = confSection.Get<OrdiniClientOptions>() ?? new();
 

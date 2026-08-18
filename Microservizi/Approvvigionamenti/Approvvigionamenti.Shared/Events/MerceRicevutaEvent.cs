@@ -1,8 +1,7 @@
 namespace Approvvigionamenti.Shared.Events
 {
     /// <summary>
-    /// Pubblicato quando un ordine al fornitore viene segnato come ricevuto:
-    /// è il via libera per Magazzino a ricaricare la giacenza.
+    /// Pubblicato quando un ordine al fornitore viene segnato come ricevuto: è il via libera per Magazzino a ricaricare la giacenza.
     /// </summary>
     public class MerceRicevutaEvent
     {

@@ -32,7 +32,7 @@ builder.Services.AddKafkaConsumerService<KafkaTopicsInput, OrdiniMessageHandlerF
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); // <-- Questo genera il file JSON di Swagger
+builder.Services.AddSwaggerGen(); // genera il file JSON di Swagger
 builder.Services.AddOpenApi();
 
 var app = builder.Build();

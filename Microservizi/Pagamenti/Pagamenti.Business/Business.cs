@@ -22,8 +22,7 @@ namespace Pagamenti.Business
             if (versamentoInsertDto.Importo <= 0)
                 throw new ArgumentException("L'importo del versamento deve essere positivo", nameof(versamentoInsertDto.Importo));
 
-            // Validazione SINCRONA (http client) verso Ordini: scartiamo subito un versamento
-            // che non potrebbe mai confermare nulla, invece di farlo sparire dentro Kafka.
+            // Validazione SINCRONA (http client) verso Ordini: scarto subito un versamento che è null
             // NB: la decisione autoritativa resta di Ordini, che la riprende sul messaggio Kafka.
             var ordine = await ordiniClient.GetOrdineByIdAsync(versamentoInsertDto.ordineId, cancellationToken);
 
@@ -45,9 +44,10 @@ namespace Pagamenti.Business
             {
                 var versamento = await repository.CreateVersamentoAsync(versamentoInsertDto, cancellation);
 
-                await repository.SaveChangesAsync(cancellation); // Save intermedia per recuperare l'Id: è autogenerato dal DB e al termine di questa chiamata viene compilato automaticamente
+                // Save intermedia per recuperare l'Id: è autogenerato dal DB e al termine di questa chiamata viene compilato automaticamente
+                await repository.SaveChangesAsync(cancellation); 
 
-                var newVersamentoRecord = map.Map<VersamentoReadDto>(versamento); // travasiamo il record su un dto (newVersamentoRecord conterrà anche l'Id)
+                var newVersamentoRecord = map.Map<VersamentoReadDto>(versamento); // sposto il record su un dto (newVersamentoRecord conterrà anche l'Id)
 
                 await repository.InsertTransactionalOutboxAsync(TransactionalOutboxFactory.CreateInsert(newVersamentoRecord), cancellation);
 

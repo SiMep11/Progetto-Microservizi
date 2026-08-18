@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
       - name: pagamenti-api
-        # Assicurati che questo nome combaci con quello dell'immagine che builderai!
         image: ghcr.io/simep11/pagamenti-api:latest
         ports:
         - containerPort: 8080
@@ -42,10 +41,10 @@ kind: Service
 metadata:
   name: pagamenti-service
 spec:
-  type: LoadBalancer # Ti permette di accedere facilmente da localhost
+  type: LoadBalancer 
   selector:
     app: pagamenti
   ports:
     - protocol: TCP
-      port: 5000 # La porta da cui lo chiamerai (es: http://localhost:5000/swagger)
-      targetPort: 8080 # Deve coincidere con il containerPort sopra
+      port: 5000 # La porta da usare su Chrome (es: http://localhost:5000/swagger)
+      targetPort: 8080 

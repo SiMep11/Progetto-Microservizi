@@ -6,14 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-// Assicurati di usare i namespace corretti per il tuo progetto!
 using Pagamenti.Repository.Abstraction;
 using Pagamenti.Repository.Model;
 using Pagamenti.Business.Abstraction;
 using Utility.Kafka.Abstractions.Clients;
 using Utility.Kafka.Services;
 
-namespace Pagamenti.Business.Kafka; // Sostituisci con il tuo namespace esatto
+namespace Pagamenti.Business.Kafka; 
 
 public class ProducerServiceWithSubscription(
     ILogger<ProducerServiceWithSubscription> logger,
@@ -25,17 +24,13 @@ public class ProducerServiceWithSubscription(
     : AbstractProducerServiceWithSubscription(logger, serviceProvider)
 {
     /// <summary>
-    /// Effettuiamo la subscribe dell'observable NuovoVersamento: ogni qualvolta
-    /// viene inoltrata una notifica tramite l'observer
-    /// eseguiamo l'azione definita, ovvero marchiamo come completato il tcs invocando il
-    /// metodo TrySetResult()
+    /// subscribe dell'observable NuovoVersamento: ogni volta che viene inoltrata una notifica tramite l'observer segno come completato il tcs invocando il metodo TrySetResult()
     /// </summary>
     protected override IDisposable Subscribe(TaskCompletionSource tcs)
     {
         return observable.NuovoVersamento.Subscribe((change) => tcs.TrySetResult());
     }
 
-    /// <inheritdoc/>
     protected override IEnumerable<string> GetTopics()
     {
         return optionsTopics.Value.GetTopics();

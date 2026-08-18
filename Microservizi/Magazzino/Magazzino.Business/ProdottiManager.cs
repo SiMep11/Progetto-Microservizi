@@ -60,7 +60,7 @@ namespace Magazzino.Business
                 return;
             }
 
-            // Se siamo scesi sotto la scorta minima avvisiamo Approvvigionamenti, che deciderà se e quanto riordinare.
+            // Se sono sceso sotto la scorta minima avviso Approvvigionamenti, che deciderà se e quanto riordinare.
             if (prodotto.QuantitaInMagazzino < prodotto.ScortaMinima)
             {
                 var evento = new ScortaSottoSogliaEvent

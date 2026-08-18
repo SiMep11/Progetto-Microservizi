@@ -6,7 +6,7 @@ using Utility.Kafka.Abstractions.MessageHandlers;
 
 namespace Approvvigionamenti.Business.Kafka.MessageHandlers;
 
-// NB: Magazzino pubblica l'evento non incapsulato in un OperationMessage, quindi implementiamo direttamente IMessageHandler invece di derivare da
+// NB: Magazzino pubblica l'evento non incapsulato in un OperationMessage, quindi implemento direttamente IMessageHandler invece di derivare da
 // AbstractOperationMessageHandlerBase come fa Ordini sul topic dei versamenti.
 public class ScortaSottoSogliaMessageHandler(
     ILogger<ScortaSottoSogliaMessageHandler> logger,

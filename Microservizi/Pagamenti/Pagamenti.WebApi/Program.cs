@@ -9,7 +9,6 @@ using Pagamenti.Business.Kafka;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<PagamentiDbContext>(options =>
@@ -20,7 +19,7 @@ builder.Services.AddDbContext<PagamentiDbContext>(options =>
 builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(AssemblyMarker).Assembly));
 
 // Registrazione Repository e Logica di Business
-builder.Services.AddScoped<IRepository, Repository>(); // Assicurati di avere l'using per il tuo Repository
+builder.Services.AddScoped<IRepository, Repository>(); 
 builder.Services.AddScoped<IBusiness, Business>();
 
 // Registrazione del sistema di Eventi (Observer Pattern per Kafka)
@@ -35,7 +34,6 @@ builder.Services.AddOrdiniClient(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddAuthorization();
 
 var app = builder.Build();
 

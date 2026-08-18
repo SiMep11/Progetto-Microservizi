@@ -4,8 +4,7 @@ namespace Approvvigionamenti.Business.Kafka;
 
 public static class KafkaTopics
 {
-    // Il "canale radio" su cui trasmettiamo: la merce è arrivata dal fornitore,
-    // il magazzino può ricaricare la giacenza.
+    // Il canale su cui trasmetto: la merce è arrivata dal fornitore, il magazzino può ricaricare la giacenza.
     public const string MerceRicevuta = "merce-ricevuta";
 }
 

@@ -19,16 +19,16 @@ spec:
         ports:
         - containerPort: 8080
         env:
-          # 1. Connessione al Database SQL Server dentro K8s
+          # Connessione al Database SQL Server dentro K8s
           - name: ConnectionStrings__DefaultConnection
             value: "Server=sqlserver-service,1433;Database=OrdiniDb;User Id=sa;Password=TuaPasswordSicura123!;TrustServerCertificate=True;"
-          # 2. Connessione al broker Kafka dentro K8s
+          # Connessione al broker Kafka dentro K8s
           - name: Kafka__BootstrapServers
             value: "kafka-service:9092"
-          # 3. Connessione HTTP al microservizio Magazzino dentro K8s
+          # Connessione HTTP al microservizio Magazzino dentro K8s
           - name: MagazzinoClient__BaseAddress
             value: "http://magazzino-service:8080"      
-          # 4. Fondamentale per mostrare l'interfaccia Swagger al professore
+          # serve per mostrare l'interfaccia Swagger 
           - name: ASPNETCORE_ENVIRONMENT
             value: "Development"
           - name: Kafka__AdminClient__BootstrapServers
@@ -49,5 +49,5 @@ spec:
   selector:
     app: ordini-api
   ports:
-  - port: 8081       # La porta che userà il prof su Chrome (localhost:8081)
+  - port: 8081       # La porta da usare su Chrome (localhost:8081)
     targetPort: 8080 # La porta interna usata dal container .NET

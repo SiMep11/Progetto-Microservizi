@@ -12,7 +12,7 @@ namespace Ordini.Shared
 
         public int Quantita { get; set; }
 
-        // La famosa "fotografia" del prezzo al momento dell'acquisto
+        // "fotografia" del prezzo al momento dell'acquisto
         public decimal PrezzoUnitario { get; set; }
     }
 }

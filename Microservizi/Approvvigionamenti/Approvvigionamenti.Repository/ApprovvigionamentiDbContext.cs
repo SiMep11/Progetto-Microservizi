@@ -25,8 +25,7 @@ namespace Approvvigionamenti.Repository
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Ipotesi di progetto: un solo fornitore per tipo di prodotto.
-            // L'indice unico fa rispettare l'ipotesi al database invece di lasciarla
-            // come convenzione non scritta.
+            // L'indice unico fa rispettare l'ipotesi al database invece di lasciarla come convenzione non scritta.
             modelBuilder.Entity<ProdottoFornito>()
                 .HasIndex(p => p.ProdottoId)
                 .IsUnique();

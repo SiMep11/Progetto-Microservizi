@@ -11,7 +11,6 @@ using Utility.Kafka.Clients;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -25,10 +24,10 @@ builder.Services.AddDbContext<MagazzinoDbContext>(options =>
         }
     ));
 
-// Registriamo il Repository
+// Registro il Repository
 builder.Services.AddScoped<IMagazzinoRepository, MagazzinoRepository>();
 
-// Registriamo il Manager
+// Registro il Manager
 builder.Services.AddScoped<IProdottiManager, ProdottiManager>();
 
 // Kafka: produciamo "scorta-sotto-soglia", consumiamo "ordine-confermato" e "merce-ricevuta"
@@ -43,10 +42,10 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-        // Chiediamo a .NET di darci un'istanza del nostro DbContext
+        // Chiedo a .NET di darmi un'istanza del DbContext
         var context = services.GetRequiredService<MagazzinoDbContext>();
 
-        // Questo comando magico crea il DB e le tabelle se non esistono!
+        // crea il DB e le tabelle se non esistono
         context.Database.Migrate();
     }
     catch (Exception ex)

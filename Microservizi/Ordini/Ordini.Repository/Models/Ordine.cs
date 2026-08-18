@@ -13,7 +13,7 @@ namespace Ordini.Repository.Models
         public decimal Totale { get; set; }
         public string Stato { get; set; } = StatiOrdine.InElaborazione;
 
-        // Usiamo ICollection per Entity Framework
+        // Uso ICollection per Entity Framework
         public ICollection<ProdottoOrdinato> Prodotti { get; set; } = new List<ProdottoOrdinato>();
     }
 }

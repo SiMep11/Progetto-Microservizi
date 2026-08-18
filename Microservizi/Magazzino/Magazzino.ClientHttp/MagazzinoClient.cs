@@ -11,19 +11,17 @@ public class MagazzinoClient(HttpClient httpClient) : IMagazzinoClient
 {
     public async Task<ProdottoDto?> GetProdottoByIdAsync(int id, CancellationToken cancellationToken = default)
     {
-        // PUNTO 2: Passaggio ID tramite QueryString
+        // Passaggio ID tramite QueryString
         var queryString = QueryString.Create(new Dictionary<string, string?>() {
             { "id", id.ToString(CultureInfo.InvariantCulture) }
         });
 
-        // PUNTO 1: Gestione errori aggressiva
         var response = await httpClient.GetAsync($"/Prodotti/GetProdottoById{queryString.Value}", cancellationToken);
         // Un prodotto inesistente è una risposta legittima(il controller torna NotFound),
         // non un errore: la traduciamo in null invece di sollevare eccezione.
         if (response.StatusCode == HttpStatusCode.NotFound)
             return null;
 
-        // PUNTO 1: Gestione errori aggressiva
         return await response.EnsureSuccessStatusCode().Content.ReadFromJsonAsync<ProdottoDto?>(cancellationToken: cancellationToken);
     }
 
@@ -31,7 +29,6 @@ public class MagazzinoClient(HttpClient httpClient) : IMagazzinoClient
     {
         var response = await httpClient.GetAsync("/Prodotti/GetProdotti", cancellationToken);
 
-        // PUNTO 1: Gestione errori aggressiva
         var result = await response.EnsureSuccessStatusCode().Content.ReadFromJsonAsync<IEnumerable<ProdottoDto>>(cancellationToken: cancellationToken);
         return result ?? new List<ProdottoDto>();
     }

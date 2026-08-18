@@ -8,7 +8,7 @@ namespace Magazzino.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    // Costruttore primario per essere perfettamente allineati allo stile di C# 12
+    // Costruttore primario in stile C# 12
     public class ProdottiController(IProdottiManager prodottiManager) : ControllerBase
     {
         [HttpGet(Name = "GetAllProdotti")]

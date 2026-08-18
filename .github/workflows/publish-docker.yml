@@ -2,13 +2,13 @@ name: Build e Pubblicazione Immagine Docker
 
 on:
   workflow_run:
-    workflows: ["Creazione e Pubblicazione NuGet"] # ⚠️ DEVE ESSERE UGUALE AL NOME DELL'ALTRA PIPELINE
+    workflows: ["Creazione e Pubblicazione NuGet"] # DEVE ESSERE UGUALE AL NOME DELL'ALTRA PIPELINE
     types:
       - completed
 
 jobs:
   build-and-publish-docker:
-    # Aggiungiamo questa riga per assicurarci che parta SOLO se i NuGet sono stati pubblicati con successo
+    # serve per per essere sicuri che parta SOLO se i NuGet sono stati pubblicati con successo
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 

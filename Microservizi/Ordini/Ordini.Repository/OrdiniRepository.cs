@@ -32,7 +32,6 @@ namespace Ordini.Repository
         public async Task CreaOrdineAsync(Ordine ordine, CancellationToken cancellationToken = default)
         {
             await context.Ordini.AddAsync(ordine, cancellationToken);
-            // Niente più salvataggio qui!
         }
 
         public async Task AggiornaStatoOrdineAsync(int id, string nuovoStato, CancellationToken cancellationToken = default)
@@ -42,7 +41,6 @@ namespace Ordini.Repository
             {
                 ordine.Stato = nuovoStato;
             }
-            // Niente più salvataggio qui!
         }
     }
 }

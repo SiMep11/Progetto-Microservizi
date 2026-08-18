@@ -20,9 +20,8 @@ namespace Approvvigionamenti.Repository.Abstraction
         Task AggiungiProdottoFornitoAsync(ProdottoFornito prodottoFornito, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Restituisce il fornitore associato a un prodotto, con prezzo e quantità di
-        /// riordino. È quello che il riordino automatico usa per sapere a chi ordinare
-        /// e quanto. Null se per quel prodotto non è stato configurato un fornitore.
+        /// Restituisce il fornitore associato a un prodotto, con prezzo e quantità di riordino. È quello che il riordino automatico usa per sapere a chi ordinare e quanto. 
+        /// Null se per quel prodotto non è stato configurato un fornitore.
         /// </summary>
         Task<ProdottoFornito?> GetProdottoFornitoAsync(int prodottoId, CancellationToken cancellationToken = default);
 
@@ -35,8 +34,7 @@ namespace Approvvigionamenti.Repository.Abstraction
         Task CreaOrdineFornitoreAsync(OrdineFornitore ordine, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Serve a non riordinare lo stesso prodotto a ogni evento di scorta bassa:
-        /// se c'è già un ordine in attesa di consegna, non se ne crea un altro.
+        /// Serve a non riordinare lo stesso prodotto a ogni evento di scorta bassa: se c'è già un ordine in attesa di consegna, non se ne crea un altro.
         /// </summary>
         Task<bool> EsisteOrdineApertoAsync(int prodottoId, CancellationToken cancellationToken = default);
 

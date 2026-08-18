@@ -11,7 +11,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.PAT_GITHUB }}
     
-    # Questi permessi sono FONDAMENTALI per permettere a GitHub di scrivere nei Packages
+    # servono a GitHub per scrivere nei Packages
     permissions:
       packages: write
       contents: read
@@ -50,5 +50,4 @@ jobs:
       run: dotnet pack Microservizi/Approvvigionamenti/Approvvigionamenti.ClientHttp/Approvvigionamenti.ClientHttp.csproj -c Release -o pacchetti_creati
 
     - name: Pubblica su GitHub Packages
-      # NOTA BENE: Sostituisci TUO_USERNAME_GITHUB qui sotto!
       run: dotnet nuget push "pacchetti_creati/*.nupkg" --api-key ${{ secrets.PAT_GITHUB }} --source "https://nuget.pkg.github.com/SiMep11/index.json" --skip-duplicate

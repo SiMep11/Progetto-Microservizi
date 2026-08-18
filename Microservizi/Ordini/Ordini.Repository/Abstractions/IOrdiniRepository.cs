@@ -14,7 +14,6 @@ namespace Ordini.Repository.Abstractions
 
         Task<Ordine?> GetOrdineByIdAsync(int id, CancellationToken cancellationToken = default);
 
-        // Ora restituisce solo un Task (niente più Ordine di ritorno)
         Task CreaOrdineAsync(Ordine ordine, CancellationToken cancellationToken = default);
 
         Task AggiornaStatoOrdineAsync(int id, string nuovoStato, CancellationToken cancellationToken = default);

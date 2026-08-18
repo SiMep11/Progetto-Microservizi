@@ -4,7 +4,7 @@ namespace Magazzino.Business.Kafka;
 
 public static class KafkaTopics
 {
-    // Il "canale radio" su cui trasmettiamo: un prodotto è sceso sotto la scorta minima
+    // Il "canale radio" su cui trasmetto: un prodotto è sceso sotto la scorta minima
     public const string ScortaSottoSoglia = "scorta-sotto-soglia";
 }
 

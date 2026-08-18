@@ -7,7 +7,7 @@ namespace Ordini.Repository
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // 1. Chiavi Primarie esplicite in stile prof
+            // 1. Chiavi Primarie esplicite
             modelBuilder.Entity<Ordine>().HasKey(x => x.Id);
             modelBuilder.Entity<ProdottoOrdinato>().HasKey(x => x.Id);
 
@@ -18,7 +18,6 @@ namespace Ordini.Repository
             // 3. Relazione scritta su una riga compatta (come fa il prof)
             modelBuilder.Entity<Ordine>().HasMany(p => p.Prodotti).WithOne(p => p.Ordine).HasForeignKey(p => p.OrdineId).OnDelete(DeleteBehavior.Cascade);
 
-            // 4. Manteniamo la tua configurazione salvavita per i prezzi!
             modelBuilder.Entity<Ordine>().Property(o => o.Totale).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<ProdottoOrdinato>().Property(p => p.PrezzoUnitario).HasColumnType("decimal(18,2)");
         }

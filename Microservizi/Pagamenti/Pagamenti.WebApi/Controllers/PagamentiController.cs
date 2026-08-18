@@ -17,8 +17,7 @@ namespace Pagamenti.WebApi.Controllers
             }
             catch (ArgumentException ex)
             {
-                // Versamento non valido (ordine inesistente, importo errato...):
-                // è un errore del chiamante, non del server.
+                // Versamento non valido (ordine inesistente, importo errato...): è un errore del chiamante, non del server.=
                 logger.LogWarning(ex, "Richiesta di versamento non valida");
                 return BadRequest(ex.Message);
             }

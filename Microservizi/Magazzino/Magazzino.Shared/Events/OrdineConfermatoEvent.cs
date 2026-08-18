@@ -1,8 +1,7 @@
 namespace Magazzino.Shared.Events
 {
     /// <summary>
-    /// Ricevuto da Ordini quando un ordine è stato pagato per l'importo corretto:
-    /// è il via libera per scaricare la giacenza.
+    /// Ricevuto da Ordini quando un ordine è stato pagato per l'importo corretto: è il via libera per scaricare la giacenza.
     /// </summary>
     public class OrdineConfermatoEvent
     {

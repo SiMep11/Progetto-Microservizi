@@ -21,7 +21,7 @@ public class VersamentoMessageHandler(
         await ordiniService.ConfermaOrdineSePagatoAsync(messageDto.ordineId, messageDto.Importo, cancellationToken);
     }
 
-    // Pagamenti oggi produce solo Insert: gli altri casi li ignoriamo senza rompere il consumer.
+    // Pagamenti produce solo Insert
     protected override Task UpdateAsync(VersamentoReadDto messageDto, CancellationToken cancellationToken = default)
         => Task.CompletedTask;
 

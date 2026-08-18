@@ -31,15 +31,15 @@ namespace Magazzino.Repository
 
         public async Task<Prodotto?> ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
-            // 1. Cerchiamo il prodotto nel database
+            // 1. Cerco il prodotto nel database
             var prodotto = await context.Prodotti.FindAsync(new object[] { id }, cancellationToken);
 
             if (prodotto != null)
             {
-                // 2. Scaliamo la quantità
+                // 2. Scalo la quantità
                 prodotto.QuantitaInMagazzino -= quantita;
 
-                // 3. Sicurezza: evitiamo giacenze negative
+                // 3. Sicurezza: evito giacenze negative
                 if (prodotto.QuantitaInMagazzino < 0)
                 {
                     prodotto.QuantitaInMagazzino = 0;

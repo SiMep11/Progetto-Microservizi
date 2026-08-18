@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Approvvigionamenti.WebApi.Controllers
 {
     [ApiController]
-    // Stile Prof: rotta basata sul nome del controller e del metodo (es. /Fornitori/GetAll)
     [Route("[controller]/[action]")]
     public class FornitoriController(IApprovvigionamentiManager manager, ILogger<FornitoriController> logger) : ControllerBase
     {
