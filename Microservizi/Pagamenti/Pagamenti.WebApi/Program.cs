@@ -40,15 +40,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    try
-    {
-        var context = services.GetRequiredService<PagamentiDbContext>();
-        context.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Errore durante la migrazione del database: {ex.Message}");
-    }
+    
+    var context = services.GetRequiredService<PagamentiDbContext>();
+    context.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.

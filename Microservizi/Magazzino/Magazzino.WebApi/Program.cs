@@ -40,19 +40,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    try
-    {
-        // Chiedo a .NET di darmi un'istanza del DbContext
-        var context = services.GetRequiredService<MagazzinoDbContext>();
 
-        // crea il DB e le tabelle se non esistono
-        context.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "Errore durante la creazione del database.");
-    }
+    var context = services.GetRequiredService<MagazzinoDbContext>();
+    context.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.
