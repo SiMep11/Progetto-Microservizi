@@ -2,15 +2,22 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Ordini.Business.Kafka;
 
-public static class KafkaTopics
-{
-    // Il canale su cui trasmetto: l'ordine è stato pagato e confermato, quindi il magazzino può scaricare la giacenza.
-    public const string OrdineConfermato = "ordine-confermato";
-}
-
+/// <summary>
+/// Topic che Ordini ASCOLTA. Bindata dalla sezione "Kafka:Topics".
+/// </summary>
 public class KafkaTopicsInput : AbstractKafkaTopics
 {
     public string Versamenti { get; set; } = "Versamenti";
 
     public override IEnumerable<string> GetTopics() => [Versamenti];
+}
+
+/// <summary>
+/// Topic su cui Ordini PUBBLICA. Bindata dalla stessa sezione "Kafka:Topics".
+/// </summary>
+public class KafkaTopicsOutput : AbstractKafkaTopics
+{
+    public string OrdineConfermato { get; set; } = "ordine-confermato";
+
+    public override IEnumerable<string> GetTopics() => [OrdineConfermato];
 }

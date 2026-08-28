@@ -4,6 +4,7 @@ using Ordini.Repository.Abstractions;
 using Ordini.Business;
 using Ordini.Business.Abstractions;
 using Ordini.Business.Kafka.MessageHandlers;
+using Ordini.Business.Factory;
 using Ordini.ClientHttp.Abstraction;
 using Ordini.ClientHttp;
 using Ordini.Business.Kafka;
@@ -25,8 +26,12 @@ builder.Services.AddScoped<IOrdiniRepository, OrdiniRepository>();
 // Registra il livello Business
 builder.Services.AddScoped<IOrdiniService, OrdiniService>();
 builder.Services.AddMagazzinoClient(builder.Configuration);
-builder.Services.Configure<KafkaProducerClientOptions>(builder.Configuration.GetSection("Kafka"));
-builder.Services.AddSingleton<IProducerClient<string, string>, ProducerClient>();
+// Observer pattern per svegliare il producer dell'outbox
+builder.Services.AddSingleton(p => ActivatorUtilities.CreateInstance<Subject>(p));
+builder.Services.AddSingleton<IOrdiniObservable>(p => p.GetRequiredService<Subject>());
+builder.Services.AddSingleton<IOrdiniObserver>(p => p.GetRequiredService<Subject>());
+
+builder.Services.AddKafkaProducerServiceWithSubscription<KafkaTopicsOutput, ProducerServiceWithSubscription>(builder.Configuration);
 builder.Services.AddKafkaConsumerService<KafkaTopicsInput, OrdiniMessageHandlerFactory>(builder.Configuration);
 // Add services to the container.
 

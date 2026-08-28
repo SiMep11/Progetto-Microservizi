@@ -6,7 +6,8 @@
     <PackageReference Include="Magazzino.Shared" Version="1.0.2" />
     <PackageReference Include="Niyat.Kafka.Utility" Version="1.10.29" />
 	<PackageReference Include="Magazzino.ClientHttp" Version="1.0.3" />
-	  <PackageReference Include="Pagamenti.Shared" Version="1.0.0" />
+	<PackageReference Include="Pagamenti.Shared" Version="1.0.0" />
+	<PackageReference Include="System.Reactive" Version="6.1.0" />
   </ItemGroup>
 
   <ItemGroup>

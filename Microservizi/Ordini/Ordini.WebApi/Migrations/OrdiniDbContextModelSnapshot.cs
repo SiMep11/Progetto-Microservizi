@@ -76,6 +76,27 @@ namespace Ordini.WebApi.Migrations
                     b.ToTable("ProdottiOrdinati");
                 });
 
+            modelBuilder.Entity("Ordini.Repository.Models.TransactionalOutbox", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Messaggio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tabella")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TransactionalOutboxList");
+                });
+
             modelBuilder.Entity("Ordini.Repository.Models.ProdottoOrdinato", b =>
                 {
                     b.HasOne("Ordini.Repository.Models.Ordine", "Ordine")

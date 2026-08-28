@@ -5,7 +5,7 @@ using Ordini.Repository.Abstractions;
 using Ordini.Repository.Models;
 using Ordini.Shared;
 using Ordini.Shared.Events;
-using Utility.Kafka.Abstractions.Clients;
+using Ordini.Business.Factory;
 
 namespace Ordini.Business;
 
@@ -13,7 +13,7 @@ namespace Ordini.Business;
 public class OrdiniService(
     IOrdiniRepository repository,
     IMagazzinoClient magazzinoClient,
-    IProducerClient<string, string> producerClient) : IOrdiniService
+    IOrdiniObserver observer) : IOrdiniService
 {
     public async Task<IEnumerable<OrdineDto>> GetAllOrdiniAsync()
     {
@@ -101,20 +101,31 @@ public class OrdiniService(
         if (importoPagato != ordine.Totale)
             return false;
 
-        await repository.AggiornaStatoOrdineAsync(ordineId, StatiOrdine.Confermato, cancellationToken);
-        await repository.SaveChangesAsync(cancellationToken);
+        long idOutbox = 0;
 
-        // --- KAFKA EVENT (Tramite UtilityKafka!) ---
-        // Solo ORA l'ordine è pagato: avviso il magazzino di scaricare la giacenza.
-        var evento = new OrdineConfermatoEvent
+        // Stato dell'ordine e messaggio Kafka nella STESSA transazione:
+        // o si salvano entrambi, o non si salva nulla.
+        await repository.BeginTransactionAsync(async (CancellationToken ct) =>
         {
-            OrdineId = ordine.Id,
-            Prodotti = ordine.Prodotti.Select(MapRiga).ToList()
-        };
-        string messaggioJson = System.Text.Json.JsonSerializer.Serialize(evento);
+            await repository.AggiornaStatoOrdineAsync(ordineId, StatiOrdine.Confermato, ct);
 
-        // Uso l'interfaccia generica IProducerClient
-        await producerClient.ProduceAsync(KafkaTopics.OrdineConfermato, ordine.Id.ToString(), messaggioJson, cancellationToken);
+            var evento = new OrdineConfermatoEvent
+            {
+                OrdineId = ordine.Id,
+                Prodotti = ordine.Prodotti.Select(MapRiga).ToList()
+            };
+
+            var outbox = TransactionalOutboxFactory.Create(evento);
+            await repository.InsertTransactionalOutboxAsync(outbox, ct);
+
+            await repository.SaveChangesAsync(ct);
+
+            idOutbox = outbox.Id;
+        }, cancellationToken);
+
+        // Svegliamo il producer: pubblicherà subito invece di attendere il giro successivo
+        if (idOutbox > 0)
+            observer.NuovoMessaggioOutbox.OnNext(idOutbox);
 
         return true;
     }

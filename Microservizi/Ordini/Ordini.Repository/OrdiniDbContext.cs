@@ -20,9 +20,13 @@ namespace Ordini.Repository
 
             modelBuilder.Entity<Ordine>().Property(o => o.Totale).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<ProdottoOrdinato>().Property(p => p.PrezzoUnitario).HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<TransactionalOutbox>().HasKey(e => e.Id);
+            modelBuilder.Entity<TransactionalOutbox>().Property(e => e.Id).ValueGeneratedOnAdd();
         }
 
         public DbSet<Ordine> Ordini { get; set; }
         public DbSet<ProdottoOrdinato> ProdottiOrdinati { get; set; }
+        public DbSet<TransactionalOutbox> TransactionalOutboxList { get; set; }
     }
 }
