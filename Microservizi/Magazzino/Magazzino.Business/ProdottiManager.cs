@@ -9,13 +9,13 @@ using Magazzino.Repository.Models;
 using Magazzino.Shared;
 using Magazzino.Shared.Events;
 using Microsoft.Extensions.Logging;
-using Utility.Kafka.Abstractions.Clients;
+using Magazzino.Business.Factory;
 
 namespace Magazzino.Business
 {
     public class ProdottiManager(
         IMagazzinoRepository repository,
-        IProducerClient<string, string> producerClient,
+        IMagazzinoObserver observer,
         ILogger<ProdottiManager> logger) : IProdottiManager
     {
         public async Task<IEnumerable<ProdottoDto>> GetAllAsync(CancellationToken cancellationToken = default)
@@ -51,31 +51,49 @@ namespace Magazzino.Business
 
         public async Task ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)
         {
-            var prodotto = await repository.ScaricaGiacenzaAsync(id, quantita, cancellationToken);
-            await repository.SaveChangesAsync(cancellationToken);
+            long idOutbox = 0;
 
-            if (prodotto is null)
+            await repository.BeginTransactionAsync(async (CancellationToken ct) =>
             {
-                logger.LogWarning("Scarico giacenza: prodotto {ProdottoId} non trovato", id);
-                return;
-            }
+                var prodotto = await repository.ScaricaGiacenzaAsync(id, quantita, ct);
 
-            // Se sono sceso sotto la scorta minima avviso Approvvigionamenti, che deciderà se e quanto riordinare.
-            if (prodotto.QuantitaInMagazzino < prodotto.ScortaMinima)
-            {
-                var evento = new ScortaSottoSogliaEvent
+                if (prodotto is null)
                 {
-                    ProdottoId = prodotto.Id,
-                    QuantitaAttuale = prodotto.QuantitaInMagazzino,
-                    ScortaMinima = prodotto.ScortaMinima
-                };
+                    logger.LogWarning("Scarico giacenza: prodotto {ProdottoId} non trovato", id);
+                    return;
+                }
 
-                await producerClient.ProduceAsync(KafkaTopics.ScortaSottoSoglia, prodotto.Id.ToString(),
-                    JsonSerializer.Serialize(evento), cancellationToken);
+                TransactionalOutbox? outbox = null;
 
-                logger.LogInformation("Prodotto {ProdottoId} sceso a {Quantita}, sotto la soglia {Soglia}: richiesto riordino",
-                    prodotto.Id, prodotto.QuantitaInMagazzino, prodotto.ScortaMinima);
-            }
+                // Se siamo scesi sotto la scorta minima prepariamo la richiesta di riordino
+                if (prodotto.QuantitaInMagazzino < prodotto.ScortaMinima)
+                {
+                    var evento = new ScortaSottoSogliaEvent
+                    {
+                        ProdottoId = prodotto.Id,
+                        QuantitaAttuale = prodotto.QuantitaInMagazzino,
+                        ScortaMinima = prodotto.ScortaMinima
+                    };
+
+                    outbox = TransactionalOutboxFactory.Create(evento);
+                    await repository.InsertTransactionalOutboxAsync(outbox, ct);
+
+                    logger.LogInformation("Prodotto {ProdottoId} sceso a {Quantita}, sotto la soglia {Soglia}: richiesto riordino",
+                        prodotto.Id, prodotto.QuantitaInMagazzino, prodotto.ScortaMinima);
+                }
+
+                // UN SOLO salvataggio: giacenza aggiornata ed eventuale messaggio
+                // vengono committati insieme, o non viene committato nulla
+                await repository.SaveChangesAsync(ct);
+
+                if (outbox is not null)
+                    idOutbox = outbox.Id;
+
+            }, cancellationToken);
+
+            // Svegliamo il producer: pubblicherà subito invece di attendere il giro successivo
+            if (idOutbox > 0)
+                observer.NuovoMessaggioOutbox.OnNext(idOutbox);
         }
 
         public async Task CaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default)

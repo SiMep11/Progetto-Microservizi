@@ -51,6 +51,27 @@ namespace Magazzino.WebApi.Migrations
 
                     b.ToTable("Prodotti");
                 });
+
+            modelBuilder.Entity("Magazzino.Repository.Models.TransactionalOutbox", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Messaggio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tabella")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TransactionalOutboxList");
+                });
 #pragma warning restore 612, 618
         }
     }

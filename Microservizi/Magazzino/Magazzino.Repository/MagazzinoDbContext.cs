@@ -12,7 +12,10 @@ namespace Magazzino.Repository
         {
             modelBuilder.Entity<Prodotto>().HasKey(x => x.Id);
             modelBuilder.Entity<Prodotto>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<TransactionalOutbox>().HasKey(e => e.Id);
+            modelBuilder.Entity<TransactionalOutbox>().Property(e => e.Id).ValueGeneratedOnAdd();
         }
         public DbSet<Prodotto> Prodotti { get; set; }
+        public DbSet<TransactionalOutbox> TransactionalOutboxList { get; set; }
     }
 }

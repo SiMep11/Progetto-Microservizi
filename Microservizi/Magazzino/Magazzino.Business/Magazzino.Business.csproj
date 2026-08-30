@@ -10,6 +10,7 @@
     <PackageReference Include="Confluent.Kafka" Version="2.13.2" />
     <PackageReference Include="KafkaUtility" Version="1.0.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.5" />
+	<PackageReference Include="System.Reactive" Version="6.1.0" />
   </ItemGroup>
 
   <ItemGroup>

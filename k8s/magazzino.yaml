@@ -37,6 +37,10 @@ spec:
             value: "ordine-confermato"
           - name: Kafka__Topics__MerceRicevuta
             value: "merce-ricevuta"
+          - name: Kafka__ProducerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__Topics__ScortaSottoSoglia
+            value: "scorta-sotto-soglia"
 ---
 apiVersion: v1
 kind: Service

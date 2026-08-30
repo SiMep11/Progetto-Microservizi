@@ -21,5 +21,19 @@ namespace Magazzino.Repository.Abstraction
         Task<Prodotto?> ScaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default);
 
         Task<Prodotto?> CaricaGiacenzaAsync(int id, int quantita, CancellationToken cancellationToken = default);
+
+        Task BeginTransactionAsync(Func<CancellationToken, Task> action, CancellationToken cancellationToken = default);
+
+        #region TransactionalOutbox
+
+        Task<IEnumerable<TransactionalOutbox>> GetAllTransactionalOutboxAsync(CancellationToken cancellationToken = default);
+
+        Task<TransactionalOutbox?> GetTransactionalOutboxByKeyAsync(long id, CancellationToken cancellationToken = default);
+
+        Task InsertTransactionalOutboxAsync(TransactionalOutbox transactionalOutbox, CancellationToken cancellationToken = default);
+
+        Task DeleteTransactionalOutboxAsync(long id, CancellationToken cancellationToken = default);
+
+        #endregion
     }
 }
