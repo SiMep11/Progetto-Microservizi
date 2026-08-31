@@ -39,6 +39,10 @@ spec:
             value: "ordini-group"
           - name: Kafka__Topics__Versamenti
             value: "Versamenti"
+          - name: Kafka__ProducerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__Topics__OrdineConfermato
+            value: "ordine-confermato"
 ---
 apiVersion: v1
 kind: Service
