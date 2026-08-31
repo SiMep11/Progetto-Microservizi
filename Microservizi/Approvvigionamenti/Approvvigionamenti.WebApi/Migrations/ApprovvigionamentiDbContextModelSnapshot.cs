@@ -112,6 +112,27 @@ namespace Approvvigionamenti.WebApi.Migrations
                     b.ToTable("ProdottiForniti");
                 });
 
+            modelBuilder.Entity("Approvvigionamenti.Repository.Models.TransactionalOutbox", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Messaggio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tabella")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TransactionalOutboxList");
+                });
+
             modelBuilder.Entity("Approvvigionamenti.Repository.Models.OrdineFornitore", b =>
                 {
                     b.HasOne("Approvvigionamenti.Repository.Models.Fornitore", "Fornitore")

@@ -7,7 +7,6 @@ using Magazzino.Repository.Abstraction;
 using Microsoft.EntityFrameworkCore;
 using Utility.Kafka.Abstractions.Clients;
 using Utility.Kafka.Clients;
-using Magazzino.Business.Abstraction;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -5,10 +5,6 @@ namespace Approvvigionamenti.Repository
 {
     public class ApprovvigionamentiDbContext(DbContextOptions<ApprovvigionamentiDbContext> dbContextOptions) : DbContext(dbContextOptions)
     {
-        public DbSet<Fornitore> Fornitori { get; set; }
-        public DbSet<ProdottoFornito> ProdottiForniti { get; set; }
-        public DbSet<OrdineFornitore> OrdiniFornitore { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Fornitore>()
@@ -33,6 +29,13 @@ namespace Approvvigionamenti.Repository
             // Senza precisione esplicita EF avvisa che i decimal verranno troncati
             modelBuilder.Entity<ProdottoFornito>().Property(p => p.PrezzoAcquisto).HasPrecision(18, 2);
             modelBuilder.Entity<OrdineFornitore>().Property(o => o.PrezzoUnitario).HasPrecision(18, 2);
+            modelBuilder.Entity<TransactionalOutbox>().HasKey(e => e.Id);
+            modelBuilder.Entity<TransactionalOutbox>().Property(e => e.Id).ValueGeneratedOnAdd();
         }
+
+        public DbSet<Fornitore> Fornitori { get; set; }
+        public DbSet<ProdottoFornito> ProdottiForniti { get; set; }
+        public DbSet<OrdineFornitore> OrdiniFornitore { get; set; }
+        public DbSet<TransactionalOutbox> TransactionalOutboxList { get; set; }
     }
 }

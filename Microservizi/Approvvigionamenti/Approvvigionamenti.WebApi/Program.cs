@@ -28,9 +28,12 @@ builder.Services.AddScoped<IApprovvigionamentiManager, ApprovvigionamentiManager
 // 3. Comunicazione sincrona verso Magazzino (verifica che i prodotti esistano)
 builder.Services.AddMagazzinoClient(builder.Configuration);
 
-// 4. Kafka: produciamo "merce-ricevuta" e consumiamo "scorta-sotto-soglia"
-builder.Services.Configure<KafkaProducerClientOptions>(builder.Configuration.GetSection("Kafka"));
-builder.Services.AddSingleton<IProducerClient<string, string>, ProducerClient>();
+// Observer pattern per svegliare il producer dell'outbox
+builder.Services.AddSingleton(p => ActivatorUtilities.CreateInstance<Subject>(p));
+builder.Services.AddSingleton<IApprovvigionamentiObservable>(p => p.GetRequiredService<Subject>());
+builder.Services.AddSingleton<IApprovvigionamentiObserver>(p => p.GetRequiredService<Subject>());
+
+builder.Services.AddKafkaProducerServiceWithSubscription<KafkaTopicsOutput, ProducerServiceWithSubscription>(builder.Configuration);
 builder.Services.AddKafkaConsumerService<KafkaTopicsInput, ApprovvigionamentiMessageHandlerFactory>(builder.Configuration);
 
 builder.Services.AddControllers();

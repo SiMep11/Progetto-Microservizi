@@ -6,8 +6,7 @@ using Approvvigionamenti.Shared;
 using Approvvigionamenti.Shared.Events;
 using Magazzino.ClientHttp.Abstraction;
 using Microsoft.Extensions.Logging;
-using System.Text.Json;
-using Utility.Kafka.Abstractions.Clients;
+using Approvvigionamenti.Business.Factory;
 
 namespace Approvvigionamenti.Business;
 
@@ -15,7 +14,7 @@ namespace Approvvigionamenti.Business;
 public class ApprovvigionamentiManager(
     IApprovvigionamentiRepository repository,
     IMagazzinoClient magazzinoClient,
-    IProducerClient<string, string> producerClient,
+    IApprovvigionamentiObserver observer,
     ILogger<ApprovvigionamentiManager> logger) : IApprovvigionamentiManager
 {
     #region Fornitori
@@ -130,21 +129,34 @@ public class ApprovvigionamentiManager(
         if (ordine.Stato == StatiOrdineFornitore.Ricevuto)
             return true;
 
-        ordine.Stato = StatiOrdineFornitore.Ricevuto;
-        ordine.DataRicezione = DateTime.UtcNow;
-        await repository.SaveChangesAsync(cancellationToken);
+        long idOutbox = 0;
 
-        // --- KAFKA EVENT (Tramite UtilityKafka!) ---
-        // Solo ORA la merce è fisicamente arrivata: il magazzino può ricaricare.
-        var evento = new MerceRicevutaEvent
+        // Stato dell'ordine e messaggio Kafka nella STESSA transazione:
+        // o si salvano entrambi, o non si salva nulla.
+        await repository.BeginTransactionAsync(async (CancellationToken ct) =>
         {
-            OrdineFornitoreId = ordine.Id,
-            ProdottoId = ordine.ProdottoId,
-            Quantita = ordine.Quantita
-        };
-        string messaggioJson = JsonSerializer.Serialize(evento);
+            ordine.Stato = StatiOrdineFornitore.Ricevuto;
+            ordine.DataRicezione = DateTime.UtcNow;
 
-        await producerClient.ProduceAsync(KafkaTopics.MerceRicevuta, ordine.Id.ToString(), messaggioJson, cancellationToken);
+            var evento = new MerceRicevutaEvent
+            {
+                OrdineFornitoreId = ordine.Id,
+                ProdottoId = ordine.ProdottoId,
+                Quantita = ordine.Quantita
+            };
+
+            var outbox = TransactionalOutboxFactory.Create(evento);
+            await repository.InsertTransactionalOutboxAsync(outbox, ct);
+
+            await repository.SaveChangesAsync(ct);
+
+            idOutbox = outbox.Id;
+
+        }, cancellationToken);
+
+        // Svegliamo il producer: pubblicherà subito invece di attendere il giro successivo
+        if (idOutbox > 0)
+            observer.NuovoMessaggioOutbox.OnNext(idOutbox);
 
         logger.LogInformation("Ordine fornitore {OrdineId} ricevuto: {Quantita} pezzi del prodotto {ProdottoId}",
             ordine.Id, ordine.Quantita, ordine.ProdottoId);

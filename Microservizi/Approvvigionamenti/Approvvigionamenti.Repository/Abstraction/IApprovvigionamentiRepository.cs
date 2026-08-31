@@ -7,6 +7,20 @@ namespace Approvvigionamenti.Repository.Abstraction
         // Il salvataggio lo comanda il Business, come negli altri microservizi
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 
+        Task BeginTransactionAsync(Func<CancellationToken, Task> action, CancellationToken cancellationToken = default);
+
+        #region TransactionalOutbox
+
+        Task<IEnumerable<TransactionalOutbox>> GetAllTransactionalOutboxAsync(CancellationToken cancellationToken = default);
+
+        Task<TransactionalOutbox?> GetTransactionalOutboxByKeyAsync(long id, CancellationToken cancellationToken = default);
+
+        Task InsertTransactionalOutboxAsync(TransactionalOutbox transactionalOutbox, CancellationToken cancellationToken = default);
+
+        Task DeleteTransactionalOutboxAsync(long id, CancellationToken cancellationToken = default);
+
+        #endregion
+
         #region Fornitori
 
         Task<IEnumerable<Fornitore>> GetAllFornitoriAsync(CancellationToken cancellationToken = default);

@@ -39,6 +39,10 @@ spec:
           # serve per mostrare l'interfaccia Swagger 
           - name: ASPNETCORE_ENVIRONMENT
             value: "Development"
+          - name: Kafka__ProducerClient__BootstrapServers
+            value: "kafka-service:9092"
+          - name: Kafka__Topics__MerceRicevuta
+            value: "merce-ricevuta"
 ---
 apiVersion: v1
 kind: Service
