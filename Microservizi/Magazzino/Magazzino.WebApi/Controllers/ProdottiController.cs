@@ -1,7 +1,5 @@
-﻿using Magazzino.Business;
-using Magazzino.Business.Abstraction;
+﻿using Magazzino.Business.Abstraction;
 using Magazzino.Shared;
-using Magazzino.Repository.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Magazzino.WebApi.Controllers

@@ -12,7 +12,7 @@ public class MerceRicevutaMessageHandler(
 {
     public async Task OnMessageReceivedAsync(string key, string message, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrWhiteSpace(message))
+        if (string.IsNullOrWhiteSpace(message))         // controllo se il messaggio è vuoto
         {
             logger.LogError("Il messaggio è null o white space e quindi sarà scartato");
             return;
@@ -21,7 +21,7 @@ public class MerceRicevutaMessageHandler(
         MerceRicevutaEvent? evento;
         try
         {
-            evento = JsonSerializer.Deserialize<MerceRicevutaEvent>(message);
+            evento = JsonSerializer.Deserialize<MerceRicevutaEvent>(message);   // controllo che il JSON abbia il formato corretto
         }
         catch (Exception ex)
         {
@@ -30,7 +30,7 @@ public class MerceRicevutaMessageHandler(
             return;
         }
 
-        if (evento is null)
+        if (evento is null)     // controllo che il tipo sia giusto
         {
             logger.LogError("Il messaggio non è del tipo {tipo}, sarà scartato", nameof(MerceRicevutaEvent));
             return;
@@ -39,6 +39,6 @@ public class MerceRicevutaMessageHandler(
         logger.LogInformation("Merce dell'ordine fornitore {OrdineId} arrivata: carico {Quantita} pezzi del prodotto {ProdottoId}",
             evento.OrdineFornitoreId, evento.Quantita, evento.ProdottoId);
 
-        await manager.CaricaGiacenzaAsync(evento.ProdottoId, evento.Quantita, cancellationToken);
+        await manager.CaricaGiacenzaAsync(evento.ProdottoId, evento.Quantita, cancellationToken);   // chiamo il manager per fare il lavoro
     }
 }

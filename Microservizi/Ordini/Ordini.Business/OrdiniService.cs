@@ -43,7 +43,7 @@ public class OrdiniService(
             if (riga.Quantita <= 0)
                 throw new ArgumentException($"La quantità del prodotto {riga.ProdottoId} deve essere positiva", nameof(nuovoOrdineDto.Prodotti));
 
-            var prodottoMagazzino = await magazzinoClient.GetProdottoByIdAsync(riga.ProdottoId);
+            var prodottoMagazzino = await magazzinoClient.GetProdottoByIdAsync(riga.ProdottoId);    // qui inizia la comunicazione sincrona
 
             if (prodottoMagazzino == null)
             {
